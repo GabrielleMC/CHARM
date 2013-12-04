@@ -17,9 +17,9 @@ create table Electrical(
 );
 
 create table Electrical_Day(
-	logDate date,
+	logDay date,
 	logAvg double,
-	primary key(logDate)
+	primary key(logDay)
 );
 
 create table HVAC(
@@ -30,7 +30,7 @@ create table HVAC(
 );
 
 create table HVAC_Day(
-	logDate date,
+	logDay date,
 	logAvg double,
 	primary key(logDate)
 );
@@ -43,9 +43,9 @@ create table Dongle(
 );
 
 create table Dongle_Day(
-	logDate date,
+	logDay date,
 	logAvg double,
-	primary key(logDate)
+	primary key(logDay)
 );
 
 	
