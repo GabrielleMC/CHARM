@@ -1,4 +1,12 @@
 <?php
+	session_start();
+	if (isset($_SESSION['auth'])) {
+    	if ($_SESSION["auth"] != 1) {
+        	header("Location: CHARMindex.php");
+    }
+	} else {
+    	header("Location: CHARMindex.php");
+	}
 	$host = "localhost";
 	$user = "gaby";
 	$pass = "m1n1eggs";

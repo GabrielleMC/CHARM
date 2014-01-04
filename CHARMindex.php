@@ -55,7 +55,7 @@
 		</p>
 	</div>
 </div>		
-<a id="Login">Log into the CHARM dashboard</a>
+<button id="Login">Log into the CHARM dashboard</button>
 <div id="dialog">
 	<form id="login" action="checkUser.php" method="post">
 		<label for="username">Username: </label>
@@ -80,7 +80,7 @@
 			}
 		}
 	});	
-	$( "#Login" ).click(function() {
+	$( "#Login" ).button().click(function() {
 		$( "#dialog" ).dialog( "open" );
 	});
 </script>

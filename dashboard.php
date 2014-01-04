@@ -107,7 +107,7 @@ if (isset($_SESSION['auth'])) {
 		<li> <a href="CHARM_Overview.php">My Home</a></li>
 		<li> <a href="#tabs-2">History</a></li>
 		<li> <a href="#tabs-3">Detailed Statistics</a></li>
-		<li> <a href="#tabs-4">Options</a></li>
+		<li> <a href="#tabs-4">System</a></li>
 		<li> <a href="#tabs-5">CHARM School (Help)</a></li>
 	</ul>
 	<div id = "tabs-1" class ="overview">
@@ -135,6 +135,6 @@ if (isset($_SESSION['auth'])) {
 	</div>
 </div>				
 
-<a href = "CHARMindex.php">Return to home</a>
+<a href = "logout.php">Return to home</a>
 </body>
 </html>
