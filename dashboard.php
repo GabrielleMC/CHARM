@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION['auth'])) {
+    if ($_SESSION["auth"] != 1) {
+        header("Location: CHARMindex.php");
+    }
+} else {
+    header("Location: CHARMindex.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

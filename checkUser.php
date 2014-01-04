@@ -12,8 +12,8 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     //if (mysql_num_rows($checklogin) == 1) 
         //$row = mysql_fetch_array($checklogin);
         //$username = $row['username'];
-        $_SESSION['username'] = $username;
-        $_SESSION['loggedIn'] = 1;
+        $_SESSION['user'] = $username;
+        $_SESSION['auth'] = 1;
         header('Location: dashboard.php'); //<-- comment it to see debug info
     } 
 	else {
