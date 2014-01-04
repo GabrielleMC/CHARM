@@ -55,6 +55,34 @@
 		</p>
 	</div>
 </div>		
-<a href="dashboard.php">CHARM dashboard</a>
+<a id="Login">Log into the CHARM dashboard</a>
+<div id="dialog">
+	<form id="login" action="checkUser.php" method="post">
+		<label for="username">Username: </label>
+		<input type="text" name="username" id="username"><br>
+		<label for="password">Password: </label>
+		<input type="password" name="password" id="id">
+    </form>
+</div>
+<script type="text/javascript">
+	$( "#dialog" ).dialog({ 
+		autoOpen: false, 
+		modal: true,
+		width: 500,
+		buttons: {
+			"Submit": function(){
+				$("form#login").submit();
+				$(this).dialog("close");
+                            
+			},
+			"Cancel": function() {
+				$(this).dialog("close");
+			}
+		}
+	});	
+	$( "#Login" ).click(function() {
+		$( "#dialog" ).dialog( "open" );
+	});
+</script>
 </body>
 </html>

@@ -19,8 +19,6 @@
 		$( "#tabs" ).tabs();
 	});
 	</script>
-	<script type="text/javascript">
-	$(function () {
 	<?php
 		$host = "localhost";
 		$user = "gaby";
@@ -36,6 +34,9 @@
 		}
 		mysql_free_result($result);
 	?>
+	<script type="text/javascript">
+	$(function () {
+	
    	     	$('#container').highcharts({
 
             	title: {
