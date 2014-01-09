@@ -31,10 +31,10 @@ if (isset($_SESSION['auth'])) {
 	</script>
 	<?php
 		$host = "localhost";
-		$user = "gaby";
-		$pass = "m1n1eggs";
+		$user = "CHARM";
+		$pass = "5*Hotel";
 		mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
-		mysql_select_db("test1");
+		mysql_select_db("CHARM");
 
 		$result = mysql_query("SELECT TestKey, Value FROM yellow WHERE TestKey < 2000");
 
