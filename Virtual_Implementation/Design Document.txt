@@ -1,0 +1,258 @@
+/*****************************************************************************/
+Vitual Team Project Design Document
+/*****************************************************************************/
+
+Table of Contents
+
+1. Overview
+2. Message Format
+3. Protocol Illustration
+4. System Design
+5. Programming Language
+
+/***************************/
+1. Overview
+/***************************/
+
+This document will outline how a model client battery powered wireless device will
+connect to a server and provide it with CRC certified values.
+
+Features
+- Client find server through broadcasting to intranet when connected
+- Client sends data at configured intervals
+- Clients can be added at any time
+- Client must always initiate communication
+- Server to handle up to 2 clients
+- Each client to be assigned unique ID
+- Server to configure client settings
+- Server to handle controlled disconnects
+- Server to detect uncontrolled disconnects (battery dying)
+- Server to log data to text file unique to client
+- Server to log communication messages to log file
+- Server and clients to handle their IP addresses being changed
+- Server and clients to handle network outage/reboot without data loss
+
+The system will consume very minimal bandwidth. It will tolerate 0 loss and
+maximum 1 second delay.
+
+/***************************/
+2. Message Format
+/***************************/
+
+The messages will all use XML v1.0 to transmit data. The format will be as
+demonstrated below with example readings. Mandatory fields are indicated by
+an asterix. There should only be a maximum of 32 readings at a time in a 
+message to keep the size reasonable and below 1500 bytes. Further config
+fields can be added later with an appropriate increment to the msg_version.
+
+
+*** Client message ***
+
+<?xml version="1.0" encoding="UTF-8"?> *
+<client> *
+    <uid>2981</uid> *
+    <msg_version>1.0</msg_version> *
+    <fw>1.0</fw> *
+    <battery>99</battery> *
+    <num_of_readings>3</num_of_readings> *
+    <shut_down>false</shut_down>
+    <set_frequency>30</set_frequency>
+    <readings>
+        <reading0>
+            <reading>1234</reading>
+            <time>10:47:00 2013-11-12</time>
+        </reading0>
+        <reading1>
+            <reading>1233</reading>
+            <time>10:47:30 2013-11-12</time>
+        </reading1>
+        <reading2>
+            <reading>1230</reading>
+            <time>10:48:00 2013-11-12</time>
+        </reading2>
+    </readings>
+</client> *
+
+
+*** Server message ***
+
+<?xml version="1.0" encoding="UTF-8"?> *
+<server> *
+    <uid>2981</uid> *
+    <msg_version>1.0</msg_version> *
+    <num_readings_recv>1</num_readings_recv> *
+    <reset>false</reset>
+    <ping>1</ping>
+    <readings_recv>
+        <reading0>10:48:00 2013-11-12</reading0>
+    </readings_recv>
+    <config>
+        <reading_frequency>30</readings_frequency>
+        <shut_down>false</shut_down>
+     </config>
+</server> *
+
+
+/***************************/
+3. Protocol Illustration
+/***************************/
+Scenario A: Client just added to the network
+Scenario B: Client provides readings
+Scenario C: Client battery dying
+Scenario D: DHCP Server reset/new IP addresses
+Scenario E: Assign a new UID to a client
+
+*** Scenario A: Client just added to the network ***
+    From: client
+    To: 255.255.255.255 (broadcast on the network)
+        uid = -1
+
+    From: server
+    To: client IP address
+        uid = new UID
+        configuration options
+
+     
+*** Scenario B: Client provides readings ***
+    From: client
+        readings
+
+    From: server
+        readings_recv
+        
+     ** compare(readings_recv and readings), if any missing, resend **
+
+*** Scenario C: Client battery dying ***
+    From: client
+    To: server IP address
+        battery reading level less than 5%
+        
+    From: server
+    To: client IP address
+        shut_down = true
+        
+    From: client
+    To: server IP address
+        shut_down = true
+        
+    ** Client shuts down **
+    ** When battery plugged back in, see Scenario D **
+
+*** Scenario D: DHCP Server reset/new IP addresses ***
+    ** Client unable to reach server **
+    From: client
+    To: 255.255.255.255 (broadcast on the network)
+        uid = previously assigned ID number
+        
+    ** repeat every 30 seconds or until server initiates contact **
+    
+    From: server
+    To: client
+        uid = previously assigned ID number
+        
+    ** Client provides all previously unsent readings **
+    ** See Scenario B **
+
+*** Scenario E: Assign a new UID to a client ***
+    ** Previously set up client encounters a new server **
+    From: client
+    To: 255.255.255.255 (broadcast on the network)
+        uid = previously assigned ID number
+        
+    ** repeat every 30 seconds or until server initiates contact **
+    
+    From: server
+    To: client
+        uid = previously assigned ID number
+        reset = true
+        
+    ** See Scenario A **  
+    ** Client then provides all previously unsent readings **
+    ** See Scenario B **
+    
+Challenges:
+    The client will not accept any incoming connection from the server as its
+    antenna will be off to save power and as such is unreachable. Thus, if a 
+    client misses an expected check in time +-5s, the server should be aware
+    that something might be wrong and inform the user.
+
+/***************************/
+4. System Design
+/***************************/
+
+Outline of server data structures:
+    Client class {
+        int uid
+        char *name // assigned by user
+        int state // Connected, Data_Collection, Missing, Battery_Shutdown
+        int data_interval
+        int battery
+        Time last_msg
+        list of Readings
+        char *filename
+        int version
+    }
+    list of connected Clients
+    Reading class {
+        char *unit
+        int value
+        Time time_taken
+    }
+    int saveToFile(Client)
+    int readFromFile(&Client)
+
+Outline of client data structures:
+    Client class {
+        int uid
+        Time last_tx
+        int version
+    }
+
+    Server class {
+        int ip_address
+        list of Readings
+    }
+    
+Server design:
+The server would substantiate the data class described above and be set up to
+receive incoming connections asynchronously using the listen() command. It 
+would then wait for a client. When a client connects (Scenario A) the server
+checks to see if its UID is on file or if it should add it as a new client.
+If a new client, the server sets up the client's data structure, configures
+it according to the default settings, informs the user, and sets up the
+output file. When it receives new data from that client it recognizes that and
+saves it to the file.
+
+Client design:
+The client follows Scenario 1 to find the server and initiate contact and get 
+configured. It then generates data (non-random so that it can be manually
+checked) at whatever the data rate is and sends it to the server. Upon
+receiving confirmation that the data is received, it deletes the data from its
+memory. For this scenario, the battery level will drop by 5% +- 2% every 10
+seconds so that it will have a random point at which the server has to shut
+it down. The client should then be able to be rebooted, check for config data
+in a local file (it's state before shutting down) and use that to re-initiate 
+contact with the server. (Scenario D)
+
+
+/***************************/
+5. Programming Language
+/***************************/
+
+All in C++
+
+Including libraries:
+<iostream>
+<fstream>
+<sys/socket.h> // for socket(), connect(), send(), and recv()
+<arpa/inet.h>  // for sockaddr_in and inet_addr()
+<stdlib.h>     // for atoi() and exit()
+<string.h>     // for memset() and string manipulation
+<unistd.h>     // for close()
+<stdio.h>      // for fgets() and printf()
+"pugixml.hpp"  // for xml parsing http://pugixml.org/ with MIT License
+
+
+
+
+
