@@ -138,6 +138,6 @@ if (isset($_SESSION['auth'])) {
 	</div>
 </div>				
 
-<a href = "logout.php">Return to home</a>
+<a href = "logout.php">Logout</a>
 </body>
 </html>
