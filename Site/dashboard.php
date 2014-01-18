@@ -110,7 +110,7 @@ if (isset($_SESSION['auth'])) {
 		<li> <a href="CHARM_Overview.php">My Home</a></li>
 		<li> <a href="#tabs-2">History</a></li>
 		<li> <a href="#tabs-3">Detailed Statistics</a></li>
-		<li> <a href="#tabs-4">System</a></li>
+		<li> <a href="Settings.php">System Settings</a></li>
 		<li> <a href="#tabs-5">CHARM School (Help)</a></li>
 	</ul>
 	<div id = "tabs-1" class ="overview">
@@ -122,7 +122,6 @@ if (isset($_SESSION['auth'])) {
 		<p>More detailed graphs relating to the home go here. For example, this page could contain pie charts breaking down the house's energy use by system or appliance</p>
 	</div>
 	<div id = "tabs-4">
-		<p>Options relating to either the user account or the house display/data recording go here. Probably limited options to modify house data here.</p>
 	</div>
 	<div id = "tabs-5">
 		<p style = "color:#2191C0;font-weight:bold">Frequently Asked Questions</p>
@@ -136,8 +135,8 @@ if (isset($_SESSION['auth'])) {
 		$( "#accordion" ).accordion();
 		</script>
 	</div>
-</div>				
-
+</div>		
+		
 <a href = "logout.php">Logout</a>
 </body>
 </html>

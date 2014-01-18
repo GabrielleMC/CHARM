@@ -18,6 +18,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
         $row = mysql_fetch_array($checklogin);
         $username = $row['username'];
         $_SESSION['auth'] = 1;
+		$_SESSION['username'] = $username;
         header('Location: dashboard.php'); //<-- comment it to see debug info
     } 
 	else {

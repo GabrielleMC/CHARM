@@ -57,7 +57,7 @@
 </div>		
 <button id="Login">Log into the CHARM dashboard</button>
 <div id="dialog">
-	<form id="login" action="checkUser.php" method="post">
+	<form id="login" action="Processing/checkUser.php" method="post">
 		<label for="username">Username: </label>
 		<input type="text" name="username" id="username"><br>
 		<label for="password">Password: </label>
