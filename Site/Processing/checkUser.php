@@ -19,14 +19,14 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
         $username = $row['username'];
         $_SESSION['auth'] = 1;
 		$_SESSION['username'] = $username;
-        header('Location: dashboard.php'); //<-- comment it to see debug info
+        header('Location: ../dashboard.php'); //<-- comment it to see debug info
     } 
 	else {
-        header("Location: CHARMindex.php");//make this give an error stating username or password is not correct
+        header("Location: ../CHARMindex.php");//make this give an error stating username or password is not correct
     }
 }
 else {
-	header("Location: CHARMindex.php");
+	header("Location: ../CHARMindex.php");
 }
 exit();
 ?>
