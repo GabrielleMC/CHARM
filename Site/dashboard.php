@@ -47,57 +47,6 @@ if (isset($_SESSION['auth'])) {
 		}
 		mysql_free_result($result);
 	?>
-	<script type="text/javascript">
-	$(function () {
-	
-   	     	$('#container').highcharts({
-
-            	title: {
-            	    text: 'Sample Home Data',
-            	    style: {
-                			color: '#2191C0',
-                			fontWeight: 'bold'
-            			}
-            	},
-    	        xAxis: {
-            	    tickInterval: 250
-            	},
-            	yAxis: { // left y axis
-                	title: {
-                		style: {
-                			color: '#2191C0',
-                			fontWeight: 'bold'
-            			},
-                    	text: 'Function results'
-                	},
-                	 plotLines: [{
-                    	value: 0,
-                    	width: 1,
-                    	color: '#808080'
-               		}]
-	            },
-    	        legend: {
-	                align: 'left',
-    	            verticalAlign: 'top',
-        	        y: 50,
-        	        x: 70,
-            	    floating: true,
-                	borderWidth: 0
-            	},
-
-	            tooltip: {
-    	            shared: true,
-        	        crosshairs: true
-            	},
-            	
-	            series: [{
-	                data :[<?php echo join($data, ',') ?>],
-	           		color: '#2191C0'
-	                }]
-        	});
-    	});
-
-	</script>
 </head>
 
 <body>
@@ -108,7 +57,7 @@ if (isset($_SESSION['auth'])) {
 <div id = "tabs" class = "stylable">
 	<ul>
 		<li> <a href="CHARM_Overview.php">My Home</a></li>
-		<li> <a href="#tabs-2">History</a></li>
+		<li> <a href="history.php">History</a></li>
 		<li> <a href="#tabs-3">Detailed Statistics</a></li>
 		<li> <a href="Settings.php">System Settings</a></li>
 		<li> <a href="#tabs-5">CHARM School (Help)</a></li>
@@ -116,7 +65,7 @@ if (isset($_SESSION['auth'])) {
 	<div id = "tabs-1" class ="overview">
 	</div>
 	<div id = "tabs-2">
-		<div id="container" style="min-width: 1500px; height: 500px; margin: 0 auto"></div>
+		
 	</div>
 	<div id = "tabs-3">
 		<p>More detailed graphs relating to the home go here. For example, this page could contain pie charts breaking down the house's energy use by system or appliance</p>
