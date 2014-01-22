@@ -1,3 +1,27 @@
+<?php
+    session_start();
+    if (isset($_SESSION['auth'])) {
+    if ($_SESSION["auth"] != 1) {
+        header("Location: CHARMindex.php");
+    }
+    } else {
+        header("Location: CHARMindex.php");
+    }
+    $host = "localhost";
+    $user = "CHARM";
+    $pass = "5*Hotel";
+    mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
+    mysql_select_db("testCHARM");
+
+    $result = mysql_query("SELECT logtime, value FROM t1 WHERE TestKey < 2000");
+
+    while ($row = mysql_fetch_array($result)) {
+        extract($row);
+        $data[] = "[$TestKey, $Value]";
+    }
+    mysql_free_result($result);
+?>
+
 <script type="text/javascript">
     $(function () {
         $('#container').highcharts({

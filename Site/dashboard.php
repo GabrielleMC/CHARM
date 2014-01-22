@@ -32,21 +32,7 @@ if (isset($_SESSION['auth'])) {
 		$( "#tabs" ).tabs();
 	});
 	</script>
-	<?php
-		$host = "localhost";
-		$user = "CHARM";
-		$pass = "5*Hotel";
-		mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
-		mysql_select_db("CHARM");
 
-		$result = mysql_query("SELECT TestKey, Value FROM yellow WHERE TestKey < 2000");
-
-		while ($row = mysql_fetch_array($result)) {
-			extract($row);
-   			$data[] = "[$TestKey, $Value]";
-		}
-		mysql_free_result($result);
-	?>
 </head>
 
 <body>
