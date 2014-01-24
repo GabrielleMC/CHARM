@@ -13,11 +13,11 @@
     mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
     mysql_select_db("testCHARM");
 
-    $result = mysql_query("SELECT logtime, value FROM t1 WHERE TestKey < 2000");
+    $result = mysql_query("SELECT logtime, value FROM t1");
 
     while ($row = mysql_fetch_array($result)) {
         extract($row);
-        $data[] = "[$TestKey, $Value]";
+        $data[] = "[$value]";
     }
     mysql_free_result($result);
 ?>
