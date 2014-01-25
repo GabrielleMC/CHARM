@@ -13,26 +13,26 @@
     mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
     mysql_select_db("testCHARM");
 
-    $result = mysql_query("SELECT logtime, value FROM t1");
-    $result2 = mysql_query("SELECT logtime, value FROM t2");
-    $result3 = mysql_query("SELECT logtime, value FROM t3");
+    $result = mysql_query("SELECT UNIX_TIMESTAMP(logtime)as time, value FROM t1");
+    $result2 = mysql_query("SELECT UNIX_TIMESTAMP(logtime)as time, value FROM t2");
+    $result3 = mysql_query("SELECT UNIX_TIMESTAMP(logtime)as time, value FROM t3");
 
     while ($row = mysql_fetch_array($result)) {
         extract($row);
-        $data[] = "[$value]";
-        $time[] = "$logtime";
+        $time *= 1000;
+        $data[] = "[$time, $value]";
     }
     
     while ($row2 = mysql_fetch_array($result2)) {
         extract($row2);
-        $data2[] = "[$value]";
-        //$time[] = "$logtime";
+        $time *= 1000;
+        $data2[] = "[$time, $value]";
     }
     
     while ($row3 = mysql_fetch_array($result3)) {
         extract($row3);
-        $data3[] = "[$value]";
-        //$time[] = "$logtime";
+        $time *= 1000;
+        $data3[] = "[$time, $value]";
     }
     
     mysql_free_result($result);
@@ -40,12 +40,47 @@
     mysql_free_result($result3);
     
 ?>
-
+<select id ="ChartType" onChange="ShowDateRange()">
+    <option value="default">View by...</option>
+    <option value="day">Date</option>
+    <option value="range">Date Range</option>
+</select>
+<p id="selectdate"></p><button id='launch'>Go!</button>
+<div id="container" style="min-width: 1500px; height: 500px; margin: 0 auto"></div>
 <script type="text/javascript">
-    $(function () {
-        var t = "<?php echo $time[0] ?>".split(/[- :]/);
-        var d = Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-        $('#container').highcharts({
+        function ShowDateRange(){
+            var opt = document.getElementById("ChartType").value;
+                if (opt == "day"){
+                     console.log("single date chosen");
+                     document.getElementById("selectdate").innerHTML= "<p>Date: <input type=\"text\" id=\"datepicker\"></p>";
+                }
+                else if (opt == "range"){
+                     console.log("date range chosen");
+                     document.getElementById("selectdate").innerHTML= "<label for=\"from\">From</label><input type=\"text\" id=\"from\" name=\"from\"><label for=\"to\">to</label><input type=\"text\" id=\"to\" name=\"to\">";
+                }
+        };       
+	$(function() {
+            $( "#datepicker" ).datepicker({ minDate: new Date(2014, 1, 1) });
+            $( "#from" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 3,
+            onClose: function( selectedDate ) {
+                $( "#to" ).datepicker( "option", "minDate", selectedDate );
+            }
+            });
+            $( "#to" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 3,
+            onClose: function( selectedDate ) {
+                $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+            }
+            });
+        });
+	$( "#launch" ).button().click(function() { 
+            //ajax call goes here!
+            $('#container').highcharts({
             title: {
                 text: 'Sample Home Data',
                 style: {
@@ -103,6 +138,4 @@
             }]
         });
     });
-
 </script>
-<div id="container" style="min-width: 1500px; height: 500px; margin: 0 auto"></div>
