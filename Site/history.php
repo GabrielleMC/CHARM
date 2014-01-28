@@ -1,4 +1,6 @@
 <?php
+    //history.php - file to generate the history page layout
+    //code by Gaby Comeau
     session_start();
     if (isset($_SESSION['auth'])) {
     if ($_SESSION["auth"] != 1) {
@@ -7,37 +9,6 @@
     } else {
         header("Location: CHARMindex.php");
     }
-    $host = "localhost";
-    $user = "CHARM";
-    $pass = "5*Hotel";
-    mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
-    mysql_select_db("testCHARM");
-
-    $result = mysql_query("SELECT UNIX_TIMESTAMP(logtime)as time, value FROM t1");
-    $result2 = mysql_query("SELECT UNIX_TIMESTAMP(logtime)as time, value FROM t2");
-    $result3 = mysql_query("SELECT UNIX_TIMESTAMP(logtime)as time, value FROM t3");
-
-    while ($row = mysql_fetch_array($result)) {
-        extract($row);
-        $time *= 1000;
-        $data[] = "[$time, $value]";
-    }
-    
-    while ($row2 = mysql_fetch_array($result2)) {
-        extract($row2);
-        $time *= 1000;
-        $data2[] = "[$time, $value]";
-    }
-    
-    while ($row3 = mysql_fetch_array($result3)) {
-        extract($row3);
-        $time *= 1000;
-        $data3[] = "[$time, $value]";
-    }
-    
-    mysql_free_result($result);
-    mysql_free_result($result2);
-    mysql_free_result($result3);
     
 ?>
 <select id ="ChartType" onChange="ShowDateRange()">
@@ -51,35 +22,51 @@
         function ShowDateRange(){
             var opt = document.getElementById("ChartType").value;
                 if (opt == "day"){
-                     console.log("single date chosen");
                      document.getElementById("selectdate").innerHTML= "<p>Date: <input type=\"text\" id=\"datepicker\"></p>";
+                     $( "#datepicker" ).datepicker({ minDate: new Date(2014, 0, 1) });
                 }
                 else if (opt == "range"){
-                     console.log("date range chosen");
                      document.getElementById("selectdate").innerHTML= "<label for=\"from\">From</label><input type=\"text\" id=\"from\" name=\"from\"><label for=\"to\">to</label><input type=\"text\" id=\"to\" name=\"to\">";
+                     $( "#from" ).datepicker({
+                     minDate: new Date(2014, 0, 1),
+                     defaultDate: "-1w",
+                     changeMonth: true,
+                     numberOfMonths: 2,
+                     onClose: function( selectedDate ) {
+                         $( "#to" ).datepicker( "option", "minDate", selectedDate );
+                     }
+                     });
+                     $( "#to" ).datepicker({
+                     defaultDate: "-1w",
+                     changeMonth: true,
+                     numberOfMonths: 2,
+                     onClose: function( selectedDate ) {
+                         $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+                     }
+                    });
                 }
         };       
-	$(function() {
-            $( "#datepicker" ).datepicker({ minDate: new Date(2014, 1, 1) });
-            $( "#from" ).datepicker({
-            defaultDate: "+1w",
-            changeMonth: true,
-            numberOfMonths: 3,
-            onClose: function( selectedDate ) {
-                $( "#to" ).datepicker( "option", "minDate", selectedDate );
-            }
-            });
-            $( "#to" ).datepicker({
-            defaultDate: "+1w",
-            changeMonth: true,
-            numberOfMonths: 3,
-            onClose: function( selectedDate ) {
-                $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-            }
-            });
-        });
 	$( "#launch" ).button().click(function() { 
-            //ajax call goes here!
+            if(opt == "day"){
+                xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange=function(){
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                        document.getElementById("modify").innerHTML=xmlhttp.responseText;
+                    };
+                    xmlhttp.open("GET","Processing/renderhistory.php?type="+opt+"",true);
+                    xmlhttp.send();  
+                }
+            }
+            else if (opt=="range"){
+                xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange=function(){
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                        document.getElementById("modify").innerHTML=xmlhttp.responseText;
+                    };
+                    xmlhttp.open("GET","Processing/renderhistory.php?type="+opt+"",true);
+                    xmlhttp.send();  
+                }
+            }
             $('#container').highcharts({
             title: {
                 text: 'Sample Home Data',
