@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ALL ^ E_NOTICE);
 if (isset($_SESSION['auth'])) {
     if ($_SESSION["auth"] != 1) {
         header("Location: CHARMindex.php");
@@ -10,19 +11,19 @@ if (isset($_SESSION['auth'])) {
 header("Cache-Control: private, must-revalidate, max-age=0");
 header("Pragma: no-cache");
 header("Expires: Fri, 4 Jun 2010 12:00:00 GMT");
-if (!empty($_POST['password'])) {
+if (!empty($_GET['old'])) {
 	$host = "localhost";
 	$user = "CHARM";
 	$pass = "5*Hotel";
 	mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
 	mysql_select_db("CHARM");
     $username = $_SESSION["username"];
-	$password = trim(mysql_real_escape_string($_POST['password']));
+    $password = trim(mysql_real_escape_string($_GET['old']));
     $hash = crypt($password,  PASSWORD_DEFAULT);
     $checklogin = mysql_query("SELECT * FROM User WHERE username = '$username' AND password = '$hash'");
-	if (mysql_num_rows($checklogin) == 1 && !empty($_POST['newpw'])){ //our user exists and entered a new password
-		$newpw = trim(mysql_real_escape_string($_POST['newpw']));
-		$confirm = trim(mysql_real_escape_string($_POST['confirm']));
+	if (mysql_num_rows($checklogin) == 1 && !empty($_GET['new'])){ //our user exists and entered a new password
+		$newpw = trim(mysql_real_escape_string($_GET['new']));
+		$confirm = trim(mysql_real_escape_string($_GET['confirm']));
 		$hash1 = crypt($newpw,  PASSWORD_DEFAULT);
 		$hash2 = crypt($confirm,  PASSWORD_DEFAULT);
 		if (strcmp($hash1, $hash2) == 0){

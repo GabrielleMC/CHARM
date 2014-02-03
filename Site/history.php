@@ -16,7 +16,7 @@
     <option value="day">Date</option>
     <option value="range">Date Range</option>
 </select>
-<p id="selectdate"></p><button id='launch'>Go!</button>
+<p id="selectdate"></p><button id="launch">Go!</button>
 <div id="container" style="min-width: 1500px; height: 500px; margin: 0 auto"></div>
 <script type="text/javascript">
         function ShowDateRange(){
@@ -47,82 +47,42 @@
                 }
         };       
 	$( "#launch" ).button().click(function() { 
+            console.log("Launching chart AJAX call");
+            var opt = document.getElementById("ChartType").value;
             if(opt == "day"){
+                console.log("Day view selected");
+                var datestr = document.getElementById("datepicker").value;
+                var datearr = datestr.split("/");
+                var dateconv = datearr[2]+"-"+datearr[0]+"-"+datearr[1];
+                var date = new Date(dateconv).getTime() / 1000
+                console.log("Date: "+ datestr);
+                console.log("Converted date: "+ dateconv);
+                console.log("Timestamp: "+ date);
                 xmlhttp=new XMLHttpRequest();
                 xmlhttp.onreadystatechange=function(){
+                    console.log("Status:" + xmlhttp.readyState+', '+xmlhttp.status);
                     if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                        document.getElementById("modify").innerHTML=xmlhttp.responseText;
-                    };
-                    xmlhttp.open("GET","Processing/renderhistory.php?type="+opt+"",true);
-                    xmlhttp.send();  
+                        document.getElementById("container").innerHTML=xmlhttp.responseText;
+                    }
                 }
-            }
+             console.log("WHEEEEE");
+             xmlhttp.open("GET","Processing/renderhistory.php?type="+opt+"&date="+date,true);
+             console.log("File opened: renderhistory.php");
+             xmlhttp.send();  
+             console.log("data sent");
+             }
             else if (opt=="range"){
+                var from = document.getElementById("from").value;
+                var to = document.getElementById("to").value;
                 xmlhttp=new XMLHttpRequest();
                 xmlhttp.onreadystatechange=function(){
                     if (xmlhttp.readyState==4 && xmlhttp.status==200){
                         document.getElementById("modify").innerHTML=xmlhttp.responseText;
                     };
-                    xmlhttp.open("GET","Processing/renderhistory.php?type="+opt+"",true);
+                    xmlhttp.open("GET","Processing/renderhistory.php?type="+opt+"&from="+from+"&to="+to,true);
                     xmlhttp.send();  
                 }
             }
-            $('#container').highcharts({
-            title: {
-                text: 'Sample Home Data',
-                style: {
-                    color: '#2191C0',
-                    fontWeight: 'bold'
-                }
-            },
-            xAxis: {
-                type: 'datetime',
-                dateTimeLabelFormats: {
-                    day: '%e of %b'
-                }
-            },
-            yAxis: { // left y axis
-                title: {
-                    style: {
-                        color: '#2191C0',
-                        fontWeight: 'bold'
-                    },
-                    text: 'Function results'
-                },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }]
-            },
-            legend: {
-                align: 'left',
-                verticalAlign: 'top',
-                y: 50,
-                x: 70,
-                floating: true,
-                borderWidth: 0
-            },
-            tooltip: {
-                shared: true,
-                crosshairs: true
-            },
-            	
-            series: [{
-                data :[<?php echo join($data, ',') ?>],
-                pointInterval: 60*10, // ten minutes
-                color: '#2191C0'
-            },
-            {
-                data :[<?php echo join($data2, ',') ?>],
-                pointInterval: 60*10, // ten minutes
-                color: '#FF3030'
-            },
-            {
-                data :[<?php echo join($data3, ',') ?>],
-                pointInterval: 60*10, // ten minutes
-                color: '#33cc33'
-            }]
-        });
-    });
+            console.log("DONE");
+         });  
 </script>
