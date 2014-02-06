@@ -47,42 +47,121 @@
                 }
         };       
 	$( "#launch" ).button().click(function() { 
-            console.log("Launching chart AJAX call");
             var opt = document.getElementById("ChartType").value;
             if(opt == "day"){
-                console.log("Day view selected");
                 var datestr = document.getElementById("datepicker").value;
                 var datearr = datestr.split("/");
-                var dateconv = datearr[2]+"-"+datearr[0]+"-"+datearr[1];
-                var date = new Date(dateconv).getTime() / 1000
-                console.log("Date: "+ datestr);
-                console.log("Converted date: "+ dateconv);
-                console.log("Timestamp: "+ date);
-                xmlhttp=new XMLHttpRequest();
-                xmlhttp.onreadystatechange=function(){
-                    console.log("Status:" + xmlhttp.readyState+', '+xmlhttp.status);
-                    if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                        document.getElementById("container").innerHTML=xmlhttp.responseText;
-                    }
-                }
-             console.log("WHEEEEE");
-             xmlhttp.open("GET","Processing/renderhistory.php?type="+opt+"&date="+date,true);
-             console.log("File opened: renderhistory.php");
-             xmlhttp.send();  
-             console.log("data sent");
+                var date = datearr[2]+"-"+datearr[0]+"-"+datearr[1];
+                $.getJSON('Processing/renderhistory.php?opt='+opt+'&date='+date, function(json) {
+                    chart = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'container',
+                            type: 'line',
+                            marginRight: 130,
+                            marginBottom: 25
+                        },
+                        title: {
+                            text: 'Sample Home Data',
+                            style: {
+                                color: '#2191C0',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        xAxis: {
+                            type: 'datetime',
+                            dateTimeLabelFormats: {
+                                day: '%e of %b'
+                            }
+                        },
+                        yAxis: { // left y axis
+                            title: {
+                                style: {
+                                    color: '#2191C0',
+                                    fontWeight: 'bold'
+                                },
+                                text: 'Function results'
+                            },
+                            plotLines: [{
+                               value: 0,
+                               width: 1,
+                               color: '#808080'
+                            }]
+                        },
+                        legend: {
+                            align: 'left',
+                            verticalAlign: 'top',
+                            y: 50,
+                            x: 70,
+                            floating: true,
+                            borderWidth: 0
+                        },
+                        tooltip: {
+                            shared: true,
+                            crosshairs: true
+                        },
+                        series: json
+                    });
+                });
              }
             else if (opt=="range"){
-                var from = document.getElementById("from").value;
-                var to = document.getElementById("to").value;
-                xmlhttp=new XMLHttpRequest();
-                xmlhttp.onreadystatechange=function(){
-                    if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                        document.getElementById("modify").innerHTML=xmlhttp.responseText;
-                    };
-                    xmlhttp.open("GET","Processing/renderhistory.php?type="+opt+"&from="+from+"&to="+to,true);
-                    xmlhttp.send();  
-                }
-            }
-            console.log("DONE");
-         });  
+                console.log("Selecting date range");
+                var fromstr = document.getElementById("from").value;
+                var tostr = document.getElementById("to").value;
+                var fromarr = fromstr.split("/");
+                var toarr = tostr.split("/");
+                var from = fromarr[2]+fromarr[0]+fromarr[1];
+                console.log ("from date:" + from);
+                var to = toarr[2]+toarr[0]+toarr[1];
+                console.log ("to date: " + to);
+                $.getJSON('Processing/renderhistory.php?opt='+opt+'&from='+from+"&to="+to, function(json) {
+                    chart = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'container',
+                            type: 'line',
+                            marginRight: 130,
+                            marginBottom: 25
+                        },
+                        title: {
+                            text: 'Sample Home Data',
+                            style: {
+                                color: '#2191C0',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        xAxis: {
+                            type: 'datetime',
+                            dateTimeLabelFormats: {
+                                day: '%e of %b'
+                            }
+                        },
+                        yAxis: { // left y axis
+                            title: {
+                                style: {
+                                    color: '#2191C0',
+                                    fontWeight: 'bold'
+                                },
+                                text: 'Function results'
+                            },
+                            plotLines: [{
+                               value: 0,
+                               width: 1,
+                               color: '#808080'
+                            }]
+                        },
+                        legend: {
+                            align: 'left',
+                            verticalAlign: 'top',
+                            y: 50,
+                            x: 70,
+                            floating: true,
+                            borderWidth: 0
+                        },
+                        tooltip: {
+                            shared: true,
+                            crosshairs: true
+                        },
+                        series: json
+                    });
+                });
+            }});  
 </script>
