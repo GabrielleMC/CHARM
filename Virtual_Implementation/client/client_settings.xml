@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<server>
+	<uid>0</uid>
+	<msg_version> 1.0</msg_version>
+	<fw> 1.0</fw>
+	<battery>11</battery>
+	<shut_down>false</shut_down>
+	<n_readings>1</n_readings>
+	<readings>
+		<reading0>
+			<time>2014-02-09 12:06:27</time>
+		</reading0>
+	</readings>
+</server>
