@@ -2,7 +2,7 @@ CREATE DATABASE `testCHARM` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE testCHARM;
 
 CREATE TABLE `t1` (
-  `total` double DEFAULT NULL,
+  `value` double DEFAULT NULL,
   `logtime` datetime NOT NULL,
   PRIMARY KEY (logtime)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
