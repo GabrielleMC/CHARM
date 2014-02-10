@@ -11,15 +11,15 @@
 	$user = "CHARM";
 	$pass = "5*Hotel";
 	mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
-	mysql_select_db("CHARM");
+	mysql_select_db("testCHARM");
 
-	$result = mysql_query("SELECT SUM(y.Value) AS yval FROM yellow y");
+	$result = mysql_query("SELECT SUM(value) AS test1 FROM t1");
 	$row = mysql_fetch_row($result);
-	$result1 = mysql_query("SELECT AVG(y.Value) As yavg FROM yellow y");
+	$result1 = mysql_query("SELECT SUM(value) AS test2 FROM t2");
 	$row1 = mysql_fetch_row($result1);
-	$result3 = mysql_query("SELECT SUM(b.Value) FROM blue b");
+	$result3 = mysql_query("SELECT AVG(total) FROM t1_day");
 	$row3 = mysql_fetch_row($result3);
-	$result4 = mysql_query("SELECT AVG(b.Value) FROM blue b");
+	$result4 = mysql_query("SELECT AVG(total) FROM t2_day");
 	$row4 = mysql_fetch_row($result4);
 	$result6 = mysql_query("SELECT SUM(r.Value) FROM red r");
 	$row6 = mysql_fetch_row($result6);

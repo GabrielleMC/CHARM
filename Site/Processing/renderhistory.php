@@ -40,7 +40,7 @@
     }
     
     $export2 = array();
-    $export2['name'] = "test1";
+    $export2['name'] = "test2";
     while ($row2 = mysql_fetch_array($result2)) {
         extract($row2);
         $time *= 1000;
