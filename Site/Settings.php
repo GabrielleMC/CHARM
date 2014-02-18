@@ -49,12 +49,14 @@ if (isset($_SESSION['auth'])) {
 		autoOpen: false, 
 		modal: true,
 		width: 500,
+		title: "Change Password",
 		buttons: {
 			"Cancel": function() {
 				$(this).dialog("close");
 			}
 		}
 	});	
+	$( "#submit" ).button();
 	$( "#changepw" ).button().click(function() {
 		$( "#dialog" ).dialog( "open" );
 	});

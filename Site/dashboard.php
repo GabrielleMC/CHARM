@@ -44,17 +44,15 @@ if (isset($_SESSION['auth'])) {
 	<ul>
 		<li> <a href="CHARM_Overview.php">My Home</a></li>
 		<li> <a href="history.php">History</a></li>
-		<li> <a href="#tabs-3">Detailed Statistics</a></li>
+		<li> <a href="detail.php">Detailed Statistics</a></li>
 		<li> <a href="Settings.php">System Settings</a></li>
 		<li> <a href="#tabs-5">CHARM School (Help)</a></li>
 	</ul>
 	<div id = "tabs-1" class ="overview">
 	</div>
 	<div id = "tabs-2">
-		
 	</div>
 	<div id = "tabs-3">
-		<p>More detailed graphs relating to the home go here. For example, this page could contain pie charts breaking down the house's energy use by system or appliance</p>
 	</div>
 	<div id = "tabs-4">
 	</div>

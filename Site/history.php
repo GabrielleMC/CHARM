@@ -70,7 +70,7 @@
                         xAxis: {
                             type: 'datetime',
                             dateTimeLabelFormats: {
-                                day: '%e of %b'
+                                day: '%b %e'
                             }
                         },
                         yAxis: { // left y axis
@@ -131,7 +131,7 @@
                         xAxis: {
                             type: 'datetime',
                             dateTimeLabelFormats: {
-                                day: '%e of %b'
+                                day: '%b %e'
                             }
                         },
                         yAxis: { // left y axis
