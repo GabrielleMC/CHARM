@@ -150,7 +150,7 @@ void processTCPSockets (fd_set readySocks)
                 int pos = device_exists(test_uid);
                 if(pos == -1) {
                         devices.push_back(Device());
-                        std::cout << std::endl << "Devices:  " << std::endl<< std::endl;
+                        std::cout << std::endl << "Devices:  " << std::endl << std::endl;
                         pos = devices.size()-1;
                         std::cout << "Added new device " << std::endl << std::endl;
                         devices[pos].set_state(WORKING);
@@ -220,7 +220,7 @@ void sendData (int sock, char* buffer, int size)
 
 int device_exists(int test_uid) 
 {
-        for(int i = 0; i < devices.size(); i++) {
+        for(unsigned int i = 0; i < devices.size(); i++) {
                 if(devices[i].get_uid() == test_uid)
                         return i;
         }

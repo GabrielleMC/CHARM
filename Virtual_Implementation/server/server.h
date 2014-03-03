@@ -14,9 +14,9 @@
 #include <string.h>     // for memset()
 #include <unistd.h>     // for close()
 #include "netdb.h"
-#include "device.h"
+#include "../common/device.h"
 #include <vector>
-#include "pugixml.hpp"
+#include "../common/pugixml.hpp"
 
 #define DEBUG 1
 #define PORT 55555

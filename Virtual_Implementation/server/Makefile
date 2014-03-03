@@ -3,14 +3,14 @@
 CC=g++
 CFLAGS=-Wall -g
 LDFLAGS=
-SOURCES=server.cpp pugixml.cpp device.cpp
+SOURCES=server.cpp ../common/pugixml.cpp ../common/device.cpp
 EXECUTABLE=server
-OBJECTS=$(SOURCES:.cpp=.o)
+OBJECTS=$(SOURCES:.o=.cpp)
 
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CC) $(LDFLAGS) $(CFLAGS) $(OBJECTS) -o $@
 .pp.o:
 	$(CC) $(CFLAGS) $< -o $@
 

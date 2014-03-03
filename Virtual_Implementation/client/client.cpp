@@ -13,7 +13,7 @@
 #include <string.h>     // for memset()
 #include <unistd.h>     // for close()
 #include <stdio.h>      // for fgets()
-#include "device.h"
+#include "../common/device.h"
 
 #define PORT 55555
 //#define IP_ADDRESS "127.0.0.1"
@@ -152,8 +152,10 @@ int main(int argc, char *argv[])
                                 memset(&outBuffer, 0, BUFFERSIZE);
                                 memset(&inBuffer, 0, BUFFERSIZE);
                                 
-                                if(device.num_readings() == 0)
+                                if(device.num_readings() == 0) {
                                         terminate = true;
+                                }
+                                //terminate = true;
                         }
                         device.save_readings();
                         sleep(device.get_frequency());
@@ -164,11 +166,13 @@ int main(int argc, char *argv[])
                 
                 // Close the socket
                 close(sock);
+                
                 int nap = random() % 60;
                 std::cout << "Battery will be replaced after " << nap << " seconds" << std::endl;
                 sleep(nap);
-                
         }
+
+        
         exit(0);
 }
 

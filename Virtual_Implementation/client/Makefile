@@ -1,19 +1,18 @@
-# SelectServer makefile
+# Client makefile
 
 CC=g++
-CFLAGS=-Wall
+CFLAGS=-Wall -g
 LDFLAGS=
-SOURCES=client.cpp device.cpp pugixml.cpp
+SOURCES=client.cpp ../common/pugixml.cpp ../common/device.cpp
 EXECUTABLE=client
-OBJECTS=$(SOURCES:.cpp=.o)
+OBJECTS=$(SOURCES:.o=.cpp)
 
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CC) $(LDFLAGS) $(CFLAGS) $(OBJECTS) -o $@
 .pp.o:
 	$(CC) $(CFLAGS) $< -o $@
 
-
 clean:
-	rm -rf *.o *~
+	rm -rf *.o *~ $(EXECUTABLE) *.txt xml_*
