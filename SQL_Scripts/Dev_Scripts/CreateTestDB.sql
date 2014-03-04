@@ -1,44 +1,38 @@
-CREATE DATABASE `CHARM` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE CHARM;
+CREATE DATABASE `testCHARM` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE testCHARM;
 
-CREATE TABLE `Dongle` (
+CREATE TABLE `t1` (
   `value` double DEFAULT NULL,
   `logtime` datetime NOT NULL,
   PRIMARY KEY (logtime)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `Dongle_day` (
+CREATE TABLE `t1_day` (
   `logdate` date NOT NULL,
   `total` double DEFAULT NULL,
   PRIMARY KEY (logdate)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `Electrical` (
+CREATE TABLE `t2` (
   `logtime` datetime NOT NULL,
   `value` double DEFAULT NULL,
   PRIMARY KEY (logtime)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `Electrical_day` (
+CREATE TABLE `t2_day` (
   `logdate` date NOT NULL,
   `total` double DEFAULT NULL,
   PRIMARY KEY (logdate)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `Modbus` (
+CREATE TABLE `t3` (
   `logtime` datetime NOT NULL,
   `value` double DEFAULT NULL,
   PRIMARY KEY (logtime)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `Modbus_day` (
+CREATE TABLE `t3_day` (
   `logdate` date NOT NULL,
   `total` double DEFAULT NULL,
   PRIMARY KEY (logdate)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `User` (
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (username)
-);

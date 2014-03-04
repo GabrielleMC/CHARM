@@ -30,13 +30,16 @@ if (isset($_SESSION['auth'])) {
 	<div id="alert"></div>
 	<script type="text/javascript">
 	$("#submit").click(function getItem(){
+                var oldp = document.getElementById("password").value;
+                var newp = document.getElementById("newpw").value;
+                var confirm = document.getElementById("confirm").value;
 		xmlhttp=new XMLHttpRequest();
 		xmlhttp.onreadystatechange=function(){
 			if (xmlhttp.readyState==4 && xmlhttp.status==200){
 				document.getElementById("alert").innerHTML=xmlhttp.responseText;
 			}
 		};
-		xmlhttp.open("GET","Processing/changepw.php",true);
+		xmlhttp.open("GET","Processing/changepw.php?old="+oldp+"&new="+newp+"&confirm="+confirm,true);
 		xmlhttp.send();
 	});	
 	</script>
@@ -46,12 +49,14 @@ if (isset($_SESSION['auth'])) {
 		autoOpen: false, 
 		modal: true,
 		width: 500,
+		title: "Change Password",
 		buttons: {
 			"Cancel": function() {
 				$(this).dialog("close");
 			}
 		}
 	});	
+	$( "#submit" ).button();
 	$( "#changepw" ).button().click(function() {
 		$( "#dialog" ).dialog( "open" );
 	});

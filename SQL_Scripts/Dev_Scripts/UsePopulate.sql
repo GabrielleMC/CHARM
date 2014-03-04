@@ -1,0 +1,5 @@
+USE testCHARM;
+CALL populate();
+
+
+

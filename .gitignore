@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Virtual_Implementation/client/client
 
@@ -14,3 +15,15 @@ Virtual_Implementation/server/server
 Virtual_Implementation/server/server.dSYM/Contents/Info.plist
 
 Virtual_Implementation/server/server.dSYM/Contents/Resources/DWARF/server
+=======
+/nbproject/private/
+Virtual_Implementation/client/device_log.txt
+
+Virtual_Implementation/server/device_0_readings.txt
+
+Virtual_Implementation/server/device_log.txt
+
+Virtual_Implementation/server/device_log.txt
+
+Virtual_Implementation/client/client_settings.xml
+>>>>>>> Chart-Dev
