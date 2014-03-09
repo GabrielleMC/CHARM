@@ -2,5 +2,5 @@ Device uid 0 settings:
   Message version =  1.0
   Reading frequency = 30
   State = MISSING
-  Battery level = 11%
+  Battery level = 95%
   Printing all the 0 readings:

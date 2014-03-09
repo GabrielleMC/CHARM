@@ -6,10 +6,19 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <cstdio>
+#include <cstdlib>
 #include <stdexcept>
 #include <sstream>
+#include <mysql.h>
+#include <string>
+#include <cstdio>
 
 #define LOG_FILENAME "device_log.txt"
+#define SERVER "localhost"
+#define USER "CHARM"
+#define PASSWORD "5*Hotel"
+#define DATABASE "testCHARM"
 
 enum STATE {WORKING, MISSING, SHUTDOWN, INVALID};
 
@@ -57,6 +66,7 @@ class Device {
                 int process_confirm_xml(pugi::xml_document &doc);
                 void create_confirm_xml(pugi::xml_document &doc, int n_readings);
                 void print(unsigned int num = 5, std::string filename = "");
+				int update_db_readings();
 };
 
 void format_time(time_t time, char* buff);

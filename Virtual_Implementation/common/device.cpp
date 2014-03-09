@@ -448,3 +448,33 @@ void Device::print_readings(unsigned int num, std::string filename)
                         log(ss.str(), filename, true, false);
         }
 }
+
+int Device::update_db_readings(){
+	
+	MYSQL *connect;
+	connect = mysql_init(NULL);
+	
+	/* Connect to database */
+	if (!mysql_real_connect(connect, SERVER, USER, PASSWORD, DATABASE, 0, NULL, 0)) {
+	      fprintf(stderr, "%s\n", mysql_error(connect));
+	      return 1;
+	}
+	
+	//iterate through readings, then for each reading, construct a query
+	while(readings.size() > 0) {
+		std::stringstream ss;
+		std::string str;
+		std::map<time_t, int>::iterator it = readings.begin();
+		time_t readtime = (it)->first;
+		char buff[20];
+		format_time(readtime, buff);
+        ss.str(std::string()); // clear the stream
+        ss << "INSERT INTO t1 (value, logtime) VALUES ('" << get_reading(readtime) << "', '" << buff << "')";
+		str = ss.str();
+		const char *query = str.c_str();
+		std::cout<< str;
+		mysql_query(connect, query);
+		readings.erase(it->first);
+	}
+			
+}

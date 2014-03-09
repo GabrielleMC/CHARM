@@ -2,7 +2,7 @@
 
 CC=g++
 CFLAGS=-Wall -g
-LDFLAGS=
+LDFLAGS= -L /usr/local/mysql/lib -lmysqlclient -I /usr/local/mysql/include
 SOURCES=server.cpp ../common/pugixml.cpp ../common/device.cpp
 EXECUTABLE=server
 OBJECTS=$(SOURCES:.o=.cpp)
