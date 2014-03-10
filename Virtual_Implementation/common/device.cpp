@@ -472,9 +472,37 @@ int Device::update_db_readings(){
         ss << "INSERT INTO t1 (value, logtime) VALUES ('" << get_reading(readtime) << "', '" << buff << "')";
 		str = ss.str();
 		const char *query = str.c_str();
-		std::cout<< str;
+		//std::cout<< str;
 		mysql_query(connect, query);
 		readings.erase(it->first);
 	}
-			
+		mysql_close(connect);
+		return 0;	
+}
+
+int Device::update_db_status(){
+	
+	std::stringstream ss;
+	std::string str;
+	MYSQL *connect;
+	connect = mysql_init(NULL);
+	unsigned int battery = get_battery();
+	STATE status = get_state();
+	int id = get_uid();
+	
+	/* Connect to database */
+	if (!mysql_real_connect(connect, SERVER, USER, PASSWORD, DATABASE, 0, NULL, 0)) {
+	      fprintf(stderr, "%s\n", mysql_error(connect));
+	      return 1;
+	}
+	
+	ss.str(std::string());
+    ss << "UPDATE Status SET battery_level ='" << battery << "', current_state='" << status << "' WHERE device_id =" << id;
+	str = ss.str();
+	const char *query = str.c_str();
+	//std::cout<< str;
+	mysql_query(connect, query);
+	mysql_close(connect);
+	
+	return 0;
 }

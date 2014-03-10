@@ -67,6 +67,7 @@ class Device {
                 void create_confirm_xml(pugi::xml_document &doc, int n_readings);
                 void print(unsigned int num = 5, std::string filename = "");
 				int update_db_readings();
+				int update_db_status();
 };
 
 void format_time(time_t time, char* buff);
