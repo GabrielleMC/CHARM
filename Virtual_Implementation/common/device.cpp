@@ -385,6 +385,123 @@ void Device::xml_latest_readings(pugi::xml_document &doc, bool time_only, int n_
         }
 }
 
+int Device::process_readings_raw(char *buf)
+{
+        int uid_test = (buf[0] | (buf[1] << 8) | (buf[2] << 16) | (buf[3] << 24));
+        if(uid_test == -1)
+                update_uid(uid_counter++);
+        
+        int flags = buf[4];
+        int n_readings = buf[5];
+        if(flags & LOW_BATTERY_FLAG)
+                set_battery(LOW_BATTERY_LEVEL);
+        if(flags & SHUTDOWN_FLAG) {
+                set_battery(LOW_BATTERY_LEVEL);
+        //        std::cout << "Device shut down" << std::endl;
+        }
+        //std::cout << "n_readings = " << n_readings << std::endl;
+        for(int i = 0; i < n_readings; i++) {
+                time_t time = 0;
+                int reading = 0;
+                for(int n = 0; n < 8; n++) {
+                        time |= ((buf[6+(i*(8+4))+n] & 0x000000FF) << n*8);
+                        if (n < 4)
+                                reading |= ((buf[6+(i*(8+4))+8+n] & 0x000000FF) << n*8);
+                }
+                add_reading(time, reading);
+        }
+        return n_readings;
+}
+
+int Device::create_readings_raw(char *buf)
+{
+        int flags = 0;
+        int n_readings = 0;
+        if(uid == -1) {
+                buf[0] = 0xFF;
+                buf[1] = 0xFF;
+                buf[2] = 0xFF;
+                buf[3] = 0xFF;
+        } else {
+                buf[0] = uid;
+                buf[1] = uid>>8;
+                buf[2] = uid>>16;
+                buf[3] = uid>>24;
+        }
+        if(get_battery() < LOW_BATTERY_LEVEL)
+                flags |= LOW_BATTERY_FLAG;
+        if(state == SHUTDOWN)
+                flags |= SHUTDOWN_FLAG;
+        
+        n_readings = num_readings();
+        if(n_readings > 9)
+                n_readings = 9;
+        buf[4] = flags;
+        buf[5] = n_readings;
+        
+        std::map<time_t,int>::iterator it = readings.begin();
+        for(int i = 0; i < n_readings; i++) {
+                for(int n = 0; n < 8; n++) {
+                        buf[6+(i*(8+4))+n] = it->first >> n*8;
+                        if (n < 4)
+                                buf[6+(i*(8+4))+8+n] = it->second >> n*8;
+                }
+                it++;
+        }
+        return n_readings;
+}
+
+int Device::process_confirm_raw(char *buf)
+{
+        int readings_removed = 0;
+        int uid_test = (buf[0] | (buf[1] << 8) | (buf[2] << 16) | (buf[3] << 24));
+        if(uid == -1)
+                update_uid(uid_test);
+        
+        int flags = buf[4];
+        if(flags & SHUTDOWN_FLAG) {
+                state = SHUTDOWN;
+        }
+        int n_readings = buf[5];
+        for(int i = 0; i < n_readings; i++) {
+                time_t time = 0;
+                for(int n = 0; n < 8; n++) {
+                        time |= ((buf[6+(i*(8))+n] & 0x000000FF) << n*8);
+                }
+                if(rm_reading(time))
+                        readings_removed++;
+        }
+        return readings_removed;
+}
+
+int Device::create_confirm_raw(char *buf, int n_readings)
+{
+        int flags = 0;
+        
+        buf[0] = uid;
+        buf[1] = uid>>8;
+        buf[2] = uid>>16;
+        buf[3] = uid>>24;
+        
+        if(state == SHUTDOWN)
+                flags |= SHUTDOWN_FLAG;
+        
+        if(n_readings > 9)
+                n_readings = 9;
+        buf[4] = flags;
+        buf[5] = n_readings;
+        // start with most recent readings
+        std::map<time_t,int>::iterator it = readings.end();
+        for(int i = 0; i < n_readings; i++) {
+                --it;
+                for(int n = 0; n < 8; n++) {
+                        buf[6+(i*(8))+n] = it->first >> n*8;
+                }
+        }
+        return n_readings;
+
+}
+
 void Device::print(unsigned int num, std::string filename)
 {
         print_header(filename);

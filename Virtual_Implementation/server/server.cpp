@@ -148,36 +148,73 @@ void processTCPSockets (fd_set readySocks)
                 // Receive data from the client
                 receiveData(sock, inBuffer, size);
                 //cout << "PS: " << size << " bytes received from socket " << sock << endl;
-                std::stringstream ss;
-                ss << inBuffer;
-                pugi::xml_document doc;
-                doc.load(ss);
+                                
                 int processed;
-                int test_uid = atoi(doc.first_child().child("uid").child_value());
-                int pos = device_exists(test_uid);
-                if(pos == -1) {
-                        devices.push_back(Device());
-                        std::cout << std::endl << "Devices:  " << std::endl << std::endl;
-                        pos = devices.size()-1;
-                        std::cout << "Added new device " << std::endl << std::endl;
-                        devices[pos].set_state(WORKING);
-                }
-                processed = devices[pos].process_readings_xml(doc);
+                int pos;
+                int test_uid;
+                int outBufferLen = 0;
                 
-                if(devices[pos].get_battery() < LOW_BATTERY)
+                if(inBuffer[0] == '<') {// xml data
+                
+                        std::stringstream ss;
+                        ss << inBuffer;
+                        pugi::xml_document doc;
+                        doc.load(ss);
+                        test_uid = atoi(doc.first_child().child("uid").child_value());
+                        pos = device_exists(test_uid);
+                                        
+                        // add new device if necessary
+                        if(pos == -1) {
+                                devices.push_back(Device());
+                                std::cout << std::endl << "Devices:  " << std::endl << std::endl;
+                                pos = devices.size()-1;
+                                std::cout << "Added new device " << std::endl << std::endl;
+                                devices[pos].set_state(WORKING);
+                        }
+                        
+                        processed = devices[pos].process_readings_xml(doc);
+                } else { // raw data
+                        test_uid = (inBuffer[0] | (inBuffer[1] << 8) \
+                                | (inBuffer[2] << 16) | (inBuffer[3] << 24));
+                        pos = device_exists(test_uid);
+                
+                        // add new device if necessary
+                        if(pos == -1) {
+                                devices.push_back(Device());
+                                std::cout << std::endl << "Devices:  " << std::endl << std::endl;
+                                pos = devices.size()-1;
+                                std::cout << "Added new device " << std::endl << std::endl;
+                                devices[pos].set_state(WORKING);
+                                devices[pos].set_battery(100);
+                        }
+                        
+                        processed = devices[pos].process_readings_raw(inBuffer);
+                }
+                
+                if(devices[pos].get_battery() <= LOW_BATTERY)
                         devices[pos].set_state(SHUTDOWN);
                 else if((devices[pos].get_state() == SHUTDOWN) \
                         && (devices[pos].get_battery() > LOW_BATTERY))
                         devices[pos].set_state(WORKING);
                         
                 
-                doc.reset();
-                ss.str(std::string());
-                devices[pos].create_confirm_xml(doc, processed);
-                doc.print(ss);
-                strcpy(outBuffer, ss.str().c_str());
+                if(inBuffer[0] == '<') { // xml data
                 
-                sendData(sock, outBuffer, strlen(outBuffer));
+                        std::stringstream ss;
+                        pugi::xml_document doc;
+                        
+                        ss.str(std::string());
+                        devices[pos].create_confirm_xml(doc, processed);
+                        doc.print(ss);
+                        strcpy(outBuffer, ss.str().c_str());
+                        outBufferLen = strlen(outBuffer);
+                } else { // raw data
+                        outBufferLen = devices[pos].create_confirm_raw(outBuffer, processed);
+                        outBufferLen = outBufferLen*8+6;
+                }
+                
+                
+                sendData(sock, outBuffer, outBufferLen);
                 
                 devices[pos].save_readings();
                 delete[] inBuffer;

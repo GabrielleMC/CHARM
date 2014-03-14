@@ -20,6 +20,11 @@
 #define PASSWORD "5*Hotel"
 #define DATABASE "testCHARM"
 
+#define RAW_BUFFER 121
+#define LOW_BATTERY_FLAG 0x1
+#define SHUTDOWN_FLAG 0x2
+#define LOW_BATTERY_LEVEL 20
+
 enum STATE {WORKING, MISSING, SHUTDOWN, INVALID};
 
 static int uid_counter = 0;
@@ -61,9 +66,13 @@ class Device {
                 void save_readings(void);
                 int num_readings(void);
                 bool is_missing(void);
+                int process_readings_raw(char *buf);
                 int process_readings_xml(pugi::xml_document &doc);
+                int create_readings_raw(char *buf);
                 void create_readings_xml(pugi::xml_document &doc, int n_readings);
+                int process_confirm_raw(char *buf);
                 int process_confirm_xml(pugi::xml_document &doc);
+                int create_confirm_raw(char *buf, int n_readings);
                 void create_confirm_xml(pugi::xml_document &doc, int n_readings);
                 void print(unsigned int num = 5, std::string filename = "");
 				int update_db_readings();

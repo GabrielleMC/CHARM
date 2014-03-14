@@ -111,6 +111,8 @@ int main(int argc, char *argv[])
                         device.print();
                         
                         while (!terminate) {
+                                int n_readings = device.create_readings_raw(outBuffer);
+                                /*
                                 std::stringstream st;
                                 device.create_readings_xml(doc, 5);
                                 
@@ -120,8 +122,8 @@ int main(int argc, char *argv[])
                                 strcpy(outBuffer, st.str().c_str());
                                 
                                 st.str(std::string());
-                        
-                                msgLength = strlen(outBuffer);
+                                */
+                                msgLength = n_readings*12+6;
 
                                 // Send the message to the server when not receiving a file
                                 bytesSent = send(sock, (char *) &outBuffer, msgLength, 0);
@@ -140,6 +142,7 @@ int main(int argc, char *argv[])
                                 
                                 // output to screen if not receiving a file
                                 //std::cout << "Server: " << inBuffer << std::endl;
+                                device.process_confirm_raw(inBuffer);
                                 
                                 st << inBuffer;
                                 doc.load(st);
