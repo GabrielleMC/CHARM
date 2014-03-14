@@ -145,11 +145,12 @@ int main(int argc, char *argv[])
                                 device.process_confirm_raw(inBuffer);
                                 
                                 st << inBuffer;
-                                doc.load(st);
+                                /*doc.load(st);
                                 device.process_confirm_xml(doc);
                                 doc.save_file("client_settings.xml");
                                 doc.reset();
                                 st.str(std::string());
+                                */
                                 
                                 // Clear the buffers
                                 memset(&outBuffer, 0, BUFFERSIZE);
