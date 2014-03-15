@@ -144,9 +144,9 @@ int main(int argc, char *argv[])
                                 //std::cout << "Server: " << inBuffer << std::endl;
                                 device.process_confirm_raw(inBuffer);
                                 
-                                st << inBuffer;
+                                //st << inBuffer;
                                 /*doc.load(st);
-                                device.process_confirm_xml(doc);
+                                device.process_confirm_xml(doc);ss
                                 doc.save_file("client_settings.xml");
                                 doc.reset();
                                 st.str(std::string());
