@@ -2,7 +2,7 @@
 
 CC=g++
 CFLAGS=-Wall -g
-LDFLAGS= -L /usr/local/mysql/lib -lmysqlclient -I /usr/local/mysql/include
+LDFLAGS= `mysql_config --cflags` `mysql_config --libs`
 SOURCES=server.cpp ../common/pugixml.cpp ../common/device.cpp
 EXECUTABLE=server
 OBJECTS=$(SOURCES:.o=.cpp)
@@ -10,7 +10,7 @@ OBJECTS=$(SOURCES:.o=.cpp)
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(CFLAGS) $(OBJECTS) -o $@
+	$(CC) $(CFLAGS) $(OBJECTS) -o $@ $(LDFLAGS) 
 .pp.o:
 	$(CC) $(CFLAGS) $< -o $@
 
