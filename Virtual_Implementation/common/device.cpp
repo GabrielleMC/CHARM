@@ -606,6 +606,8 @@ int Device::update_db_status(){
 	unsigned int battery = get_battery();
 	STATE status = get_state();
 	int id = get_uid();
+	MYSQL_RES *res_set;
+	MYSQL_ROW row;
 	
 	/* Connect to database */
 	if (!mysql_real_connect(connect, SERVER, USER, PASSWORD, DATABASE, 0, NULL, 0)) {
@@ -613,13 +615,29 @@ int Device::update_db_status(){
 	      return 1;
 	}
 	
-	ss.str(std::string());
-    ss << "UPDATE Status SET battery_level ='" << battery << "', current_state='" << status << "' WHERE device_id =" << id;
+	/*ss.str(std::string());
+    ss << "SELECT * FROM Status WHERE device_id = " << id;
 	str = ss.str();
 	const char *query = str.c_str();
-	//std::cout<< str;
 	mysql_query(connect, query);
-	mysql_close(connect);
+	res_set = mysql_store_result(connect);
 	
+	if (((row = mysql_fetch_row(res_set)) != NULL)){
+		ss.str(std::string());
+    	ss << "UPDATE Status SET battery_level = " << battery << ", current_state =" << status << " WHERE device_id = " << id;
+		str = ss.str();
+		const char *query = str.c_str();
+		mysql_query(connect, query);
+	}
+	
+	else {
+		ss.str(std::string());
+    	ss << "INSERT INTO Status (battery_level, current_state, device_id) VALUES (" << battery << ", " << status << ", " << id << ")";
+		str = ss.str();
+		const char *query = str.c_str();
+		mysql_query(connect, query);
+	}*/
+	
+	mysql_close(connect);
 	return 0;
 }

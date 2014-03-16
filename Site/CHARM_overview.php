@@ -14,8 +14,26 @@
 	mysql_select_db("testCHARM");
 	
 	date_default_timezone_set("America/Edmonton");
-	$date = "2014-02-05";
-	//$date = Date("Y-m-d"); not usable right now w/test data from before today's date!
+	//$date = "2014-02-05"; test date 
+	$date = Date("Y-m-d");
+	
+	//Code to check for missing devices and low batteries goes here 
+	$num_devices = mysql_query("SELECT MAX(device_id) FROM Status");
+	$num_devices_r = mysql_fetch_row($num_devices);
+	for ($i = 0; $i <= $num_devices_r[0]; $i++){
+		$stat_data_r = mysql_query("SELECT battery_level, current_state FROM Status WHERE device_id = $i");
+		$stat_data = mysql_fetch_row($stat_data_r);
+		if ($stat_data[0] <= 20){
+			echo "<div class=\"ui-state-highlight ui-corner-all\" style=\"padding: 0 .7em;\"><p><span class=\"ui-icon ui-icon-alert\" style=\"float: left; margin-right: .3em;\"></span><strong>Alert: </strong>Current battery level for device $i is $stat_data[0]</p></div>";
+		}
+		else if ($stat_data[1] == 1){
+			echo "<div class=\"ui-state-error ui-corner-all\" style=\"padding: 0 .7em;\"><p><span class=\"ui-icon ui-icon-alert\" style=\"float: left; margin-right: .3em;\"></span><strong>Alert: </strong>Device $i is missing</p></div>";
+		}
+		else if ($stat_data[1] == 2){
+			echo "<div class=\"ui-state-error ui-corner-all\" style=\"padding: 0 .7em;\"><p><span class=\"ui-icon ui-icon-alert\" style=\"float: left; margin-right: .3em;\"></span><strong>Alert: </strong>Device $i has reached critical battery level and was shut down</p></div>";
+		}
+	}
+	
 	
 	$result = mysql_query("SELECT AVG(value) AS test1 FROM t1 WHERE DATE(logtime) = '$date'");
 	$row = mysql_fetch_row($result);
