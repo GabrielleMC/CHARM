@@ -174,8 +174,8 @@ int main(int argc, char *argv[])
                 int nap = random() % 60;
                 std::cout << "Battery will be replaced after " << nap << " seconds" << std::endl;
                 sleep(nap);
-				device.set_battery(100);	
-				device.set_state(WORKING);
+				//device.set_battery(100);	
+				//device.set_state(WORKING);
         }
 
         

@@ -606,8 +606,7 @@ int Device::update_db_status(){
 	unsigned int battery = get_battery();
 	STATE status = get_state();
 	int id = get_uid();
-	MYSQL_RES *res_set;
-	MYSQL_ROW row;
+	
 	
 	/* Connect to database */
 	if (!mysql_real_connect(connect, SERVER, USER, PASSWORD, DATABASE, 0, NULL, 0)) {
@@ -615,10 +614,12 @@ int Device::update_db_status(){
 	      return 1;
 	}
 	
-	/*ss.str(std::string());
+	ss.str(std::string());
     ss << "SELECT * FROM Status WHERE device_id = " << id;
 	str = ss.str();
 	const char *query = str.c_str();
+	MYSQL_RES *res_set;
+	MYSQL_ROW row;
 	mysql_query(connect, query);
 	res_set = mysql_store_result(connect);
 	
@@ -636,7 +637,7 @@ int Device::update_db_status(){
 		str = ss.str();
 		const char *query = str.c_str();
 		mysql_query(connect, query);
-	}*/
+	}
 	
 	mysql_close(connect);
 	return 0;
