@@ -1,0 +1,24 @@
+
+**** Build of configuration Debug for project BasicWiFi Application ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/BasicWiFi Application/basic_wifi_application.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=coffabi -O4 --opt_for_speed=0 -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000 Spi" --include_path="C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/inc" --include_path="C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/HyperTerminal Driver" --include_path="C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDriver" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --gcc --define=__CCS__ --define=__MSP430FR5739__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="basic_wifi_application.pp"  "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/BasicWiFi Application/basic_wifi_application.c"
+'Finished building: C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/BasicWiFi Application/basic_wifi_application.c'
+' '
+'Building target: BasicWiFi Application.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=coffabi -O4 --opt_for_speed=0 -g --gcc --define=__CCS__ --define=__MSP430FR5739__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=368 -m"BasicWiFi Application.map" --heap_size=0 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --xml_link_info="BasicWiFi Application_linkInfo.xml" --rom_model -o "BasicWiFi Application.out"  "./board.obj" "./basic_wifi_application.obj" "../lnk_msp430fr5739.cmd" "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Basic WiFi Application CCS/CC3000 Spi/Debug/CC3000 Spi.lib" "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Basic WiFi Application CCS/CC3000HostDriver/Debug/CC3000HostDriver.lib" "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Basic WiFi Application CCS/HyperTerminal Driver/Debug/HyperTerminal Driver.lib" -l"libc.a" 
+<Linking>
+'Finished building target: BasicWiFi Application.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project BasicWiFi Application ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****

@@ -1,0 +1,1068 @@
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE    1
+
+       1            ;******************************************************************************
+       2            ;* MSP430 C/C++ Codegen                                             PC v4.2.1 *
+       3            ;* Date/Time created: Fri Mar 21 13:42:30 2014                                *
+       4            ;******************************************************************************
+       5                    .compiler_opts --abi=coffabi --hll_source=on --mem_model:code=large --mem_model:data=small --o
+       6            
+       7            $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       8                    .dwattr $C$DW$CU, DW_AT_name("C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Bas
+       9                    .dwattr $C$DW$CU, DW_AT_producer("MSP430 C/C++ Codegen PC v4.2.1 Copyright (c) 2003-2013 Texas
+      10                    .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      11                    .dwattr $C$DW$CU, DW_AT_comp_dir("C:\Users\409010855\Documents\GitHub\CHARM\Embedded_Voltmeter
+      12            
+      13            $C$DW$1 .dwtag  DW_TAG_subprogram, DW_AT_name("memcpy")
+      14                    .dwattr $C$DW$1, DW_AT_TI_symbol_name("memcpy")
+      15                    .dwattr $C$DW$1, DW_AT_type(*$C$DW$T$3)
+      16                    .dwattr $C$DW$1, DW_AT_declaration
+      17                    .dwattr $C$DW$1, DW_AT_external
+      18            $C$DW$2 .dwtag  DW_TAG_formal_parameter
+      19                    .dwattr $C$DW$2, DW_AT_type(*$C$DW$T$3)
+      20            $C$DW$3 .dwtag  DW_TAG_formal_parameter
+      21                    .dwattr $C$DW$3, DW_AT_type(*$C$DW$T$20)
+      22            $C$DW$4 .dwtag  DW_TAG_formal_parameter
+      23                    .dwattr $C$DW$4, DW_AT_type(*$C$DW$T$21)
+      24                    .dwendtag $C$DW$1
+      25            
+      26            
+      27            $C$DW$5 .dwtag  DW_TAG_subprogram, DW_AT_name("UINT16_TO_STREAM_f")
+      28                    .dwattr $C$DW$5, DW_AT_TI_symbol_name("UINT16_TO_STREAM_f")
+      29                    .dwattr $C$DW$5, DW_AT_type(*$C$DW$T$25)
+      30                    .dwattr $C$DW$5, DW_AT_declaration
+      31                    .dwattr $C$DW$5, DW_AT_external
+      32            $C$DW$6 .dwtag  DW_TAG_formal_parameter
+      33                    .dwattr $C$DW$6, DW_AT_type(*$C$DW$T$25)
+      34            $C$DW$7 .dwtag  DW_TAG_formal_parameter
+      35                    .dwattr $C$DW$7, DW_AT_type(*$C$DW$T$23)
+      36                    .dwendtag $C$DW$5
+      37            
+      38            
+      39            $C$DW$8 .dwtag  DW_TAG_subprogram, DW_AT_name("SpiWrite")
+      40                    .dwattr $C$DW$8, DW_AT_TI_symbol_name("SpiWrite")
+      41                    .dwattr $C$DW$8, DW_AT_type(*$C$DW$T$12)
+      42                    .dwattr $C$DW$8, DW_AT_declaration
+      43                    .dwattr $C$DW$8, DW_AT_external
+      44            $C$DW$9 .dwtag  DW_TAG_formal_parameter
+      45                    .dwattr $C$DW$9, DW_AT_type(*$C$DW$T$35)
+      46            $C$DW$10        .dwtag  DW_TAG_formal_parameter
+      47                    .dwattr $C$DW$10, DW_AT_type(*$C$DW$T$9)
+      48                    .dwendtag $C$DW$8
+      49            
+      50            ;       C:\ti\ccsv5\tools\compiler\msp430_4.2.1\bin\opt430.exe C:\\Users\\409010~1\\AppData\\Local\\Te
+      51 000000               .sect   ".text:hci_patch_send"
+      52                    .align  2
+      53                    .clink
+      54                    .global hci_patch_send
+      55            
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE    2
+
+      56            $C$DW$11        .dwtag  DW_TAG_subprogram, DW_AT_name("hci_patch_send")
+      57                    .dwattr $C$DW$11, DW_AT_low_pc(hci_patch_send)
+      58                    .dwattr $C$DW$11, DW_AT_high_pc(0x00)
+      59                    .dwattr $C$DW$11, DW_AT_TI_symbol_name("hci_patch_send")
+      60                    .dwattr $C$DW$11, DW_AT_external
+      61                    .dwattr $C$DW$11, DW_AT_TI_begin_file("C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Volt
+      62                    .dwattr $C$DW$11, DW_AT_TI_begin_line(0xa2)
+      63                    .dwattr $C$DW$11, DW_AT_TI_begin_column(0x06)
+      64                    .dwattr $C$DW$11, DW_AT_TI_max_frame_size(0x18)
+      65                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+      66            
+      67                    .dwfde $C$DW$CIE, hci_patch_send
+      68            $C$DW$12        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ucOpcode")
+      69                    .dwattr $C$DW$12, DW_AT_TI_symbol_name("ucOpcode")
+      70                    .dwattr $C$DW$12, DW_AT_type(*$C$DW$T$24)
+      71                    .dwattr $C$DW$12, DW_AT_location[DW_OP_reg12]
+      72            $C$DW$13        .dwtag  DW_TAG_formal_parameter, DW_AT_name("pucBuff")
+      73                    .dwattr $C$DW$13, DW_AT_TI_symbol_name("pucBuff")
+      74                    .dwattr $C$DW$13, DW_AT_type(*$C$DW$T$25)
+      75                    .dwattr $C$DW$13, DW_AT_location[DW_OP_reg13]
+      76            $C$DW$14        .dwtag  DW_TAG_formal_parameter, DW_AT_name("patch")
+      77                    .dwattr $C$DW$14, DW_AT_TI_symbol_name("patch")
+      78                    .dwattr $C$DW$14, DW_AT_type(*$C$DW$T$29)
+      79                    .dwattr $C$DW$14, DW_AT_location[DW_OP_reg14]
+      80            $C$DW$15        .dwtag  DW_TAG_formal_parameter, DW_AT_name("usDataLength")
+      81                    .dwattr $C$DW$15, DW_AT_TI_symbol_name("usDataLength")
+      82                    .dwattr $C$DW$15, DW_AT_type(*$C$DW$T$23)
+      83                    .dwattr $C$DW$15, DW_AT_location[DW_OP_reg15]
+      84            
+      85            ;*****************************************************************************
+      86            ;* FUNCTION NAME: hci_patch_send                                             *
+      87            ;*                                                                           *
+      88            ;*   Regs Modified     : SP,SR,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15           *
+      89            ;*   Regs Used         : SP,SR,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15           *
+      90            ;*   Local Frame Size  : 0 Args + 0 Auto + 20 Save = 20 byte                 *
+      91            ;*****************************************************************************
+      92            hci_patch_send:
+      93            ;* --------------------------------------------------------------------------*
+      94            ;* r6    assigned to stream
+      95            $C$DW$16        .dwtag  DW_TAG_variable, DW_AT_name("stream")
+      96                    .dwattr $C$DW$16, DW_AT_TI_symbol_name("stream")
+      97                    .dwattr $C$DW$16, DW_AT_type(*$C$DW$T$25)
+      98                    .dwattr $C$DW$16, DW_AT_location[DW_OP_reg6]
+      99            ;* r6    assigned to usTransLength
+     100            $C$DW$17        .dwtag  DW_TAG_variable, DW_AT_name("usTransLength")
+     101                    .dwattr $C$DW$17, DW_AT_TI_symbol_name("usTransLength")
+     102                    .dwattr $C$DW$17, DW_AT_type(*$C$DW$T$23)
+     103                    .dwattr $C$DW$17, DW_AT_location[DW_OP_reg6]
+     104            ;* r10   assigned to data_ptr
+     105            $C$DW$18        .dwtag  DW_TAG_variable, DW_AT_name("data_ptr")
+     106                    .dwattr $C$DW$18, DW_AT_TI_symbol_name("data_ptr")
+     107                    .dwattr $C$DW$18, DW_AT_type(*$C$DW$T$25)
+     108                    .dwattr $C$DW$18, DW_AT_location[DW_OP_reg10]
+     109            ;* r8    assigned to usDataLength
+     110            $C$DW$19        .dwtag  DW_TAG_variable, DW_AT_name("usDataLength")
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE    3
+
+     111                    .dwattr $C$DW$19, DW_AT_TI_symbol_name("usDataLength")
+     112                    .dwattr $C$DW$19, DW_AT_type(*$C$DW$T$23)
+     113                    .dwattr $C$DW$19, DW_AT_location[DW_OP_reg8]
+     114            ;* r7    assigned to patch
+     115            $C$DW$20        .dwtag  DW_TAG_variable, DW_AT_name("patch")
+     116                    .dwattr $C$DW$20, DW_AT_TI_symbol_name("patch")
+     117                    .dwattr $C$DW$20, DW_AT_type(*$C$DW$T$29)
+     118                    .dwattr $C$DW$20, DW_AT_location[DW_OP_reg7]
+     119            ;* r9    assigned to pucBuff
+     120            $C$DW$21        .dwtag  DW_TAG_variable, DW_AT_name("pucBuff")
+     121                    .dwattr $C$DW$21, DW_AT_TI_symbol_name("pucBuff")
+     122                    .dwattr $C$DW$21, DW_AT_type(*$C$DW$T$34)
+     123                    .dwattr $C$DW$21, DW_AT_location[DW_OP_reg9]
+     124            ;* r12   assigned to ucOpcode
+     125            $C$DW$22        .dwtag  DW_TAG_variable, DW_AT_name("ucOpcode")
+     126                    .dwattr $C$DW$22, DW_AT_TI_symbol_name("ucOpcode")
+     127                    .dwattr $C$DW$22, DW_AT_type(*$C$DW$T$31)
+     128                    .dwattr $C$DW$22, DW_AT_location[DW_OP_reg12]
+     129            ;* r9    assigned to $O$U34
+     130                    .dwcfi  cfa_offset, 4
+     131                    .dwcfi  save_reg_to_mem, 16, -4
+     132 000000 144A          PUSHM.A   #5,r10                ; [] 
+     133                    .dwcfi  save_reg_to_mem, 10, -8
+     134                    .dwcfi  save_reg_to_mem, 9, -12
+     135                    .dwcfi  save_reg_to_mem, 8, -16
+     136                    .dwcfi  save_reg_to_mem, 7, -20
+     137                    .dwcfi  save_reg_to_mem, 6, -24
+     138                    .dwcfi  cfa_offset, 24
+     139 000002 0FC8          MOVA      r15,r8                ; [] |163| 
+     140 000004 0EC7          MOVA      r14,r7                ; [] |163| 
+     141 000006 0DC9          MOVA      r13,r9                ; [] |163| 
+     142                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     143 000008 403A          MOV.W     #5,r10                ; [] |164| 
+         00000a 0005 
+     144 00000c 590A          ADD.W     r9,r10                ; [] |164| 
+     145                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     146 00000e 0AC6          MOVA      r10,r6                ; [] |166| 
+     147                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     148 000010 5316          ADD.W     #1,r6                 ; [] |168| 
+     149 000012 40F6          MOV.B     #3,-1(r6)             ; [] |168| 
+         000014 0003 
+         000016 FFFF 
+     150                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     151 000018 5316          ADD.W     #1,r6                 ; [] |169| 
+     152 00001a 4CC6          MOV.B     r12,-1(r6)            ; [] |169| 
+         00001c FFFF 
+     153                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     154 00001e 432D          MOV.W     #2,r13                ; [] |170| 
+     155 000020 580D          ADD.W     r8,r13                ; [] |170| 
+     156 000022 06CC          MOVA      r6,r12                ; [] |170| 
+     157            $C$DW$23        .dwtag  DW_TAG_TI_branch
+     158                    .dwattr $C$DW$23, DW_AT_low_pc(0x00)
+     159                    .dwattr $C$DW$23, DW_AT_name("UINT16_TO_STREAM_f")
+     160                    .dwattr $C$DW$23, DW_AT_TI_call
+     161 000024 13B0!         CALLA     #UINT16_TO_STREAM_f   ; [] |170| 
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE    4
+
+         000026 0000 
+     162                                                      ; [] |170| 
+     163 000028 0CC6          MOVA      r12,r6                ; [] |170| 
+     164                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     165 00002a 9038          CMP.W     #1001,r8              ; [] |172| 
+         00002c 03E9 
+     166 00002e 283B          JLO       $C$L4                 ; [] |172| 
+     167                                                      ; [] |172| 
+     168            ;* --------------------------------------------------------------------------*
+     169                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     170 000030 08CC          MOVA      r8,r12                ; [] |185| 
+     171 000032 403D          MOV.W     #1000,r13             ; [] |185| 
+         000034 03E8 
+     172            $C$DW$24        .dwtag  DW_TAG_TI_branch
+     173                    .dwattr $C$DW$24, DW_AT_low_pc(0x00)
+     174                    .dwattr $C$DW$24, DW_AT_name("__divu")
+     175                    .dwattr $C$DW$24, DW_AT_TI_call
+     176 000036 13B0!         CALLA     #__divu               ; [] |185| 
+         000038 0000 
+     177                                                      ; [] |185| 
+     178 00003a 025C          RLAM.W    #1,r12                ; [] |185| 
+     179 00003c 580C          ADD.W     r8,r12                ; [] |185| 
+     180 00003e 532C          ADD.W     #2,r12                ; [] |185| 
+     181 000040 0CCD          MOVA      r12,r13               ; [] |185| 
+     182 000042 06CC          MOVA      r6,r12                ; [] |185| 
+     183            $C$DW$25        .dwtag  DW_TAG_TI_branch
+     184                    .dwattr $C$DW$25, DW_AT_low_pc(0x00)
+     185                    .dwattr $C$DW$25, DW_AT_name("UINT16_TO_STREAM_f")
+     186                    .dwattr $C$DW$25, DW_AT_TI_call
+     187 000044 13B0!         CALLA     #UINT16_TO_STREAM_f   ; [] |185| 
+         000046 0000 
+     188                                                      ; [] |185| 
+     189                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     190 000048 06CC          MOVA      r6,r12                ; [] |186| 
+     191 00004a 403D          MOV.W     #1000,r13             ; [] |186| 
+         00004c 03E8 
+     192            $C$DW$26        .dwtag  DW_TAG_TI_branch
+     193                    .dwattr $C$DW$26, DW_AT_low_pc(0x00)
+     194                    .dwattr $C$DW$26, DW_AT_name("$abproc0")
+     195                    .dwattr $C$DW$26, DW_AT_TI_call
+     196 00004e 13B0!         CALLA     #$abproc0             ; [] 
+         000050 00CA 
+     197                                                      ; [] 
+     198                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     199 000052 403E          MOV.W     #1000,r14             ; [] |187| 
+         000054 03E8 
+     200            $C$DW$27        .dwtag  DW_TAG_TI_branch
+     201                    .dwattr $C$DW$27, DW_AT_low_pc(0x00)
+     202                    .dwattr $C$DW$27, DW_AT_name("memcpy")
+     203                    .dwattr $C$DW$27, DW_AT_TI_call
+     204 000056 13B0!         CALLA     #memcpy               ; [] |187| 
+         000058 0000 
+     205                                                      ; [] |187| 
+     206                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     207 00005a 09CC          MOVA      r9,r12                ; [] |192| 
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE    5
+
+     208 00005c 403D          MOV.W     #1006,r13             ; [] |192| 
+         00005e 03EE 
+     209            $C$DW$28        .dwtag  DW_TAG_TI_branch
+     210                    .dwattr $C$DW$28, DW_AT_low_pc(0x00)
+     211                    .dwattr $C$DW$28, DW_AT_name("SpiWrite")
+     212                    .dwattr $C$DW$28, DW_AT_TI_call
+     213 000060 13B0!         CALLA     #SpiWrite             ; [] |192| 
+         000062 0000 
+     214                                                      ; [] |192| 
+     215                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     216 000064 8038          SUB.W     #1000,r8              ; [] |194| 
+         000066 03E8 
+     217 000068 242E          JEQ       $C$L5                 ; [] |194| 
+     218                                                      ; [] |194| 
+     219            ;* --------------------------------------------------------------------------*
+     220                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     221 00006a 5037          ADD.W     #1000,r7              ; [] |189| 
+         00006c 03E8 
+     222 00006e 4329          MOV.W     #2,r9                 ; [] 
+     223 000070 5A09          ADD.W     r10,r9                ; [] 
+     224            ;* --------------------------------------------------------------------------*
+     225            ;*   BEGIN LOOP $C$L1
+     226            ;*
+     227            ;*   Loop source line                : 194
+     228            ;*   Loop closing brace source line  : 214
+     229            ;*   Known Minimum Trip Count        : 1
+     230            ;*   Known Maximum Trip Count        : 4294967295
+     231            ;*   Known Max Trip Count Factor     : 1
+     232            ;* --------------------------------------------------------------------------*
+     233 000072       $C$L1:    
+     234                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     235 000072 9038          CMP.W     #1001,r8              ; [] |196| 
+         000074 03E9 
+     236 000076 2805          JLO       $C$L2                 ; [] |196| 
+     237                                                      ; [] |196| 
+     238            ;* --------------------------------------------------------------------------*
+     239                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     240 000078 8038          SUB.W     #1000,r8              ; [] |205| 
+         00007a 03E8 
+     241                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     242 00007c 4036          MOV.W     #1000,r6              ; [] |204| 
+         00007e 03E8 
+     243                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     244 000080 3C02          JMP       $C$L3                 ; [] |205| 
+     245                                                      ; [] |205| 
+     246            ;* --------------------------------------------------------------------------*
+     247 000082       $C$L2:    
+     248                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     249 000082 08C6          MOVA      r8,r6                 ; [] |198| 
+     250                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     251 000084 4308          MOV.W     #0,r8                 ; [] |199| 
+     252            ;* --------------------------------------------------------------------------*
+     253 000086       $C$L3:    
+     254                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     255 000086 468A          MOV.W     r6,0(r10)             ; [] |208| 
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE    6
+
+         000088 0000 
+     256                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     257 00008a 09CC          MOVA      r9,r12                ; [] |209| 
+     258 00008c 07CD          MOVA      r7,r13                ; [] |209| 
+     259 00008e 06CE          MOVA      r6,r14                ; [] |209| 
+     260            $C$DW$29        .dwtag  DW_TAG_TI_branch
+     261                    .dwattr $C$DW$29, DW_AT_low_pc(0x00)
+     262                    .dwattr $C$DW$29, DW_AT_name("memcpy")
+     263                    .dwattr $C$DW$29, DW_AT_TI_call
+     264 000090 13B0!         CALLA     #memcpy               ; [] |209| 
+         000092 0000 
+     265                                                      ; [] |209| 
+     266                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     267 000094 5607          ADD.W     r6,r7                 ; [] |210| 
+     268                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     269 000096 432D          MOV.W     #2,r13                ; [] |213| 
+     270 000098 560D          ADD.W     r6,r13                ; [] |213| 
+     271 00009a 0ACC          MOVA      r10,r12               ; [] |213| 
+     272            $C$DW$30        .dwtag  DW_TAG_TI_branch
+     273                    .dwattr $C$DW$30, DW_AT_low_pc(0x00)
+     274                    .dwattr $C$DW$30, DW_AT_name("SpiWrite")
+     275                    .dwattr $C$DW$30, DW_AT_TI_call
+     276 00009c 13B0!         CALLA     #SpiWrite             ; [] |213| 
+         00009e 0000 
+     277                                                      ; [] |213| 
+     278                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     279 0000a0 9308          TST.W     r8                    ; [] |194| 
+     280 0000a2 23E7          JNE       $C$L1                 ; [] |194| 
+     281                                                      ; [] |194| 
+     282            ;* --------------------------------------------------------------------------*
+     283 0000a4 3C10          JMP       $C$L5                 ; [] |194| 
+     284                                                      ; [] |194| 
+     285            ;* --------------------------------------------------------------------------*
+     286 0000a6       $C$L4:    
+     287                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     288 0000a6 08CD          MOVA      r8,r13                ; [] |174| 
+     289            $C$DW$31        .dwtag  DW_TAG_TI_branch
+     290                    .dwattr $C$DW$31, DW_AT_low_pc(0x00)
+     291                    .dwattr $C$DW$31, DW_AT_name("UINT16_TO_STREAM_f")
+     292                    .dwattr $C$DW$31, DW_AT_TI_call
+     293 0000a8 13B0!         CALLA     #UINT16_TO_STREAM_f   ; [] |174| 
+         0000aa 0000 
+     294                                                      ; [] |174| 
+     295                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     296 0000ac 06CC          MOVA      r6,r12                ; [] |175| 
+     297 0000ae 08CD          MOVA      r8,r13                ; [] |175| 
+     298            $C$DW$32        .dwtag  DW_TAG_TI_branch
+     299                    .dwattr $C$DW$32, DW_AT_low_pc(0x00)
+     300                    .dwattr $C$DW$32, DW_AT_name("$abproc0")
+     301                    .dwattr $C$DW$32, DW_AT_TI_call
+     302 0000b0 13B0!         CALLA     #$abproc0             ; [] 
+         0000b2 00CA 
+     303                                                      ; [] 
+     304                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     305 0000b4 08CE          MOVA      r8,r14                ; [] |176| 
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE    7
+
+     306            $C$DW$33        .dwtag  DW_TAG_TI_branch
+     307                    .dwattr $C$DW$33, DW_AT_low_pc(0x00)
+     308                    .dwattr $C$DW$33, DW_AT_name("memcpy")
+     309                    .dwattr $C$DW$33, DW_AT_TI_call
+     310 0000b6 13B0!         CALLA     #memcpy               ; [] |176| 
+         0000b8 0000 
+     311                                                      ; [] |176| 
+     312                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     313 0000ba 403D          MOV.W     #6,r13                ; [] |179| 
+         0000bc 0006 
+     314 0000be 580D          ADD.W     r8,r13                ; [] |179| 
+     315 0000c0 09CC          MOVA      r9,r12                ; [] |179| 
+     316            $C$DW$34        .dwtag  DW_TAG_TI_branch
+     317                    .dwattr $C$DW$34, DW_AT_low_pc(0x00)
+     318                    .dwattr $C$DW$34, DW_AT_name("SpiWrite")
+     319                    .dwattr $C$DW$34, DW_AT_TI_call
+     320 0000c2 13B0!         CALLA     #SpiWrite             ; [] |179| 
+         0000c4 0000 
+     321                                                      ; [] |179| 
+     322            ;* --------------------------------------------------------------------------*
+     323 0000c6       $C$L5:    
+     324 0000c6 1646          POPM.A    #5,r10                ; [] 
+     325                    .dwcfi  restore_reg, 6
+     326                    .dwcfi  restore_reg, 7
+     327                    .dwcfi  restore_reg, 8
+     328                    .dwcfi  restore_reg, 9
+     329                    .dwcfi  restore_reg, 10
+     330                    .dwcfi  cfa_offset, 4
+     331            $C$DW$35        .dwtag  DW_TAG_TI_branch
+     332                    .dwattr $C$DW$35, DW_AT_low_pc(0x00)
+     333                    .dwattr $C$DW$35, DW_AT_TI_return
+     334 0000c8 0110          RETA      ; [] 
+     335                    ; [] 
+     336                    .dwattr $C$DW$11, DW_AT_TI_end_file("C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltme
+     337                    .dwattr $C$DW$11, DW_AT_TI_end_line(0xd8)
+     338                    .dwattr $C$DW$11, DW_AT_TI_end_column(0x01)
+     339                    .dwendentry
+     340                    .dwendtag $C$DW$11
+     341            
+     342 0000ca               .sect   ".text:hci_patch_send"
+     343            
+     344            $C$DW$36        .dwtag  DW_TAG_subprogram, DW_AT_name("")
+     345                    .dwattr $C$DW$36, DW_AT_low_pc($abproc0)
+     346                    .dwattr $C$DW$36, DW_AT_high_pc(0x00)
+     347                    .dwattr $C$DW$36, DW_AT_TI_symbol_name("$abproc0")
+     348            
+     349                    .dwfde $C$DW$CIE, $abproc0
+     350            
+     351            ;*****************************************************************************
+     352            ;* ABSTRACTED PROCEDURE: $abproc0                                            *
+     353            ;*****************************************************************************
+     354 0000ca       $abproc0:
+     355                    .dwcfi  cfa_offset, 4
+     356 0000ca 13B0!         CALLA     #UINT16_TO_STREAM_f   ; [] |186| 
+         0000cc 0000 
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE    8
+
+     357                                                      ; [] |186| 
+     358 0000ce 403C          MOV.W     #11,r12               ; [] |187| 
+         0000d0 000B 
+     359 0000d2 590C          ADD.W     r9,r12                ; [] |187| 
+     360 0000d4 07CD          MOVA      r7,r13                ; [] |187| 
+     361 0000d6 0110          RETA      ; [] 
+     362                    ; [] 
+     363                    .dwendentry
+     364                    .dwendtag $C$DW$36
+     365            
+     366 000000               .sect   ".text:hci_data_send"
+     367                    .align  2
+     368                    .clink
+     369                    .global hci_data_send
+     370            
+     371            $C$DW$37        .dwtag  DW_TAG_subprogram, DW_AT_name("hci_data_send")
+     372                    .dwattr $C$DW$37, DW_AT_low_pc(hci_data_send)
+     373                    .dwattr $C$DW$37, DW_AT_high_pc(0x00)
+     374                    .dwattr $C$DW$37, DW_AT_TI_symbol_name("hci_data_send")
+     375                    .dwattr $C$DW$37, DW_AT_external
+     376                    .dwattr $C$DW$37, DW_AT_type(*$C$DW$T$45)
+     377                    .dwattr $C$DW$37, DW_AT_TI_begin_file("C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Volt
+     378                    .dwattr $C$DW$37, DW_AT_TI_begin_line(0x60)
+     379                    .dwattr $C$DW$37, DW_AT_TI_begin_column(0x07)
+     380                    .dwattr $C$DW$37, DW_AT_TI_max_frame_size(0x0c)
+     381                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     382            
+     383                    .dwfde $C$DW$CIE, hci_data_send
+     384            $C$DW$38        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ucOpcode")
+     385                    .dwattr $C$DW$38, DW_AT_TI_symbol_name("ucOpcode")
+     386                    .dwattr $C$DW$38, DW_AT_type(*$C$DW$T$24)
+     387                    .dwattr $C$DW$38, DW_AT_location[DW_OP_reg12]
+     388            $C$DW$39        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ucArgs")
+     389                    .dwattr $C$DW$39, DW_AT_TI_symbol_name("ucArgs")
+     390                    .dwattr $C$DW$39, DW_AT_type(*$C$DW$T$25)
+     391                    .dwattr $C$DW$39, DW_AT_location[DW_OP_reg13]
+     392            $C$DW$40        .dwtag  DW_TAG_formal_parameter, DW_AT_name("usArgsLength")
+     393                    .dwattr $C$DW$40, DW_AT_TI_symbol_name("usArgsLength")
+     394                    .dwattr $C$DW$40, DW_AT_type(*$C$DW$T$23)
+     395                    .dwattr $C$DW$40, DW_AT_location[DW_OP_reg14]
+     396            $C$DW$41        .dwtag  DW_TAG_formal_parameter, DW_AT_name("usDataLength")
+     397                    .dwattr $C$DW$41, DW_AT_TI_symbol_name("usDataLength")
+     398                    .dwattr $C$DW$41, DW_AT_type(*$C$DW$T$23)
+     399                    .dwattr $C$DW$41, DW_AT_location[DW_OP_reg15]
+     400            $C$DW$42        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ucTail")
+     401                    .dwattr $C$DW$42, DW_AT_TI_symbol_name("ucTail")
+     402                    .dwattr $C$DW$42, DW_AT_type(*$C$DW$T$32)
+     403                    .dwattr $C$DW$42, DW_AT_location[DW_OP_breg1 12]
+     404            $C$DW$43        .dwtag  DW_TAG_formal_parameter, DW_AT_name("usTailLength")
+     405                    .dwattr $C$DW$43, DW_AT_TI_symbol_name("usTailLength")
+     406                    .dwattr $C$DW$43, DW_AT_type(*$C$DW$T$23)
+     407                    .dwattr $C$DW$43, DW_AT_location[DW_OP_breg1 14]
+     408            
+     409            ;*****************************************************************************
+     410            ;* FUNCTION NAME: hci_data_send                                              *
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE    9
+
+     411            ;*                                                                           *
+     412            ;*   Regs Modified     : SP,SR,r9,r10,r11,r12,r13,r14,r15                    *
+     413            ;*   Regs Used         : SP,SR,r9,r10,r11,r12,r13,r14,r15                    *
+     414            ;*   Local Frame Size  : 0 Args + 0 Auto + 8 Save = 8 byte                   *
+     415            ;*****************************************************************************
+     416            hci_data_send:
+     417            ;* --------------------------------------------------------------------------*
+     418            ;* r10   assigned to $O$C1
+     419            ;* r13   assigned to ucOpcode
+     420            $C$DW$44        .dwtag  DW_TAG_variable, DW_AT_name("ucOpcode")
+     421                    .dwattr $C$DW$44, DW_AT_TI_symbol_name("ucOpcode")
+     422                    .dwattr $C$DW$44, DW_AT_type(*$C$DW$T$31)
+     423                    .dwattr $C$DW$44, DW_AT_location[DW_OP_reg13]
+     424            ;* r9    assigned to ucArgs
+     425            $C$DW$45        .dwtag  DW_TAG_variable, DW_AT_name("ucArgs")
+     426                    .dwattr $C$DW$45, DW_AT_TI_symbol_name("ucArgs")
+     427                    .dwattr $C$DW$45, DW_AT_type(*$C$DW$T$34)
+     428                    .dwattr $C$DW$45, DW_AT_location[DW_OP_reg9]
+     429            ;* r14   assigned to usArgsLength
+     430            $C$DW$46        .dwtag  DW_TAG_variable, DW_AT_name("usArgsLength")
+     431                    .dwattr $C$DW$46, DW_AT_TI_symbol_name("usArgsLength")
+     432                    .dwattr $C$DW$46, DW_AT_type(*$C$DW$T$40)
+     433                    .dwattr $C$DW$46, DW_AT_location[DW_OP_reg14]
+     434            ;* r15   assigned to usDataLength
+     435            $C$DW$47        .dwtag  DW_TAG_variable, DW_AT_name("usDataLength")
+     436                    .dwattr $C$DW$47, DW_AT_TI_symbol_name("usDataLength")
+     437                    .dwattr $C$DW$47, DW_AT_type(*$C$DW$T$40)
+     438                    .dwattr $C$DW$47, DW_AT_location[DW_OP_reg15]
+     439            ;* r10   assigned to usTailLength
+     440            $C$DW$48        .dwtag  DW_TAG_variable, DW_AT_name("usTailLength")
+     441                    .dwattr $C$DW$48, DW_AT_TI_symbol_name("usTailLength")
+     442                    .dwattr $C$DW$48, DW_AT_type(*$C$DW$T$40)
+     443                    .dwattr $C$DW$48, DW_AT_location[DW_OP_reg10]
+     444            ;* r12   assigned to stream
+     445            $C$DW$49        .dwtag  DW_TAG_variable, DW_AT_name("stream")
+     446                    .dwattr $C$DW$49, DW_AT_TI_symbol_name("stream")
+     447                    .dwattr $C$DW$49, DW_AT_type(*$C$DW$T$25)
+     448                    .dwattr $C$DW$49, DW_AT_location[DW_OP_reg12]
+     449                    .dwcfi  cfa_offset, 4
+     450                    .dwcfi  save_reg_to_mem, 16, -4
+     451 000000 141A          PUSHM.A   #2,r10                ; [] 
+     452                    .dwcfi  save_reg_to_mem, 10, -8
+     453                    .dwcfi  save_reg_to_mem, 9, -12
+     454                    .dwcfi  cfa_offset, 12
+     455 000002 0DC9          MOVA      r13,r9                ; [] |102| 
+     456 000004 0CCD          MOVA      r12,r13               ; [] |102| 
+     457 000006 411A          MOV.W     14(SP),r10            ; [] |102| 
+         000008 000E 
+     458                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     459 00000a 403C          MOV.W     #5,r12                ; [] |105| 
+         00000c 0005 
+     460 00000e 590C          ADD.W     r9,r12                ; [] |105| 
+     461                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     462 000010 531C          ADD.W     #1,r12                ; [] |107| 
+     463 000012 43EC          MOV.B     #2,-1(r12)            ; [] |107| 
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE   10
+
+         000014 FFFF 
+     464                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     465 000016 531C          ADD.W     #1,r12                ; [] |108| 
+     466 000018 4DCC          MOV.B     r13,-1(r12)           ; [] |108| 
+         00001a FFFF 
+     467                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     468 00001c 531C          ADD.W     #1,r12                ; [] |109| 
+     469 00001e 4ECC          MOV.B     r14,-1(r12)           ; [] |109| 
+         000020 FFFF 
+     470                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     471 000022 5F0E          ADD.W     r15,r14               ; [] |110| 
+     472 000024 5E0A          ADD.W     r14,r10               ; [] |110| 
+     473 000026 0ACD          MOVA      r10,r13               ; [] |110| 
+     474            $C$DW$50        .dwtag  DW_TAG_TI_branch
+     475                    .dwattr $C$DW$50, DW_AT_low_pc(0x00)
+     476                    .dwattr $C$DW$50, DW_AT_name("UINT16_TO_STREAM_f")
+     477                    .dwattr $C$DW$50, DW_AT_TI_call
+     478 000028 13B0!         CALLA     #UINT16_TO_STREAM_f   ; [] |110| 
+         00002a 0000 
+     479                                                      ; [] |110| 
+     480                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     481 00002c 403D          MOV.W     #5,r13                ; [] |113| 
+         00002e 0005 
+     482 000030 5A0D          ADD.W     r10,r13               ; [] |113| 
+     483 000032 09CC          MOVA      r9,r12                ; [] |113| 
+     484            $C$DW$51        .dwtag  DW_TAG_TI_branch
+     485                    .dwattr $C$DW$51, DW_AT_low_pc(0x00)
+     486                    .dwattr $C$DW$51, DW_AT_name("SpiWrite")
+     487                    .dwattr $C$DW$51, DW_AT_TI_call
+     488 000034 13B0!         CALLA     #SpiWrite             ; [] |113| 
+         000036 0000 
+     489                                                      ; [] |113| 
+     490                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     491 000038 430C          MOV.W     #0,r12                ; [] |115| 
+     492 00003a 430D          MOV.W     #0,r13                ; [] |115| 
+     493 00003c 1619          POPM.A    #2,r10                ; [] 
+     494                    .dwcfi  restore_reg, 9
+     495                    .dwcfi  restore_reg, 10
+     496                    .dwcfi  cfa_offset, 4
+     497            $C$DW$52        .dwtag  DW_TAG_TI_branch
+     498                    .dwattr $C$DW$52, DW_AT_low_pc(0x00)
+     499                    .dwattr $C$DW$52, DW_AT_TI_return
+     500 00003e 0110          RETA      ; [] 
+     501                    ; [] 
+     502                    .dwattr $C$DW$37, DW_AT_TI_end_file("C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltme
+     503                    .dwattr $C$DW$37, DW_AT_TI_end_line(0x74)
+     504                    .dwattr $C$DW$37, DW_AT_TI_end_column(0x01)
+     505                    .dwendentry
+     506                    .dwendtag $C$DW$37
+     507            
+     508 000000               .sect   ".text:hci_data_command_send"
+     509                    .align  2
+     510                    .clink
+     511                    .global hci_data_command_send
+     512            
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE   11
+
+     513            $C$DW$53        .dwtag  DW_TAG_subprogram, DW_AT_name("hci_data_command_send")
+     514                    .dwattr $C$DW$53, DW_AT_low_pc(hci_data_command_send)
+     515                    .dwattr $C$DW$53, DW_AT_high_pc(0x00)
+     516                    .dwattr $C$DW$53, DW_AT_TI_symbol_name("hci_data_command_send")
+     517                    .dwattr $C$DW$53, DW_AT_external
+     518                    .dwattr $C$DW$53, DW_AT_TI_begin_file("C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Volt
+     519                    .dwattr $C$DW$53, DW_AT_TI_begin_line(0x85)
+     520                    .dwattr $C$DW$53, DW_AT_TI_begin_column(0x06)
+     521                    .dwattr $C$DW$53, DW_AT_TI_max_frame_size(0x0c)
+     522                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     523            
+     524                    .dwfde $C$DW$CIE, hci_data_command_send
+     525            $C$DW$54        .dwtag  DW_TAG_formal_parameter, DW_AT_name("usOpcode")
+     526                    .dwattr $C$DW$54, DW_AT_TI_symbol_name("usOpcode")
+     527                    .dwattr $C$DW$54, DW_AT_type(*$C$DW$T$23)
+     528                    .dwattr $C$DW$54, DW_AT_location[DW_OP_reg12]
+     529            $C$DW$55        .dwtag  DW_TAG_formal_parameter, DW_AT_name("pucBuff")
+     530                    .dwattr $C$DW$55, DW_AT_TI_symbol_name("pucBuff")
+     531                    .dwattr $C$DW$55, DW_AT_type(*$C$DW$T$25)
+     532                    .dwattr $C$DW$55, DW_AT_location[DW_OP_reg13]
+     533            $C$DW$56        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ucArgsLength")
+     534                    .dwattr $C$DW$56, DW_AT_TI_symbol_name("ucArgsLength")
+     535                    .dwattr $C$DW$56, DW_AT_type(*$C$DW$T$24)
+     536                    .dwattr $C$DW$56, DW_AT_location[DW_OP_reg14]
+     537            $C$DW$57        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ucDataLength")
+     538                    .dwattr $C$DW$57, DW_AT_TI_symbol_name("ucDataLength")
+     539                    .dwattr $C$DW$57, DW_AT_type(*$C$DW$T$23)
+     540                    .dwattr $C$DW$57, DW_AT_location[DW_OP_reg15]
+     541            
+     542            ;*****************************************************************************
+     543            ;* FUNCTION NAME: hci_data_command_send                                      *
+     544            ;*                                                                           *
+     545            ;*   Regs Modified     : SP,SR,r9,r10,r11,r12,r13,r14,r15                    *
+     546            ;*   Regs Used         : SP,SR,r9,r10,r11,r12,r13,r14,r15                    *
+     547            ;*   Local Frame Size  : 0 Args + 0 Auto + 8 Save = 8 byte                   *
+     548            ;*****************************************************************************
+     549            hci_data_command_send:
+     550            ;* --------------------------------------------------------------------------*
+     551            ;* r9    assigned to $O$C1
+     552            ;* r13   assigned to usOpcode
+     553            $C$DW$58        .dwtag  DW_TAG_variable, DW_AT_name("usOpcode")
+     554                    .dwattr $C$DW$58, DW_AT_TI_symbol_name("usOpcode")
+     555                    .dwattr $C$DW$58, DW_AT_type(*$C$DW$T$40)
+     556                    .dwattr $C$DW$58, DW_AT_location[DW_OP_reg13]
+     557            ;* r10   assigned to pucBuff
+     558            $C$DW$59        .dwtag  DW_TAG_variable, DW_AT_name("pucBuff")
+     559                    .dwattr $C$DW$59, DW_AT_TI_symbol_name("pucBuff")
+     560                    .dwattr $C$DW$59, DW_AT_type(*$C$DW$T$34)
+     561                    .dwattr $C$DW$59, DW_AT_location[DW_OP_reg10]
+     562            ;* r14   assigned to ucArgsLength
+     563            $C$DW$60        .dwtag  DW_TAG_variable, DW_AT_name("ucArgsLength")
+     564                    .dwattr $C$DW$60, DW_AT_TI_symbol_name("ucArgsLength")
+     565                    .dwattr $C$DW$60, DW_AT_type(*$C$DW$T$31)
+     566                    .dwattr $C$DW$60, DW_AT_location[DW_OP_reg14]
+     567            ;* r15   assigned to ucDataLength
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE   12
+
+     568            $C$DW$61        .dwtag  DW_TAG_variable, DW_AT_name("ucDataLength")
+     569                    .dwattr $C$DW$61, DW_AT_TI_symbol_name("ucDataLength")
+     570                    .dwattr $C$DW$61, DW_AT_type(*$C$DW$T$40)
+     571                    .dwattr $C$DW$61, DW_AT_location[DW_OP_reg15]
+     572            ;* r12   assigned to stream
+     573            $C$DW$62        .dwtag  DW_TAG_variable, DW_AT_name("stream")
+     574                    .dwattr $C$DW$62, DW_AT_TI_symbol_name("stream")
+     575                    .dwattr $C$DW$62, DW_AT_type(*$C$DW$T$25)
+     576                    .dwattr $C$DW$62, DW_AT_location[DW_OP_reg12]
+     577                    .dwcfi  cfa_offset, 4
+     578                    .dwcfi  save_reg_to_mem, 16, -4
+     579 000000 141A          PUSHM.A   #2,r10                ; [] 
+     580                    .dwcfi  save_reg_to_mem, 10, -8
+     581                    .dwcfi  save_reg_to_mem, 9, -12
+     582                    .dwcfi  cfa_offset, 12
+     583 000002 0DCA          MOVA      r13,r10               ; [] |134| 
+     584 000004 0CCD          MOVA      r12,r13               ; [] |134| 
+     585                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     586 000006 403C          MOV.W     #5,r12                ; [] |135| 
+         000008 0005 
+     587 00000a 5A0C          ADD.W     r10,r12               ; [] |135| 
+     588                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     589 00000c 531C          ADD.W     #1,r12                ; [] |137| 
+     590 00000e 43EC          MOV.B     #2,-1(r12)            ; [] |137| 
+         000010 FFFF 
+     591                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     592 000012 531C          ADD.W     #1,r12                ; [] |138| 
+     593 000014 4DCC          MOV.B     r13,-1(r12)           ; [] |138| 
+         000016 FFFF 
+     594                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     595 000018 531C          ADD.W     #1,r12                ; [] |139| 
+     596 00001a 4ECC          MOV.B     r14,-1(r12)           ; [] |139| 
+         00001c FFFF 
+     597                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     598 00001e 4E4E          MOV.B     r14,r14               ; [] |140| 
+     599 000020 0EC9          MOVA      r14,r9                ; [] |140| 
+     600 000022 5F09          ADD.W     r15,r9                ; [] |140| 
+     601 000024 09CD          MOVA      r9,r13                ; [] |140| 
+     602            $C$DW$63        .dwtag  DW_TAG_TI_branch
+     603                    .dwattr $C$DW$63, DW_AT_low_pc(0x00)
+     604                    .dwattr $C$DW$63, DW_AT_name("UINT16_TO_STREAM_f")
+     605                    .dwattr $C$DW$63, DW_AT_TI_call
+     606 000026 13B0!         CALLA     #UINT16_TO_STREAM_f   ; [] |140| 
+         000028 0000 
+     607                                                      ; [] |140| 
+     608                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     609 00002a 403D          MOV.W     #5,r13                ; [] |143| 
+         00002c 0005 
+     610 00002e 590D          ADD.W     r9,r13                ; [] |143| 
+     611 000030 0ACC          MOVA      r10,r12               ; [] |143| 
+     612            $C$DW$64        .dwtag  DW_TAG_TI_branch
+     613                    .dwattr $C$DW$64, DW_AT_low_pc(0x00)
+     614                    .dwattr $C$DW$64, DW_AT_name("SpiWrite")
+     615                    .dwattr $C$DW$64, DW_AT_TI_call
+     616 000032 13B0!         CALLA     #SpiWrite             ; [] |143| 
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE   13
+
+         000034 0000 
+     617                                                      ; [] |143| 
+     618 000036 1619          POPM.A    #2,r10                ; [] 
+     619                    .dwcfi  restore_reg, 9
+     620                    .dwcfi  restore_reg, 10
+     621                    .dwcfi  cfa_offset, 4
+     622            $C$DW$65        .dwtag  DW_TAG_TI_branch
+     623                    .dwattr $C$DW$65, DW_AT_low_pc(0x00)
+     624                    .dwattr $C$DW$65, DW_AT_TI_return
+     625 000038 0110          RETA      ; [] 
+     626                    ; [] 
+     627                    .dwattr $C$DW$53, DW_AT_TI_end_file("C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltme
+     628                    .dwattr $C$DW$53, DW_AT_TI_end_line(0x92)
+     629                    .dwattr $C$DW$53, DW_AT_TI_end_column(0x01)
+     630                    .dwendentry
+     631                    .dwendtag $C$DW$53
+     632            
+     633 000000               .sect   ".text:hci_command_send"
+     634                    .align  2
+     635                    .clink
+     636                    .global hci_command_send
+     637            
+     638            $C$DW$66        .dwtag  DW_TAG_subprogram, DW_AT_name("hci_command_send")
+     639                    .dwattr $C$DW$66, DW_AT_low_pc(hci_command_send)
+     640                    .dwattr $C$DW$66, DW_AT_high_pc(0x00)
+     641                    .dwattr $C$DW$66, DW_AT_TI_symbol_name("hci_command_send")
+     642                    .dwattr $C$DW$66, DW_AT_external
+     643                    .dwattr $C$DW$66, DW_AT_type(*$C$DW$T$23)
+     644                    .dwattr $C$DW$66, DW_AT_TI_begin_file("C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Volt
+     645                    .dwattr $C$DW$66, DW_AT_TI_begin_line(0x41)
+     646                    .dwattr $C$DW$66, DW_AT_TI_begin_column(0x08)
+     647                    .dwattr $C$DW$66, DW_AT_TI_max_frame_size(0x0c)
+     648                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     649            
+     650                    .dwfde $C$DW$CIE, hci_command_send
+     651            $C$DW$67        .dwtag  DW_TAG_formal_parameter, DW_AT_name("usOpcode")
+     652                    .dwattr $C$DW$67, DW_AT_TI_symbol_name("usOpcode")
+     653                    .dwattr $C$DW$67, DW_AT_type(*$C$DW$T$23)
+     654                    .dwattr $C$DW$67, DW_AT_location[DW_OP_reg12]
+     655            $C$DW$68        .dwtag  DW_TAG_formal_parameter, DW_AT_name("pucBuff")
+     656                    .dwattr $C$DW$68, DW_AT_TI_symbol_name("pucBuff")
+     657                    .dwattr $C$DW$68, DW_AT_type(*$C$DW$T$25)
+     658                    .dwattr $C$DW$68, DW_AT_location[DW_OP_reg13]
+     659            $C$DW$69        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ucArgsLength")
+     660                    .dwattr $C$DW$69, DW_AT_TI_symbol_name("ucArgsLength")
+     661                    .dwattr $C$DW$69, DW_AT_type(*$C$DW$T$24)
+     662                    .dwattr $C$DW$69, DW_AT_location[DW_OP_reg14]
+     663            
+     664            ;*****************************************************************************
+     665            ;* FUNCTION NAME: hci_command_send                                           *
+     666            ;*                                                                           *
+     667            ;*   Regs Modified     : SP,SR,r9,r10,r11,r12,r13,r14,r15                    *
+     668            ;*   Regs Used         : SP,SR,r9,r10,r11,r12,r13,r14,r15                    *
+     669            ;*   Local Frame Size  : 0 Args + 0 Auto + 8 Save = 8 byte                   *
+     670            ;*****************************************************************************
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE   14
+
+     671            hci_command_send:
+     672            ;* --------------------------------------------------------------------------*
+     673            ;* r13   assigned to usOpcode
+     674            $C$DW$70        .dwtag  DW_TAG_variable, DW_AT_name("usOpcode")
+     675                    .dwattr $C$DW$70, DW_AT_TI_symbol_name("usOpcode")
+     676                    .dwattr $C$DW$70, DW_AT_type(*$C$DW$T$40)
+     677                    .dwattr $C$DW$70, DW_AT_location[DW_OP_reg13]
+     678            ;* r9    assigned to pucBuff
+     679            $C$DW$71        .dwtag  DW_TAG_variable, DW_AT_name("pucBuff")
+     680                    .dwattr $C$DW$71, DW_AT_TI_symbol_name("pucBuff")
+     681                    .dwattr $C$DW$71, DW_AT_type(*$C$DW$T$34)
+     682                    .dwattr $C$DW$71, DW_AT_location[DW_OP_reg9]
+     683            ;* r10   assigned to ucArgsLength
+     684            $C$DW$72        .dwtag  DW_TAG_variable, DW_AT_name("ucArgsLength")
+     685                    .dwattr $C$DW$72, DW_AT_TI_symbol_name("ucArgsLength")
+     686                    .dwattr $C$DW$72, DW_AT_type(*$C$DW$T$31)
+     687                    .dwattr $C$DW$72, DW_AT_location[DW_OP_reg10]
+     688            ;* r12   assigned to stream
+     689            $C$DW$73        .dwtag  DW_TAG_variable, DW_AT_name("stream")
+     690                    .dwattr $C$DW$73, DW_AT_TI_symbol_name("stream")
+     691                    .dwattr $C$DW$73, DW_AT_type(*$C$DW$T$25)
+     692                    .dwattr $C$DW$73, DW_AT_location[DW_OP_reg12]
+     693                    .dwcfi  cfa_offset, 4
+     694                    .dwcfi  save_reg_to_mem, 16, -4
+     695 000000 141A          PUSHM.A   #2,r10                ; [] 
+     696                    .dwcfi  save_reg_to_mem, 10, -8
+     697                    .dwcfi  save_reg_to_mem, 9, -12
+     698                    .dwcfi  cfa_offset, 12
+     699 000002 0ECA          MOVA      r14,r10               ; [] |66| 
+     700 000004 0DC9          MOVA      r13,r9                ; [] |66| 
+     701 000006 0CCD          MOVA      r12,r13               ; [] |66| 
+     702                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     703 000008 403C          MOV.W     #5,r12                ; [] |69| 
+         00000a 0005 
+     704 00000c 590C          ADD.W     r9,r12                ; [] |69| 
+     705                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     706 00000e 531C          ADD.W     #1,r12                ; [] |71| 
+     707 000010 43DC          MOV.B     #1,-1(r12)            ; [] |71| 
+         000012 FFFF 
+     708                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     709            $C$DW$74        .dwtag  DW_TAG_TI_branch
+     710                    .dwattr $C$DW$74, DW_AT_low_pc(0x00)
+     711                    .dwattr $C$DW$74, DW_AT_name("UINT16_TO_STREAM_f")
+     712                    .dwattr $C$DW$74, DW_AT_TI_call
+     713 000014 13B0!         CALLA     #UINT16_TO_STREAM_f   ; [] |72| 
+         000016 0000 
+     714                                                      ; [] |72| 
+     715                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     716 000018 4ACC          MOV.B     r10,0(r12)            ; [] |73| 
+         00001a 0000 
+     717                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     718 00001c 4A4D          MOV.B     r10,r13               ; [] |76| 
+     719 00001e 522D          ADD.W     #4,r13                ; [] |76| 
+     720 000020 09CC          MOVA      r9,r12                ; [] |76| 
+     721            $C$DW$75        .dwtag  DW_TAG_TI_branch
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE   15
+
+     722                    .dwattr $C$DW$75, DW_AT_low_pc(0x00)
+     723                    .dwattr $C$DW$75, DW_AT_name("SpiWrite")
+     724                    .dwattr $C$DW$75, DW_AT_TI_call
+     725 000022 13B0!         CALLA     #SpiWrite             ; [] |76| 
+         000024 0000 
+     726                                                      ; [] |76| 
+     727                    .dwpsn  file "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/S
+     728 000026 430C          MOV.W     #0,r12                ; [] |78| 
+     729 000028 1619          POPM.A    #2,r10                ; [] 
+     730                    .dwcfi  restore_reg, 9
+     731                    .dwcfi  restore_reg, 10
+     732                    .dwcfi  cfa_offset, 4
+     733            $C$DW$76        .dwtag  DW_TAG_TI_branch
+     734                    .dwattr $C$DW$76, DW_AT_low_pc(0x00)
+     735                    .dwattr $C$DW$76, DW_AT_TI_return
+     736 00002a 0110          RETA      ; [] 
+     737                    ; [] 
+     738                    .dwattr $C$DW$66, DW_AT_TI_end_file("C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltme
+     739                    .dwattr $C$DW$66, DW_AT_TI_end_line(0x4f)
+     740                    .dwattr $C$DW$66, DW_AT_TI_end_column(0x01)
+     741                    .dwendentry
+     742                    .dwendtag $C$DW$66
+     743            
+     744            ;*****************************************************************************
+     745            ;* UNDEFINED EXTERNAL REFERENCES                                             *
+     746            ;*****************************************************************************
+     747                    .global UINT16_TO_STREAM_f
+     748                    .global SpiWrite
+     749                    .global __divu
+     750                    .global memcpy
+     751            
+     752            ;******************************************************************************
+     753            ;* BUILD ATTRIBUTES                                                           *
+     754            ;******************************************************************************
+     755                    .battr "TI", Tag_File, 1, Tag_ABI_enum_size(3)
+     756            
+     757            ;******************************************************************************
+     758            ;* TYPE INFORMATION                                                           *
+     759            ;******************************************************************************
+     760            $C$DW$T$3       .dwtag  DW_TAG_pointer_type
+     761                    .dwattr $C$DW$T$3, DW_AT_address_class(0x10)
+     762            $C$DW$T$19      .dwtag  DW_TAG_const_type
+     763            $C$DW$T$20      .dwtag  DW_TAG_pointer_type
+     764                    .dwattr $C$DW$T$20, DW_AT_type(*$C$DW$T$19)
+     765                    .dwattr $C$DW$T$20, DW_AT_address_class(0x10)
+     766            $C$DW$T$4       .dwtag  DW_TAG_base_type
+     767                    .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+     768                    .dwattr $C$DW$T$4, DW_AT_name("bool")
+     769                    .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+     770            $C$DW$T$5       .dwtag  DW_TAG_base_type
+     771                    .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+     772                    .dwattr $C$DW$T$5, DW_AT_name("signed char")
+     773                    .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+     774            $C$DW$T$6       .dwtag  DW_TAG_base_type
+     775                    .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE   16
+
+     776                    .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+     777                    .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+     778            $C$DW$T$24      .dwtag  DW_TAG_typedef, DW_AT_name("UINT8")
+     779                    .dwattr $C$DW$T$24, DW_AT_type(*$C$DW$T$6)
+     780                    .dwattr $C$DW$T$24, DW_AT_language(DW_LANG_C)
+     781            $C$DW$T$31      .dwtag  DW_TAG_const_type
+     782                    .dwattr $C$DW$T$31, DW_AT_type(*$C$DW$T$24)
+     783            $C$DW$T$32      .dwtag  DW_TAG_pointer_type
+     784                    .dwattr $C$DW$T$32, DW_AT_type(*$C$DW$T$31)
+     785                    .dwattr $C$DW$T$32, DW_AT_address_class(0x10)
+     786            $C$DW$T$25      .dwtag  DW_TAG_pointer_type
+     787                    .dwattr $C$DW$T$25, DW_AT_type(*$C$DW$T$24)
+     788                    .dwattr $C$DW$T$25, DW_AT_address_class(0x10)
+     789            $C$DW$T$34      .dwtag  DW_TAG_const_type
+     790                    .dwattr $C$DW$T$34, DW_AT_type(*$C$DW$T$25)
+     791            $C$DW$T$35      .dwtag  DW_TAG_pointer_type
+     792                    .dwattr $C$DW$T$35, DW_AT_type(*$C$DW$T$6)
+     793                    .dwattr $C$DW$T$35, DW_AT_address_class(0x10)
+     794            $C$DW$T$7       .dwtag  DW_TAG_base_type
+     795                    .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+     796                    .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+     797                    .dwattr $C$DW$T$7, DW_AT_byte_size(0x02)
+     798            $C$DW$T$8       .dwtag  DW_TAG_base_type
+     799                    .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+     800                    .dwattr $C$DW$T$8, DW_AT_name("short")
+     801                    .dwattr $C$DW$T$8, DW_AT_byte_size(0x02)
+     802            $C$DW$T$9       .dwtag  DW_TAG_base_type
+     803                    .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+     804                    .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+     805                    .dwattr $C$DW$T$9, DW_AT_byte_size(0x02)
+     806            $C$DW$T$23      .dwtag  DW_TAG_typedef, DW_AT_name("UINT16")
+     807                    .dwattr $C$DW$T$23, DW_AT_type(*$C$DW$T$9)
+     808                    .dwattr $C$DW$T$23, DW_AT_language(DW_LANG_C)
+     809            $C$DW$T$40      .dwtag  DW_TAG_const_type
+     810                    .dwattr $C$DW$T$40, DW_AT_type(*$C$DW$T$23)
+     811            $C$DW$T$10      .dwtag  DW_TAG_base_type
+     812                    .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+     813                    .dwattr $C$DW$T$10, DW_AT_name("int")
+     814                    .dwattr $C$DW$T$10, DW_AT_byte_size(0x02)
+     815            $C$DW$T$11      .dwtag  DW_TAG_base_type
+     816                    .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+     817                    .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+     818                    .dwattr $C$DW$T$11, DW_AT_byte_size(0x02)
+     819            $C$DW$T$21      .dwtag  DW_TAG_typedef, DW_AT_name("size_t")
+     820                    .dwattr $C$DW$T$21, DW_AT_type(*$C$DW$T$11)
+     821                    .dwattr $C$DW$T$21, DW_AT_language(DW_LANG_C)
+     822            $C$DW$T$12      .dwtag  DW_TAG_base_type
+     823                    .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+     824                    .dwattr $C$DW$T$12, DW_AT_name("long")
+     825                    .dwattr $C$DW$T$12, DW_AT_byte_size(0x04)
+     826            $C$DW$T$45      .dwtag  DW_TAG_typedef, DW_AT_name("INT32")
+     827                    .dwattr $C$DW$T$45, DW_AT_type(*$C$DW$T$12)
+     828                    .dwattr $C$DW$T$45, DW_AT_language(DW_LANG_C)
+     829            $C$DW$T$13      .dwtag  DW_TAG_base_type
+     830                    .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE   17
+
+     831                    .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+     832                    .dwattr $C$DW$T$13, DW_AT_byte_size(0x04)
+     833            $C$DW$T$14      .dwtag  DW_TAG_base_type
+     834                    .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+     835                    .dwattr $C$DW$T$14, DW_AT_name("long long")
+     836                    .dwattr $C$DW$T$14, DW_AT_byte_size(0x08)
+     837            $C$DW$T$15      .dwtag  DW_TAG_base_type
+     838                    .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+     839                    .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+     840                    .dwattr $C$DW$T$15, DW_AT_byte_size(0x08)
+     841            $C$DW$T$16      .dwtag  DW_TAG_base_type
+     842                    .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+     843                    .dwattr $C$DW$T$16, DW_AT_name("float")
+     844                    .dwattr $C$DW$T$16, DW_AT_byte_size(0x04)
+     845            $C$DW$T$17      .dwtag  DW_TAG_base_type
+     846                    .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+     847                    .dwattr $C$DW$T$17, DW_AT_name("double")
+     848                    .dwattr $C$DW$T$17, DW_AT_byte_size(0x04)
+     849            $C$DW$T$18      .dwtag  DW_TAG_base_type
+     850                    .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+     851                    .dwattr $C$DW$T$18, DW_AT_name("long double")
+     852                    .dwattr $C$DW$T$18, DW_AT_byte_size(0x04)
+     853            $C$DW$T$28      .dwtag  DW_TAG_typedef, DW_AT_name("CHAR")
+     854                    .dwattr $C$DW$T$28, DW_AT_type(*$C$DW$T$6)
+     855                    .dwattr $C$DW$T$28, DW_AT_language(DW_LANG_C)
+     856            $C$DW$T$29      .dwtag  DW_TAG_pointer_type
+     857                    .dwattr $C$DW$T$29, DW_AT_type(*$C$DW$T$28)
+     858                    .dwattr $C$DW$T$29, DW_AT_address_class(0x10)
+     859                    .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+     860            
+     861            ;***************************************************************
+     862            ;* DWARF CIE ENTRIES                                           *
+     863            ;***************************************************************
+     864            
+     865            $C$DW$CIE       .dwcie 16
+     866                    .dwcfi  cfa_register, 1
+     867                    .dwcfi  cfa_offset, 0
+     868                    .dwcfi  undefined, 0
+     869                    .dwcfi  undefined, 1
+     870                    .dwcfi  undefined, 2
+     871                    .dwcfi  undefined, 3
+     872                    .dwcfi  same_value, 4
+     873                    .dwcfi  same_value, 5
+     874                    .dwcfi  same_value, 6
+     875                    .dwcfi  same_value, 7
+     876                    .dwcfi  same_value, 8
+     877                    .dwcfi  same_value, 9
+     878                    .dwcfi  same_value, 10
+     879                    .dwcfi  undefined, 11
+     880                    .dwcfi  undefined, 12
+     881                    .dwcfi  undefined, 13
+     882                    .dwcfi  undefined, 14
+     883                    .dwcfi  undefined, 15
+     884                    .dwcfi  undefined, 16
+     885                    .dwendentry
+MSP430 Assembler PC v4.2.1 Fri Mar 21 13:42:30 2014
+
+Tools Copyright (c) 2003-2013 Texas Instruments Incorporated
+C:\Users\409010~1\AppData\Local\Temp\0054010                         PAGE   18
+
+     886            
+     887            ;***************************************************************
+     888            ;* DWARF REGISTER MAP                                          *
+     889            ;***************************************************************
+     890            
+     891            $C$DW$77        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PC")
+     892                    .dwattr $C$DW$77, DW_AT_location[DW_OP_reg0]
+     893            $C$DW$78        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SP")
+     894                    .dwattr $C$DW$78, DW_AT_location[DW_OP_reg1]
+     895            $C$DW$79        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SR")
+     896                    .dwattr $C$DW$79, DW_AT_location[DW_OP_reg2]
+     897            $C$DW$80        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("CG")
+     898                    .dwattr $C$DW$80, DW_AT_location[DW_OP_reg3]
+     899            $C$DW$81        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r4")
+     900                    .dwattr $C$DW$81, DW_AT_location[DW_OP_reg4]
+     901            $C$DW$82        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r5")
+     902                    .dwattr $C$DW$82, DW_AT_location[DW_OP_reg5]
+     903            $C$DW$83        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r6")
+     904                    .dwattr $C$DW$83, DW_AT_location[DW_OP_reg6]
+     905            $C$DW$84        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r7")
+     906                    .dwattr $C$DW$84, DW_AT_location[DW_OP_reg7]
+     907            $C$DW$85        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r8")
+     908                    .dwattr $C$DW$85, DW_AT_location[DW_OP_reg8]
+     909            $C$DW$86        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r9")
+     910                    .dwattr $C$DW$86, DW_AT_location[DW_OP_reg9]
+     911            $C$DW$87        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r10")
+     912                    .dwattr $C$DW$87, DW_AT_location[DW_OP_reg10]
+     913            $C$DW$88        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r11")
+     914                    .dwattr $C$DW$88, DW_AT_location[DW_OP_reg11]
+     915            $C$DW$89        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r12")
+     916                    .dwattr $C$DW$89, DW_AT_location[DW_OP_reg12]
+     917            $C$DW$90        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r13")
+     918                    .dwattr $C$DW$90, DW_AT_location[DW_OP_reg13]
+     919            $C$DW$91        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r14")
+     920                    .dwattr $C$DW$91, DW_AT_location[DW_OP_reg14]
+     921            $C$DW$92        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r15")
+     922                    .dwattr $C$DW$92, DW_AT_location[DW_OP_reg15]
+     923            $C$DW$93        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("CIE_RETA")
+     924                    .dwattr $C$DW$93, DW_AT_location[DW_OP_reg16]
+     925                    .dwendtag $C$DW$CU
+     926            
+
+No Assembly Errors, No Assembly Warnings

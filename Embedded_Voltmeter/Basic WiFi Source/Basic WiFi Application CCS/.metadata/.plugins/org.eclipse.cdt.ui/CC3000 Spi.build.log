@@ -1,0 +1,13 @@
+
+**** Build of configuration Debug for project CC3000 Spi ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building target: CC3000 Spi.lib'
+'Invoking: MSP430 Archiver'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/ar430" r "CC3000 Spi.lib"  "./spi.obj" 
+  ==>  new archive 'CC3000 Spi.lib'
+  ==>  building archive 'CC3000 Spi.lib'
+'Finished building target: CC3000 Spi.lib'
+' '
+
+**** Build Finished ****

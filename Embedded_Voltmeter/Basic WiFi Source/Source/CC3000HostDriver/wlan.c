@@ -149,7 +149,7 @@ void ConnectToAP(void)
 	strcpy(skey, SKEY_NAME);
 	ulSsidLen = strlen(ssid);
 	ulSkeyLen = strlen(skey);
-	unsigned int network_type = WLAN_SEC_WPA2;
+	unsigned int network_type = WLAN_SEC_UNSEC;
 	// options are WLAN_SEC_UNSEC, WLAN_SEC_WPA, or WLAN_SEC_WEP, WLAN_SEC_WPA2
 
 	wlan_connect(network_type, ssid, ulSsidLen, NULL, (unsigned char *)skey, ulSkeyLen);

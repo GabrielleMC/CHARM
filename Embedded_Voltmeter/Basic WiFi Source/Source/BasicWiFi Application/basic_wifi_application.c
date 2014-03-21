@@ -663,6 +663,101 @@ DemoHandleUartCommand(unsigned char *usBuffer)
 //!  @brief  The main loop is executed here
 //
 //*****************************************************************************
+//OUR ADC10 FUNCTIONS (SET UP REQUIREMENTS, TIMER SETTINGS, ARE ALL SET UP IN THE FOLLOWING FUNCTIONS
+void setPins(void) // Sets up the io pins we will be using
+{
+	// for SPI
+	P1SEL1 |= /*BIT7 + BIT6 +*/ BIT4 + BIT5; //adc10 input channels
+	//P1SEL0 &= ~(BIT6 + BIT7);
+	P1SEL0 |= BIT4 + BIT5; //P1.4 and P1.5 for adc10 input
+	//P2SEL1 |= BIT2;// set up for SPI incoming
+	P2SEL0 &= ~(/*BIT2+*/BIT1);//SPI in
+	P2SEL1 &= ~BIT1; // set 2.1 for switch output
+	P2DIR |= BIT1; // bit 1 is switch output
+	P2OUT = 0;
+	/*//Our SPI_TALKERS
+	P2DIR |= BIT3 + BIT1; // bit 3 is SPI_CS drive low to talk bit 1 is switch output
+	P2OUT |= BIT3; // starts high
+	P2OUT &= BIT3; // all p2 outs off accept bit 3
+
+	P1DIR &= ~BIT3; // BIT3 is input for SPI_IRQ
+	P1OUT &= ~BIT3; // set port 2 interrupt for this
+	P1IE = BIT3; // interrupt on pin 1.3
+    P1IES = ~BIT3; // interrupt on falling edge*/
+
+	//SET ADC10 PINS
+}
+void setClocks(void)// won't clash with our UART test base as we leave the SmClock alone
+{
+	CSCTL0_H = 0xA5;
+	CSCTL1 |= DCORSEL + DCOFSEL_0; //DCO 16 MHZ
+	CSCTL2 = SELA_1 + SELM_3;// VLO on ACLK, DCO on Mclk
+	CSCTL3 = DIVA_5 + DIVM_4; // f = 312 Hz on Aclk, Mclk f = 1 GHz
+}
+//void setSPI(void); -- will not need to use spi with UDP protocol already in place
+void setTimers(void)
+{
+	TA0CTL |= TASSEL_1 + ID_3 + MC_1;
+	//Timer A0 on 39 Hz, Count up mode to TA0CCRO, interrupt enabled
+	TA0R = 0; // set count to 0;
+	TA0CCR0 = 0x426; // 1 minute
+	TA0CCTL0 |= CM_1 + CCIE;
+}
+void setADC10(void)
+{
+	ADC10CTL0 |= ADC10SHT_2 + ADC10ON;
+	ADC10CTL1 |= ADC10SSEL_1 + ADC10SHP;
+	ADC10CTL2 |= ADC10RES;
+	ADC10MCTL0 |= ADC10SREF_0 + ADC10INCH_4;
+	ADC10IE |= ADC10IE0 + ADC10HIIE; // enable interrupt for ADC10
+}
+
+
+//Globals for ADC10routine, its outputs and ISRs FOUND IN dispatcher.c
+int STATE = 0;
+unsigned int ADC10_READING = 0;
+unsigned int battLow = 0;
+void ADC10routine(void)
+{
+	 WDTCTL = WDTPW + WDTHOLD;	// Stop watchdog timer
+	    _bis_SR_register(GIE); //enable maskable global interrupts
+		//setPins();
+		setClocks();
+		//setSPI();
+		setTimers();
+		setADC10();
+		//setADC10();
+
+		while(STATE != 2)
+		{
+			if(STATE == 1) // timer expired Take ADC10 readings
+			{
+				ADC10CTL0 |= ADC10ENC + ADC10SC;// Take sensor reading
+				while((ADC10CTL1 & ADC10BUSY) == ADC10BUSY)
+				ADC10_READING = ADC10MEM0; // save sensor reading
+				ADC10MCTL0 &= ~ADC10INCH_4; // turn off channel 4
+				ADC10MCTL0 |= ADC10INCH_5; //select ch 5 for battery reading
+				P2OUT |= BIT1;
+				_delay_cycles(40000);//let switch settle
+
+				ADC10CTL0 |= ADC10ENC + ADC10SC;// Take battery reading
+				while((ADC10CTL1 & ADC10BUSY) == ADC10BUSY)
+				ADC10MCTL0 &= ~ ADC10INCH_5;//CLOSE CHANNEL 5
+				ADC10MCTL0 |= ADC10INCH_4; //BACK TO CHANNEL 4
+				P2OUT &= ~BIT1; // turn switch off
+
+
+				STATE = 2;
+
+
+			}
+
+		}
+		STATE = 0;// restore to timer set off for next round
+		initClk();
+
+}
+
 
 main(void)
 {
@@ -671,32 +766,36 @@ main(void)
 	ulCC3000Connected = 0;
 	ulSocket = 0xFFFFFFFF;
 	ulSmartConfigFinished=0;
-	
-	
+
+
 	WDTCTL = WDTPW + WDTHOLD;
-	
+
 	//  Board Initialization start
 	initDriver();
-	
-	// Initialize the UART RX Buffer   
-	memset(g_ucUARTBuffer, 0xFF, UART_IF_BUFFER);
+	setPins();
+	setClocks();
+	//setTimers(); Do this each time in the AD10routine
+
+	// Initialize the UART RX Buffer
+	//memset(g_ucUARTBuffer, 0xFF, UART_IF_BUFFER);
 	uart_have_cmd =0;
 	ConnectToAP();
 	toggleLed(1);
 	//wakeup_timer_disable();
-	
+
 	// Loop forever waiting  for commands from PC...
 	while (1)
 	{
-		__bis_SR_register(LPM2_bits + GIE); 
+		__bis_SR_register(LPM2_bits + GIE);
 		__no_operation();
+		ADC10routine();
 		SleepOneSecond();
 		toggleLed(1);
 		toggleLed(2);
 		SleepOneSecond();
 		toggleLed(1);
 		toggleLed(2);
-		
+
 		if(ulSocket == 0xFFFFFFFF)
 			ConnectToServer();
 
@@ -706,34 +805,68 @@ main(void)
 			//Process the cmd in RX buffer
 			DemoHandleUartCommand(g_ucUARTBuffer);
 			uart_have_cmd = 0;
-			memset(g_ucUARTBuffer, 0xFF, UART_IF_BUFFER);			
+			memset(g_ucUARTBuffer, 0xFF, UART_IF_BUFFER);
 			wakeup_timer_init();
 		}
-		
+
 		// complete smart config process:
-		// 1. if smart config is done 
+		// 1. if smart config is done
 		// 2. CC3000 established AP connection
 		// 3. DHCP IP is configured
 		// then send mDNS packet to stop external SmartConfig application
 		if ((ucStopSmartConfig == 1) && (ulCC3000DHCP == 1) && (ulCC3000Connected == 1))
 		{
 			unsigned char loop_index = 0;
-			
+
 			while (loop_index < 3)
 			{
 				mdnsAdvertiser(1,device_name,strlen(device_name));
 				loop_index++;
 			}
-			
+
 			ucStopSmartConfig = 0;
 		}*/
-		
+
 		if( (printOnce == 1) && (ulCC3000DHCP == 1) && (ulCC3000Connected == 1))
 		{
 			printOnce = 0;
 			DispatcherUartSendPacket((unsigned char*)pucCC3000_Rx_Buffer, strlen((char const*)pucCC3000_Rx_Buffer));
 		}
-		
-	}  
+
+	}
 }
+
+
+#pragma vector = TIMER0_A0_VECTOR
+__interrupt void Timer__Off()
+{
+	//clear interrupt flags
+	TA0CTL &= ~TAIFG;
+	TA0CCR0 = 0x462;
+	STATE = 1;
+	TA0CTL |= MC_0; // stop timer
+}
+
+#pragma vector = ADC10_VECTOR
+__interrupt void ADC10_read_In()
+{
+	__bic_SR_register_on_exit(CPUOFF);
+	ADC10IFG &= ~(ADC10IFG0 + ADC10INIFG); // lower flag
+	ADC10CTL0 &= ~(ADC10ENC + ADC10SC);
+	if(ADC10MCTL0 & ADC10INCH_5)
+	{
+		if(ADC10MEM0 < 681)
+		{
+			battLow = 1;
+		}
+		else
+		{
+			battLow = 0;
+		}
+
+
+	}
+
+}
+
 

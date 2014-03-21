@@ -53,7 +53,7 @@ extern "C" {
 #define      WLAN_SEC_WPA2	(3)
 
 // Cannot be longer than 16 characters
-#define SSID_NAME "Animal House"
+#define SSID_NAME "TP-LINK_4C3E00"
 
 // Cannot be longer than 16 characters
 #define SKEY_NAME "ab123456"

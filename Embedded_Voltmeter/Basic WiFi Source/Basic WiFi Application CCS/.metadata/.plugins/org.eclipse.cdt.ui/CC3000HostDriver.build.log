@@ -1,0 +1,18 @@
+
+**** Build of configuration Debug for project CC3000HostDriver ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDriver/cc3000_common.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmspx --abi=coffabi -O4 --opt_for_speed=0 -g --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/inc" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --gcc --define=__CCS__ --define=__MSP430FR5739__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal --asm_listing --preproc_with_compile --preproc_dependency="cc3000_common.pp"  "C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDriver/cc3000_common.c"
+'Finished building: C:/Users/409010855/Documents/GitHub/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDriver/cc3000_common.c'
+' '
+'Building target: CC3000HostDriver.lib'
+'Invoking: MSP430 Archiver'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/ar430" r "CC3000HostDriver.lib"  "./wlan.obj" "./socket.obj" "./security.obj" "./nvmem.obj" "./netapp.obj" "./hci.obj" "./evnt_handler.obj" "./cc3000_common.obj" 
+  ==>  new archive 'CC3000HostDriver.lib'
+  ==>  building archive 'CC3000HostDriver.lib'
+'Finished building target: CC3000HostDriver.lib'
+' '
+
+**** Build Finished ****
