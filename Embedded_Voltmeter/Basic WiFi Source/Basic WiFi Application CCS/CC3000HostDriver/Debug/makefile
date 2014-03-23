@@ -4,10 +4,9 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccsv5/tools/compiler/msp430_4.2.1
+CG_TOOL_ROOT := E:/ti/ccsv5/tools/compiler/msp430_4.1.9
 
 ORDERED_OBJS += \
-$(GEN_CMDS__FLAG) \
 "./wlan.obj" \
 "./socket.obj" \
 "./security.obj" \
@@ -120,7 +119,7 @@ all: CC3000HostDriver.lib
 CC3000HostDriver.lib: $(OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Archiver'
-	"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/ar430" r "CC3000HostDriver.lib" $(ORDERED_OBJS)
+	"E:/ti/ccsv5/tools/compiler/msp430_4.1.9/bin/ar430" r "CC3000HostDriver.lib" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -136,4 +135,3 @@ clean:
 .SECONDARY:
 
 -include ../makefile.targets
-

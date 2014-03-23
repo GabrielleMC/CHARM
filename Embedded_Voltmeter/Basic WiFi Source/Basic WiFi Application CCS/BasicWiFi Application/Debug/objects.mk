@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -l"libc.a"
+LIBS := $(GEN_CMDS__FLAG) -l"libc.a"
 
