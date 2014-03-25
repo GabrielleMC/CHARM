@@ -44,9 +44,8 @@ if (isset($_SESSION['auth'])) {
 	<ul>
 		<li> <a href="CHARM_Overview.php">My Home</a></li>
 		<li> <a href="history.php">History</a></li>
-		<li> <a href="detail.php">Detailed Statistics</a></li>
 		<li> <a href="Settings.php">System Settings</a></li>
-		<li> <a href="#tabs-5">CHARM School (Help)</a></li>
+		<li> <a href="#tabs-4">CHARM School (Help)</a></li>
 	</ul>
 	<div id = "tabs-1" class ="overview">
 	</div>
@@ -55,8 +54,6 @@ if (isset($_SESSION['auth'])) {
 	<div id = "tabs-3">
 	</div>
 	<div id = "tabs-4">
-	</div>
-	<div id = "tabs-5">
 		<p style = "color:#2191C0;font-weight:bold">Frequently Asked Questions</p>
 		<div id="accordion">
 			<h3>How can I change how often data is logged from a system?</h3>
