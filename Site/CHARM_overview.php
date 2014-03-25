@@ -35,10 +35,18 @@
 	}
 	
 	
-	$result = mysql_query("SELECT AVG(value) AS test1 FROM t1 WHERE DATE(logtime) = '$date'");
+	$result = mysql_query("SELECT COUNT(device_id) AS devices FROM Status");
 	$row = mysql_fetch_row($result);
-	$result1 = mysql_query("SELECT AVG(value) AS test2 FROM t2 WHERE DATE(logtime) = '$date'");
-	$row1 = mysql_fetch_row($result1);
+	$count = $row[0];
+	$day = array();
+	
+	for ($i = 0; $i < $count; $i++){
+		$table = "Device_" + i;
+		$result1 = mysql_query("SELECT AVG(value) FROM $table WHERE DATE(logtime) = '$date'");
+		$row1 = mysql_fetch_row($result1);
+		$day[$i] = $row1[0];	
+	}
+	
 	$result2 = mysql_query("SELECT SUM(value) AS test3 FROM t3 WHERE DATE(logtime) = '$date'");
 	$row2 = mysql_fetch_row($result2);
 	$result3 = mysql_query("SELECT AVG(total) FROM t1_day WHERE logdate >= DATE(DATE_SUB('$date', INTERVAL 7 DAY))");

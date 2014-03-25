@@ -637,6 +637,16 @@ int Device::update_db_status(){
 		str = ss.str();
 		const char *query = str.c_str();
 		mysql_query(connect, query);
+		//Add the new tables
+		ss.str(std::string());
+    	ss << "CREATE TABLE `Device_" << id << "` (`value` double DEFAULT NULL,`logtime` datetime NOT NULL, PRIMARY KEY (logtime))";
+		const char *query = str.c_str();
+		mysql_query(connect, query);
+		ss.str(std::string());
+		ss << "CREATE TABLE `Device_Day_" << id << "` (`logdate` date NOT NULL, `total` double DEFAULT NULL, PRIMARY KEY (logdate))";
+		const char *query = str.c_str();
+		mysql_query(connect, query);
+		
 	}
 	
 	mysql_close(connect);
