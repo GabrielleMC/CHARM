@@ -462,6 +462,13 @@ int Device::process_confirm_raw(char *buf)
         if(flags & SHUTDOWN_FLAG) {
                 state = SHUTDOWN;
         }
+        if(flags & UPDATE_TIME_FLAG) {
+                time_t temp = 0;
+                for(int n = 0; n < 8; n++) {
+                        temp |= ((buf[6+n] & 0x000000FF) << n*8);
+                }
+                std::cout << "Time update, now " << temp << std::endl;
+        }
         int n_readings = buf[5];
         for(int i = 0; i < n_readings; i++) {
                 time_t time = 0;
@@ -485,7 +492,13 @@ int Device::create_confirm_raw(char *buf, int n_readings)
         
         if(state == SHUTDOWN)
                 flags |= SHUTDOWN_FLAG;
-        
+        if(n_readings == 0) {
+                flags |= UPDATE_TIME_FLAG;
+                time_t temp = time(NULL);
+                for(int n = 0; n < 8; n++) {
+                        buf[6+n] = temp >> n*8;
+                }
+        }
         if(n_readings > 9)
                 n_readings = 9;
         buf[4] = flags;
