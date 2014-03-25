@@ -568,6 +568,7 @@ void Device::print_readings(unsigned int num, std::string filename)
 
 int Device::update_db_readings(){
 	
+	int id = get_uid();
 	MYSQL *connect;
 	connect = mysql_init(NULL);
 	
@@ -586,7 +587,7 @@ int Device::update_db_readings(){
 		char buff[20];
 		format_time(readtime, buff);
         ss.str(std::string()); // clear the stream
-        ss << "INSERT INTO t1 (value, logtime) VALUES ('" << get_reading(readtime) << "', '" << buff << "')";
+        ss << "INSERT INTO Device_" << id << " (value, logtime) VALUES ('" << get_reading(readtime) << "', '" << buff << "')";
 		str = ss.str();
 		const char *query = str.c_str();
 		//std::cout<< str;
