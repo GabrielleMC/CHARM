@@ -39,74 +39,52 @@
 	$row = mysql_fetch_row($result);
 	$count = $row[0];
 	$day = array();
+	$week = array();
+	$month = array();
 	
 	for ($i = 0; $i < $count; $i++){
-		$table = "Device_" + i;
+		$table = "Device_$i";
 		$result1 = mysql_query("SELECT AVG(value) FROM $table WHERE DATE(logtime) = '$date'");
 		$row1 = mysql_fetch_row($result1);
 		$day[$i] = $row1[0];	
+		$result2 = mysql_query("SELECT AVG(value) FROM $table  WHERE DATE(logtime) >= DATE(DATE_SUB('$date', INTERVAL 7 DAY))");
+		$row2 = mysql_fetch_row($result2);
+		$week[$i] = $row2[0];
+		$result3 = mysql_query("SELECT AVG(value) FROM $table WHERE DATE(logtime) >= DATE(DATE_SUB('$date', INTERVAL 30 DAY))");
+		$row3 = mysql_fetch_row($result3);
+		$month[$i] = $row3[0];
 	}
-	
-	$result2 = mysql_query("SELECT SUM(value) AS test3 FROM t3 WHERE DATE(logtime) = '$date'");
-	$row2 = mysql_fetch_row($result2);
-	$result3 = mysql_query("SELECT AVG(total) FROM t1_day WHERE logdate >= DATE(DATE_SUB('$date', INTERVAL 7 DAY))");
-	$row3 = mysql_fetch_row($result3);
-	$result4 = mysql_query("SELECT AVG(total) FROM t2_day WHERE logdate >= DATE(DATE_SUB('$date', INTERVAL 7 DAY))");
-	$row4 = mysql_fetch_row($result4);
-	$result5 = mysql_query("SELECT AVG(total) FROM t3_day WHERE logdate >= DATE(DATE_SUB('$date', INTERVAL 7 DAY))");
-	$row5 = mysql_fetch_row($result5);
-	$result6 = mysql_query("SELECT AVG(total) FROM t1_day WHERE logdate >= DATE(DATE_SUB('$date', INTERVAL 30 DAY))");
-	$row6 = mysql_fetch_row($result6);
-	$result7 = mysql_query("SELECT AVG(total) FROM t2_day WHERE logdate >= DATE(DATE_SUB('$date', INTERVAL 30 DAY))");
-	$row7 = mysql_fetch_row($result7);
-	$result8 = mysql_query("SELECT AVG(total) FROM t3_day WHERE logdate >= DATE(DATE_SUB('$date', INTERVAL 30 DAY))");
-	$row8 = mysql_fetch_row($result8);
 
-	echo "<p style = \"color:#2191C0;font-weight:bold\">Last 24 hours</p>";
+	echo "<p style = \"color:#2191C0;font-weight:bold\">Last 24 hours - Average Readings</p>";
 	echo "<table border=\"1\">";
-	echo "<tr>";
-	echo "<td>Average Power Used (W)</td>";
-	echo "<td>" . $row[0] . "</td>";
-	echo "</tr>";
-	echo "<tr>";
-	echo "<td>Average current Recorded (A)</td>";
-	echo "<td>" . $row1[0] . "</td>";
-	echo "</tr>";
-	echo "<tr>";
-	echo "<td>Total Current Recorded (A)</td>";
-	echo "<td>" . $row2[0] . "</td>";
-	echo "</tr>";
+	for ($i = 0; $i < $count; $i++){
+		echo "<tr>";
+		$table = "Device_$i";
+		echo "<td>$table</td>";
+		echo "<td>$day[$i]</td>";
+		echo "</tr>";
+	}
 	echo "</table>";
 	echo "<br>";
-	echo "<p style = \"color:#2191C0;font-weight:bold\">Last Week</p>";
+	echo "<p style = \"color:#2191C0;font-weight:bold\">Last Week - Average Readings</p>";
 	echo "<table border=\"1\">";
-	echo "<tr>";
-	echo "<td>Average Power Used (W)</td>";
-	echo "<td>" . $row3[0] . "</td>";
-	echo "</tr>";
-	echo "<tr>";
-	echo "<td>Average current Recorded (A)</td>";
-	echo "<td>" . $row4[0] . "</td>";
-	echo "</tr>";
-	echo "<tr>";
-	echo "<td>Average Current Recorded (A)</td>";
-	echo "<td>" . $row5[0] . "</td>";
-	echo "</tr>";
+	for ($i = 0; $i < $count; $i++){
+		echo "<tr>";
+		$table = "Device_$i";
+		echo "<td>$table</td>";
+		echo "<td>$week[$i]</td>";
+		echo "</tr>";
+	}
 	echo "</table>";
 	echo "<br>";
-	echo "<p style = \"color:#2191C0;font-weight:bold\">Last Month</p>";
+	echo "<p style = \"color:#2191C0;font-weight:bold\">Last Month - Average Readings</p>";
 	echo "<table border=\"1\">";
-	echo "<tr>";
-	echo "<td>Average Power Used (W)</td>";
-	echo "<td>" . $row6[0] . "</td>";
-	echo "</tr>";
-	echo "<tr>";
-	echo "<td>Average Current Recorded (A)</td>";
-	echo "<td>" . $row7[0] . "</td>";
-	echo "</tr>";
-	echo "<tr>";
-	echo "<td>Total Current Recorded (A)</td>";
-	echo "<td>" . $row8[0] . "</td>";
-	echo "</tr>";
+	for ($i = 0; $i < $count; $i++){
+		echo "<tr>";
+		$table = "Device_$i";
+		echo "<td>$table</td>";
+		echo "<td>$month[$i]</td>";
+		echo "</tr>";
+	}
 	echo "</table>";
 ?>
