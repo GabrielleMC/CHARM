@@ -47,6 +47,7 @@
 #include "host_driver_version.h"
 #include <msp430.h>
 #include "security.h"
+#include "coms.h"
 
 
 #define PALTFORM_VERSION						(1)
@@ -91,6 +92,8 @@ volatile unsigned long ulSmartConfigFinished, ulCC3000Connected,ulCC3000DHCP,
 OkToDoShutDown, ulCC3000DHCP_configured;
 
 volatile unsigned char ucStopSmartConfig;
+
+volatile extern time_t deviceTime;
 
 char digits[] = "0123456789";
 
@@ -372,7 +375,7 @@ void CC3000_UsynchCallback(long lEventType, char * data, unsigned char length)
 		// Turn off the LED7
 		turnLedOff(7);
 		
-		// Turn off LED5
+		// Turn off LED8
 		turnLedOff(8);          
 	}
 	
@@ -486,174 +489,6 @@ void killSocket()
 
 //*****************************************************************************
 //
-//! DemoHandleUartCommand
-//!
-//!  @param  usBuffer
-//!
-//!  @return none
-//!
-//!  @brief  The function handles commands arrived from CLI
-//
-//*****************************************************************************
-/*
-void
-DemoHandleUartCommand(unsigned char *usBuffer)
-{
-	volatile signed long iReturnValue;
-	sockaddr tSocketAddr;
-	socklen_t tRxPacketLength;
-	unsigned char pucIP_Addr[4];
-	unsigned char pucIP_DefaultGWAddr[4];
-	unsigned char pucSubnetMask[4];
-	unsigned char pucDNS[4];
-	int bytesSent;
-	char outBuffer[128];
-	int buffLen = 0;
-	
-	
-	// usBuffer[0] contains always 0
-	// usBuffer[1] maps the command
-	// usBuffer[2..end] optional parameters
-	switch(usBuffer[1])
-	{
-		// Start a smart configuration process
-	case UART_COMMAND_CC3000_SIMPLE_CONFIG_START:
-
-		break;
-		
-		// Start a WLAN Connect process
-	case UART_COMMAND_CC3000_CONNECT:
-		ConnectToServer();
-		break;
-		
-		// Handle open socket command
-	case UART_COMMAND_SOCKET_OPEN:
-		//wait for DHCP process to finish. if you are using a static IP address
-		//please delete the wait for DHCP event - ulCC3000DHCP 
-		while ((ulCC3000DHCP == 0) || (ulCC3000Connected == 0))
-		{		
-			__delay_cycles(1000);
-		}
-		ulSocket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-		break;
-		
-		// Handle close socket command
-	case UART_COMMAND_SOCKET_CLOSE:
-		break;
-		
-		// Handle receive data command
-	case UART_COMMAND_RCV_DATA:
-		iReturnValue = recvfrom(ulSocket, pucCC3000_Rx_Buffer, CC3000_APP_BUFFER_SIZE, 0, &tSocketAddr, &tRxPacketLength);
-		if (iReturnValue <= 0)
-		{       
-			// No data received by device
-			DispatcherUartSendPacket((unsigned char*)pucUARTNoDataString, sizeof(pucUARTNoDataString));
-		}
-		else
-		{
-			// Send data to UART...
-			DispatcherUartSendPacket(pucCC3000_Rx_Buffer, CC3000_APP_BUFFER_SIZE);
-		}
-		break;
-		
-		
-		// Handle send data command
-	case UART_COMMAND_SEND_DATA:
-		// Send the message to the server when not receiving a file
-		strcpy(outBuffer, "Hello world");
-		buffLen = strlen(outBuffer);
-		bytesSent = send(ulSocket, (char *) &outBuffer, buffLen, 0);
-		if (bytesSent < 0 || bytesSent != buffLen) {
-			turnLedOn(1);
-			break;
-		}
-
-		turnLedOn(2);
-		turnLedOn(3);
-		__delay_cycles(10000);
-		turnLedOff(2);
-		turnLedOff(3);
-		break;
-		
-		
-		// Handle bind command
-	case UART_COMMAND_BSD_BIND:
-		tSocketAddr.sa_family = AF_INET;
-		
-		// the source port
-		tSocketAddr.sa_data[0] = ascii_to_char(usBuffer[2], usBuffer[3]);
-		tSocketAddr.sa_data[1] = ascii_to_char(usBuffer[4], usBuffer[5]);
-		
-		// all 0 IP address
-		memset (&tSocketAddr.sa_data[2], 0, 4);
-		
-		bind(ulSocket, &tSocketAddr, sizeof(sockaddr));
-		
-		break;
-		
-		
-		// Handle IP configuration command
-	case UART_COMMAND_IP_CONFIG:
-		
-		// Network mask is assumed to be 255.255.255.0
-		pucSubnetMask[0] = 0xFF;
-		pucSubnetMask[1] = 0xFF;
-		pucSubnetMask[2] = 0xFF;
-		pucSubnetMask[3] = 0x0;
-		
-		pucIP_Addr[0] = ascii_to_char(usBuffer[2], usBuffer[3]);
-		pucIP_Addr[1] = ascii_to_char(usBuffer[4], usBuffer[5]);
-		pucIP_Addr[2] = ascii_to_char(usBuffer[6], usBuffer[7]);
-		pucIP_Addr[3] = ascii_to_char(usBuffer[8], usBuffer[9]);
-		
-		pucIP_DefaultGWAddr[0] = ascii_to_char(usBuffer[10], usBuffer[11]);
-		pucIP_DefaultGWAddr[1] = ascii_to_char(usBuffer[12], usBuffer[13]);
-		pucIP_DefaultGWAddr[2] = ascii_to_char(usBuffer[14], usBuffer[15]);
-		pucIP_DefaultGWAddr[3] = ascii_to_char(usBuffer[16], usBuffer[17]);
-		
-		pucDNS[0] = 0;
-		pucDNS[1] = 0;
-		pucDNS[2] = 0;
-		pucDNS[3] = 0;
-		
-		netapp_dhcp((unsigned long *)pucIP_Addr, (unsigned long *)pucSubnetMask, (unsigned long *)pucIP_DefaultGWAddr, (unsigned long *)pucDNS);
-		
-		break;
-		
-		
-		// Handle WLAN disconnect command
-	case UART_COMMAND_CC3000_DISCONNECT:
-		wlan_disconnect();
-		break;
-		
-		// Handle erase policy command
-	case UART_COMMAND_CC3000_DEL_POLICY:
-		wlan_ioctl_set_connection_policy(DISABLE, DISABLE, DISABLE);
-		break;
-		
-		
-		// Handle send DNS Discovery command
-	case UART_COMMAND_SEND_DNS_ADVERTIZE:
-		if(ulCC3000DHCP)
-		{
-			mdnsAdvertiser(1,device_name,strlen(device_name));
-		}
-		
-		break;
-		
-	default:
-		DispatcherUartSendPacket((unsigned char*)pucUARTIllegalCommandString, sizeof(pucUARTIllegalCommandString));
-		break;
-		
-	}
-	
-	// Send a response - the command handling has finished
-	DispatcherUartSendPacket((unsigned char *)(pucUARTCommandDoneString), sizeof(pucUARTCommandDoneString));
-}
-*/
-
-//*****************************************************************************
-//
 //! main
 //!
 //!  @param  None
@@ -717,6 +552,7 @@ void setADC10(void)
 int STATE = 0;
 unsigned int ADC10_READING = 0;
 unsigned int battLow = 0;
+
 void ADC10routine(void)
 {
 	 WDTCTL = WDTPW + WDTHOLD;	// Stop watchdog timer
@@ -755,13 +591,12 @@ void ADC10routine(void)
 		}
 		STATE = 0;// restore to timer set off for next round
 		initClk();
-
 }
 
 
 main(void)
 {
-
+	//FakeList();
 	ulCC3000DHCP = 0;
 	ulCC3000Connected = 0;
 	ulSocket = 0xFFFFFFFF;
@@ -776,11 +611,8 @@ main(void)
 	setClocks();
 	//setTimers(); Do this each time in the AD10routine
 
-	// Initialize the UART RX Buffer
-	//memset(g_ucUARTBuffer, 0xFF, UART_IF_BUFFER);
-	uart_have_cmd =0;
 	ConnectToAP();
-	toggleLed(1);
+	turnLedOn(1);
 	//wakeup_timer_disable();
 
 	// Loop forever waiting  for commands from PC...
@@ -788,51 +620,40 @@ main(void)
 	{
 		__bis_SR_register(LPM2_bits + GIE);
 		__no_operation();
-		ADC10routine();
-		SleepOneSecond();
-		toggleLed(1);
-		toggleLed(2);
-		SleepOneSecond();
-		toggleLed(1);
-		toggleLed(2);
 
 		if(ulSocket == 0xFFFFFFFF)
-			ConnectToServer();
-
-		/*if (uart_have_cmd)
 		{
-			wakeup_timer_disable();
-			//Process the cmd in RX buffer
-			DemoHandleUartCommand(g_ucUARTBuffer);
-			uart_have_cmd = 0;
-			memset(g_ucUARTBuffer, 0xFF, UART_IF_BUFFER);
-			wakeup_timer_init();
+			ConnectToServer();
 		}
 
-		// complete smart config process:
-		// 1. if smart config is done
-		// 2. CC3000 established AP connection
-		// 3. DHCP IP is configured
-		// then send mDNS packet to stop external SmartConfig application
-		if ((ucStopSmartConfig == 1) && (ulCC3000DHCP == 1) && (ulCC3000Connected == 1))
-		{
-			unsigned char loop_index = 0;
+		if((printOnce == 1) && (ulCC3000DHCP == 1) && (ulCC3000Connected == 1)) {
+			turnLedOn(6); // we have a dhcp address
+			printOnce = 0;
+		}
 
-			while (loop_index < 3)
-			{
-				mdnsAdvertiser(1,device_name,strlen(device_name));
-				loop_index++;
+		if((ulCC3000DHCP == 1) && (ulCC3000Connected == 1)) {
+			int bytesSent;
+			char outBuffer[128];
+			char inBuffer[128];
+			memset(outBuffer, 0, 128);
+			memset(inBuffer, 0, 128);
+			CreateReadingsRaw(outBuffer, 128);
+			bytesSent = send(ulSocket, (char *) &outBuffer, strlen(outBuffer), 0);
+			if(bytesSent < 0 || bytesSent != strlen(outBuffer)) {
+				turnLedOn(1);
+				break;
 			}
 
-			ucStopSmartConfig = 0;
-		}*/
+			int temp = recv(ulSocket, (char *) &inBuffer, 128, 0);
+			ProcessConfirmRaw(inBuffer, temp);
 
-		if( (printOnce == 1) && (ulCC3000DHCP == 1) && (ulCC3000Connected == 1))
-		{
-			printOnce = 0;
-			DispatcherUartSendPacket((unsigned char*)pucCC3000_Rx_Buffer, strlen((char const*)pucCC3000_Rx_Buffer));
+			killSocket();
+
+			ADC10routine();
+			AddReading(deviceTime, ADC10_READING);
+
+			SleepOneSecond();
 		}
-
 	}
 }
 

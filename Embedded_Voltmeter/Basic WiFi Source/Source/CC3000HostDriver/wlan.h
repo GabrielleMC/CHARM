@@ -59,6 +59,9 @@ extern "C" {
 // Cannot be longer than 16 characters
 #define SKEY_NAME "ab123456"
 
+// set this to one of the 4 defines above.
+#define WLAN_SECURITY WLAN_SEC_WPA2
+
 // Must use commas (,) to seperate the IP address
 #define SERVER_IP {192,168,1,113}
 

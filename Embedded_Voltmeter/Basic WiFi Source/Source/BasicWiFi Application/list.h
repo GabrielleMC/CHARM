@@ -3,8 +3,17 @@
 #ifndef __list_h__
 #define __list_h__
 
-#include "coms.h" // for reading_pair
 #include "cc3000_common.h" // for time_t
+
+
+#define N_READINGS 20
+
+
+typedef struct _reading_pair{
+	time_t time;
+	int reading;
+} READING_PAIR;
+
 
 typedef struct _node {
 	READING_PAIR data;
@@ -12,17 +21,14 @@ typedef struct _node {
 	void *next;
 } NODE;
 
-NODE *CURSOR;
-NODE *FIRST;
-NODE *LAST;
-unsigned int list_size;
-
 void InitializeList();
-void AppendNode(READING_PAIR new_data);
+NODE* NewNode();
+void AppendNode(time_t new_time, int new_reading);
 int FindNode(time_t wanted_time);
 READING_PAIR GetDataFromTime(time_t time);
 int RemoveTime(time_t dead_time);
 void RemoveNode(NODE *dead_node);
+int RemoveOldestNode();
 void ResetCursor();
 int CursorValid();
 void CursorStepNext();

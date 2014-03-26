@@ -40,13 +40,14 @@
 #include "socket.h"
 #include "netapp.h"
 #include "board.h"
-
+#include "coms.h"
 
 #define FRAM_FORCED_RES_ADDRESS       0x1840
 #define FIRST_TIME_CONFIG_SET 0xAA
 
 unsigned char * msp430_forced_restart_ptr = (unsigned char *)FRAM_FORCED_RES_ADDRESS;  
 extern unsigned char * ptrFtcAtStartup;
+volatile extern time_t deviceTime;
 //*****************************************************************************
 //
 //! pio_init
@@ -256,6 +257,7 @@ __interrupt void TIMER1_A0_ISR(void)
 void SleepOneSecond(void)
 {
 	__delay_cycles(FREQUENCY);
+	deviceTime += 60;
 }
 
 //*****************************************************************************

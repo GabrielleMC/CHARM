@@ -8,8 +8,8 @@ CG_TOOL_ROOT := E:/ti/ccsv5/tools/compiler/msp430_4.1.9
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
-"./list.obj" \
 "./coms.obj" \
+"./buffer.obj" \
 "./board.obj" \
 "./basic_wifi_application.obj" \
 -l"libc.a" \
@@ -123,15 +123,15 @@ all: BasicWiFi\ Application.out
 BasicWiFi\ Application.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
-	"E:/ti/ccsv5/tools/compiler/msp430_4.1.9/bin/cl430" -vmspx --abi=coffabi -O4 --opt_for_speed=0 -g --gcc --define=__CCS__ --define=__MSP430FR5739__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=368 -m"BasicWiFi Application.map" --heap_size=0 --use_hw_mpy=F5 -i"E:/ti/ccsv5/ccs_base/msp430/include" -i"E:/ti/ccsv5/tools/compiler/msp430_4.1.9/lib" -i"E:/ti/ccsv5/tools/compiler/msp430_4.1.9/include" --reread_libs --warn_sections --xml_link_info="BasicWiFi Application_linkInfo.xml" --rom_model -o "BasicWiFi Application.out" $(ORDERED_OBJS)
+	"E:/ti/ccsv5/tools/compiler/msp430_4.1.9/bin/cl430" -vmspx --abi=coffabi -Ooff --opt_for_speed=0 -g --gcc --define=__CCS__ --define=__MSP430FR5739__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=368 -m"BasicWiFi Application.map" --heap_size=0 --use_hw_mpy=F5 -i"E:/ti/ccsv5/ccs_base/msp430/include" -i"E:/ti/ccsv5/tools/compiler/msp430_4.1.9/lib" -i"E:/ti/ccsv5/tools/compiler/msp430_4.1.9/include" --reread_libs --warn_sections --xml_link_info="BasicWiFi Application_linkInfo.xml" --rom_model -o "BasicWiFi Application.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(MSP430_EXECUTABLE_OUTPUTS__QUOTED) "BasicWiFi Application.out"
-	-$(RM) "basic_wifi_application.pp" "board.pp" "coms.pp" "list.pp" 
-	-$(RM) "basic_wifi_application.obj" "board.obj" "coms.obj" "list.obj" 
+	-$(RM) "basic_wifi_application.pp" "board.pp" "buffer.pp" "coms.pp" 
+	-$(RM) "basic_wifi_application.obj" "board.obj" "buffer.obj" "coms.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

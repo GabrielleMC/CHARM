@@ -99,6 +99,8 @@ SECTIONS
        {
           .cio        : {}                   /* C I/O BUFFER                      */
           .sysmem     : {}                   /* DYNAMIC MEMORY ALLOCATION AREA    */
+          .uid		  : {}					 /* UID VALUE ASSIGNED FROM THE SERVER */
+          .readings	  : {}				     /* READINGS NOT YET SENT TO THE SERVER */
        }
 
        GROUP(READ_ONLY_MEMORY): ALIGN(0x0200) RUN_START(fram_ro_start)

@@ -9,37 +9,37 @@ CMD_SRCS += \
 C_SRCS += \
 E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic\ WiFi\ Source/Source/BasicWiFi\ Application/basic_wifi_application.c \
 E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic\ WiFi\ Source/Source/BasicWiFi\ Application/board.c \
-E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic\ WiFi\ Source/Source/BasicWiFi\ Application/coms.c \
-E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic\ WiFi\ Source/Source/BasicWiFi\ Application/list.c 
+E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic\ WiFi\ Source/Source/BasicWiFi\ Application/buffer.c \
+E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic\ WiFi\ Source/Source/BasicWiFi\ Application/coms.c 
 
 OBJS += \
 ./basic_wifi_application.obj \
 ./board.obj \
-./coms.obj \
-./list.obj 
+./buffer.obj \
+./coms.obj 
 
 C_DEPS += \
 ./basic_wifi_application.pp \
 ./board.pp \
-./coms.pp \
-./list.pp 
+./buffer.pp \
+./coms.pp 
 
 C_DEPS__QUOTED += \
 "basic_wifi_application.pp" \
 "board.pp" \
-"coms.pp" \
-"list.pp" 
+"buffer.pp" \
+"coms.pp" 
 
 OBJS__QUOTED += \
 "basic_wifi_application.obj" \
 "board.obj" \
-"coms.obj" \
-"list.obj" 
+"buffer.obj" \
+"coms.obj" 
 
 C_SRCS__QUOTED += \
 "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/BasicWiFi Application/basic_wifi_application.c" \
 "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/BasicWiFi Application/board.c" \
-"E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/BasicWiFi Application/coms.c" \
-"E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/BasicWiFi Application/list.c" 
+"E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/BasicWiFi Application/buffer.c" \
+"E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/BasicWiFi Application/coms.c" 
 
 

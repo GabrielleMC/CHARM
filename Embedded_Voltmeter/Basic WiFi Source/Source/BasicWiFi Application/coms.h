@@ -2,16 +2,13 @@
 #ifndef __COMS_H__
 #define __COMS_H__
 
-#include "cc3000_common.h" // for time_t
-
-#define N_READINGS 20
+#include "buffer.h"
 
 
-typedef struct _reading_pair{
-	time_t time;
-	int reading;
-} READING_PAIR;
 
-
+void FakeList();
+int LowBattery();
+int CreateReadingsRaw(char *buf, int size);
+int ProcessConfirmRaw(char *buf, int size);
 
 #endif

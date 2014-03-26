@@ -97,6 +97,16 @@
 			<locationURI>PARENT-2-PROJECT_LOC/Source/BasicWiFi%20Application/board.c</locationURI>
 		</link>
 		<link>
+			<name>buffer.c</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Source/BasicWiFi%20Application/buffer.c</locationURI>
+		</link>
+		<link>
+			<name>buffer.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Source/BasicWiFi%20Application/buffer.h</locationURI>
+		</link>
+		<link>
 			<name>coms.c</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/Source/BasicWiFi%20Application/coms.c</locationURI>
@@ -105,16 +115,6 @@
 			<name>coms.h</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/Source/BasicWiFi%20Application/coms.h</locationURI>
-		</link>
-		<link>
-			<name>list.c</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Source/BasicWiFi%20Application/list.c</locationURI>
-		</link>
-		<link>
-			<name>list.h</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Source/BasicWiFi%20Application/list.h</locationURI>
 		</link>
 		<link>
 			<name>Library/CC3000 Spi.lib</name>

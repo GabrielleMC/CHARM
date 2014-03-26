@@ -1,11 +1,11 @@
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    1
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE    1
 
        1            ;******************************************************************************
        2            ;* MSP430 C/C++ Codegen                                             PC v4.1.9 *
-       3            ;* Date/Time created: Sun Mar 23 16:08:25 2014                                *
+       3            ;* Date/Time created: Tue Mar 25 16:18:27 2014                                *
        4            ;******************************************************************************
        5                    .compiler_opts --abi=coffabi --hll_source=on --mem_model:code=large --mem_model:data=small --o
        6            
@@ -58,10 +58,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    1
       53            $C$DW$11        .dwtag  DW_TAG_formal_parameter
       54                    .dwattr $C$DW$11, DW_AT_type(*$C$DW$T$19)
       55            $C$DW$12        .dwtag  DW_TAG_formal_parameter
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    2
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE    2
 
       56                    .dwattr $C$DW$12, DW_AT_type(*$C$DW$T$3)
       57                    .dwendtag $C$DW$10
@@ -118,10 +118,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    2
      108                    .dwattr $C$DW$25, DW_AT_TI_symbol_name("SpiClose")
      109                    .dwattr $C$DW$25, DW_AT_declaration
      110                    .dwattr $C$DW$25, DW_AT_external
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    3
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE    3
 
      111            
      112            $C$DW$26        .dwtag  DW_TAG_subprogram, DW_AT_name("socket")
@@ -178,10 +178,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    3
      163                    .dwendtag $C$DW$36
      164            
      165            
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    4
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE    4
 
      166            $C$DW$41        .dwtag  DW_TAG_subprogram, DW_AT_name("aes_decrypt")
      167                    .dwattr $C$DW$41, DW_AT_TI_symbol_name("aes_decrypt")
@@ -238,10 +238,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    4
      218                    .dwattr $C$DW$51, DW_AT_location[DW_OP_addr key]
      219                    .dwattr $C$DW$51, DW_AT_type(*$C$DW$T$85)
      220                    .dwattr $C$DW$51, DW_AT_external
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    5
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE    5
 
      221                    .global profileArray
      222 00004e               .bss    profileArray,68,2
@@ -298,10 +298,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    5
      273            ;*                                                                            *
      274            ;* Using -g (debug) with optimization (-o4) may disable key optimizations!    *
      275            ;*                                                                            *
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    6
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE    6
 
      276            ;******************************************************************************
      277 000000       SpiReceiveHandler:
@@ -358,10 +358,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    6
      325            ;*   Regs Modified     : SR,r11,r12,r13,r14,r15                              *
      326            ;*   Regs Used         : SR,r11,r12,r13,r14,r15                              *
      327            ;*   Local Frame Size  : 0 Args + 0 Auto + 0 Save = 0 byte                   *
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    7
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE    7
 
      328            ;*****************************************************************************
      329            
@@ -418,10 +418,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    7
      378 000012 9382          TST.W     &tSLInformation+6     ; [] |402| 
          000014 0006!
      379 000016 2402          JEQ       $C$L3                 ; [] |402| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    8
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE    8
 
      380                                                      ; [] |402| 
      381            ;* --------------------------------------------------------------------------*
@@ -441,7 +441,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    8
      393                                                      ; [] |407| 
      394            
      395            $C$DW$62        .dwtag  DW_TAG_TI_loop
-     396                    .dwattr $C$DW$62, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L1:1:13956125
+     396                    .dwattr $C$DW$62, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L1:1:13957859
      397                    .dwattr $C$DW$62, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sour
      398                    .dwattr $C$DW$62, DW_AT_TI_begin_line(0x18d)
      399                    .dwattr $C$DW$62, DW_AT_TI_end_line(0x18f)
@@ -478,10 +478,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    8
      430                    .dwfde $C$DW$CIE, wlan_start
      431            $C$DW$66        .dwtag  DW_TAG_formal_parameter, DW_AT_name("usPatchesAvailableAtHost")
      432                    .dwattr $C$DW$66, DW_AT_TI_symbol_name("usPatchesAvailableAtHost")
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    9
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE    9
 
      433                    .dwattr $C$DW$66, DW_AT_type(*$C$DW$T$19)
      434                    .dwattr $C$DW$66, DW_AT_location[DW_OP_reg12]
@@ -538,10 +538,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE    9
      483                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
      484 00000a 1800!         MOVX.A    #0,&tSLInformation+56 ; [] |328| 
          00000c 43C2 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   10
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   10
 
          00000e 0038 
      485                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -598,10 +598,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   10
      522            $C$DW$73        .dwtag  DW_TAG_TI_branch
      523                    .dwattr $C$DW$73, DW_AT_low_pc(0x00)
      524                    .dwattr $C$DW$73, DW_AT_TI_call
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   11
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   11
 
      525                    .dwattr $C$DW$73, DW_AT_TI_indirect
      526 00004a 1380!         CALLA     &tSLInformation+36    ; [] |348| 
@@ -658,10 +658,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   11
      575                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
      576            $C$DW$75        .dwtag  DW_TAG_TI_branch
      577                    .dwattr $C$DW$75, DW_AT_low_pc(0x00)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   12
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   12
 
      578                    .dwattr $C$DW$75, DW_AT_TI_call
      579                    .dwattr $C$DW$75, DW_AT_TI_indirect
@@ -718,10 +718,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   12
      627                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
      628 000080 403F          MOV.W     #9,r15                ; [] |121| 
          000082 0009 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   13
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   13
 
      629 000084 5D0F          ADD.W     r13,r15               ; [] |121| 
      630                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -778,10 +778,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   13
      673 0000b6 403C          MOV.W     #16395,r12            ; [] |373| 
          0000b8 400B 
      674 0000ba 430D          MOV.W     #0,r13                ; [] |373| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   14
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   14
 
      675            $C$DW$80        .dwtag  DW_TAG_TI_branch
      676                    .dwattr $C$DW$80, DW_AT_low_pc(0x00)
@@ -804,7 +804,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   14
      692                    ; [] 
      693            
      694            $C$DW$82        .dwtag  DW_TAG_TI_loop
-     695                    .dwattr $C$DW$82, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L6:1:13956125
+     695                    .dwattr $C$DW$82, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L6:1:13957859
      696                    .dwattr $C$DW$82, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sour
      697                    .dwattr $C$DW$82, DW_AT_TI_begin_line(0x161)
      698                    .dwattr $C$DW$82, DW_AT_TI_end_line(0x16c)
@@ -818,7 +818,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   14
      706            
      707            
      708            $C$DW$85        .dwtag  DW_TAG_TI_loop
-     709                    .dwattr $C$DW$85, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L5:1:13956125
+     709                    .dwattr $C$DW$85, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L5:1:13957859
      710                    .dwattr $C$DW$85, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sour
      711                    .dwattr $C$DW$85, DW_AT_TI_begin_line(0x16c)
      712                    .dwattr $C$DW$85, DW_AT_TI_end_line(0x16e)
@@ -832,16 +832,16 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   14
      720            
      721            
      722            $C$DW$88        .dwtag  DW_TAG_TI_loop
-     723                    .dwattr $C$DW$88, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L4:1:13956125
+     723                    .dwattr $C$DW$88, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L4:1:13957859
      724                    .dwattr $C$DW$88, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sour
      725                    .dwattr $C$DW$88, DW_AT_TI_begin_line(0x168)
      726                    .dwattr $C$DW$88, DW_AT_TI_end_line(0x16a)
      727            $C$DW$89        .dwtag  DW_TAG_TI_loop_range
      728                    .dwattr $C$DW$89, DW_AT_low_pc($C$DW$L$wlan_start$3$B)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   15
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   15
 
      729                    .dwattr $C$DW$89, DW_AT_high_pc($C$DW$L$wlan_start$3$E)
      730            $C$DW$90        .dwtag  DW_TAG_TI_loop_range
@@ -898,10 +898,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   15
      781                    .dwattr $C$DW$92, DW_AT_type(*$C$DW$T$32)
      782                    .dwattr $C$DW$92, DW_AT_location[DW_OP_breg1 0]
      783            ;* r13   assigned to ptr
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   16
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   16
 
      784            $C$DW$93        .dwtag  DW_TAG_variable, DW_AT_name("ptr")
      785                    .dwattr $C$DW$93, DW_AT_TI_symbol_name("ptr")
@@ -958,10 +958,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   16
      828 000000               .sect   ".text:wlan_smart_config_start"
      829                    .align  2
      830                    .clink
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   17
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   17
 
      831                    .global wlan_smart_config_start
      832            
@@ -1018,10 +1018,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   17
      883            $C$DW$101       .dwtag  DW_TAG_variable, DW_AT_name("ptr")
      884                    .dwattr $C$DW$101, DW_AT_TI_symbol_name("ptr")
      885                    .dwattr $C$DW$101, DW_AT_type(*$C$DW$T$21)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   18
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   18
 
      886                    .dwattr $C$DW$101, DW_AT_location[DW_OP_reg10]
      887 000004 0CCE          MOVA      r12,r14               ; [] |1076| 
@@ -1078,10 +1078,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   18
      928 00003e 5221          ADD.W     #4,SP                 ; [] 
      929                    .dwcfi  cfa_offset, 8
      930                    .dwcfi  restore_reg, 10
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   19
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   19
 
      931 000040 160A          POPM.A    #1,r10                ; [] 
      932                    .dwcfi  cfa_offset, 4
@@ -1138,10 +1138,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   19
      983                    .dwcfi  save_reg_to_mem, 16, -4
      984 000000 8221          SUB.W     #4,SP                 ; [] 
      985                    .dwcfi  cfa_offset, 8
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   20
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   20
 
      986            ;* r14   assigned to $O$C11
      987            ;* r14   assigned to $O$C12
@@ -1198,10 +1198,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   20
     1030 00002a 4ECF          MOV.B     r14,-1(r15)           ; [] |1164| 
          00002c FFFF 
     1031 00002e 531C          ADD.W     #1,r12                ; [] 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   21
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   21
 
     1032 000030 531F          ADD.W     #1,r15                ; [] |1164| 
     1033 000032 4CFF          MOV.B     @r12+,-1(r15)         ; [] |1164| 
@@ -1258,10 +1258,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   21
     1076                    .dwendentry
     1077                    .dwendtag $C$DW$106
     1078            
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   22
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   22
 
     1079 000000               .sect   ".text:wlan_add_profile"
     1080                    .align  2
@@ -1318,10 +1318,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   22
     1131                    .dwattr $C$DW$124, DW_AT_type(*$C$DW$T$21)
     1132                    .dwattr $C$DW$124, DW_AT_location[DW_OP_breg1 84]
     1133            $C$DW$125       .dwtag  DW_TAG_formal_parameter, DW_AT_name("ulPassPhraseLen")
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   23
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   23
 
     1134                    .dwattr $C$DW$125, DW_AT_TI_symbol_name("ulPassPhraseLen")
     1135                    .dwattr $C$DW$125, DW_AT_type(*$C$DW$T$25)
@@ -1378,10 +1378,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   23
     1185            ;* r10   assigned to ucBssid
     1186            $C$DW$130       .dwtag  DW_TAG_variable, DW_AT_name("ucBssid")
     1187                    .dwattr $C$DW$130, DW_AT_TI_symbol_name("ucBssid")
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   24
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   24
 
     1188                    .dwattr $C$DW$130, DW_AT_type(*$C$DW$T$84)
     1189                    .dwattr $C$DW$130, DW_AT_location[DW_OP_reg10]
@@ -1438,10 +1438,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   24
     1240            $C$DW$142       .dwtag  DW_TAG_variable, DW_AT_name("_i")
     1241                    .dwattr $C$DW$142, DW_AT_TI_symbol_name("_i")
     1242                    .dwattr $C$DW$142, DW_AT_type(*$C$DW$T$48)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   25
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   25
 
     1243                    .dwattr $C$DW$142, DW_AT_location[DW_OP_reg14]
     1244            ;* r14   assigned to _i
@@ -1498,10 +1498,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   25
          000030 004C 
          000032 0014 
     1284 000034 4191          MOV.W     78(SP),22(SP)         ; [] |657| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   26
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   26
 
          000036 004E 
          000038 0016 
@@ -1558,10 +1558,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   26
     1318 000082 411D          MOV.W     14(SP),r13            ; [] 
          000084 000E 
     1319 000086 930D          TST.W     r13                   ; [] |671| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   27
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   27
 
     1320 000088 2002          JNE       $C$L12                ; [] |671| 
     1321                                                      ; [] |671| 
@@ -1618,10 +1618,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   27
     1369            ;*   Known Max Trip Count Factor     : 6
     1370            ;* --------------------------------------------------------------------------*
     1371            $C$L14:    
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   28
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   28
 
     1372            $C$DW$L$wlan_add_profile$9$B:
     1373            $C$DW$150       .dwtag  DW_TAG_TI_branch
@@ -1678,10 +1678,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   28
     1419 0000d0 13B0!         CALLA     #$abproc0             ; [] 
          0000d2 0244 
     1420                                                      ; [] 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   29
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   29
 
     1421                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
     1422 0000d4 411D          MOV.W     24(SP),r13            ; [] 
@@ -1738,10 +1738,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   29
     1466            ;*   Loop closing brace source line  : 749
     1467            ;*   Known Minimum Trip Count        : 1
     1468            ;*   Known Maximum Trip Count        : 4294967295
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   30
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   30
 
     1469            ;*   Known Max Trip Count Factor     : 1
     1470            ;* --------------------------------------------------------------------------*
@@ -1798,10 +1798,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   30
     1518 000120 44FF          MOV.B     @r4+,-1(r15)          ; [] |750| 
          000122 FFFF 
     1519 000124 531E          ADD.W     #1,r14                ; [] |750| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   31
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   31
 
     1520 000126 B03E          BIT.W     #32768,r14            ; [] |750| 
          000128 8000 
@@ -1858,10 +1858,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   31
     1564            ;* --------------------------------------------------------------------------*
     1565            ;*   BEGIN LOOP $C$L25
     1566            ;*
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   32
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   32
 
     1567            ;*   Loop source line                : 706
     1568            ;*   Loop closing brace source line  : 706
@@ -1918,10 +1918,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   32
     1616                    .dwattr $C$DW$160, DW_AT_TI_call
     1617 00016c 13B0!         CALLA     #$abproc3             ; [] 
          00016e 028C 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   33
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   33
 
     1618                                                      ; [] 
     1619                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -1978,10 +1978,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   33
     1667            ;* --------------------------------------------------------------------------*
     1668 000192       $C$DW$L$wlan_add_profile$37$B:
     1669 000192 980E          CMP.W     r8,r14                ; [] |712| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   34
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   34
 
     1670 000194 2BFA          JLO       $C$L30                ; [] |712| 
     1671                                                      ; [] |712| 
@@ -2038,10 +2038,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   34
     1721 0001ac       $C$L34:    
     1722 0001ac       $C$DW$L$wlan_add_profile$42$B:
     1723 0001ac 531F          ADD.W     #1,r15                ; [] |718| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   35
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   35
 
     1724 0001ae 4CFF          MOV.B     @r12+,-1(r15)         ; [] |718| 
          0001b0 FFFF 
@@ -2098,10 +2098,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   35
     1771                                                      ; [] 
     1772 0001e0 2008          JNE       $C$L38                ; [] |679| 
     1773                                                      ; [] |679| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   36
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   36
 
     1774            ;* --------------------------------------------------------------------------*
     1775                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -2158,10 +2158,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   36
     1822                                                      ; [] 
     1823 0001fa 23FD          JNE       $C$L39                ; [] |681| 
     1824                                                      ; [] |681| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   37
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   37
 
     1825            $C$DW$L$wlan_add_profile$52$E:
     1826            ;* --------------------------------------------------------------------------*
@@ -2218,10 +2218,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   37
     1875                                                      ; [] |688| 
     1876 000218       $C$DW$L$wlan_add_profile$58$E:
     1877            ;* --------------------------------------------------------------------------*
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   38
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   38
 
     1878 000218       $C$L43:    
     1879                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -2278,12 +2278,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   38
     1922                    ; [] 
     1923            
     1924            $C$DW$172       .dwtag  DW_TAG_TI_loop
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   39
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   39
 
-    1925                    .dwattr $C$DW$172, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L42:1:139561
+    1925                    .dwattr $C$DW$172, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L42:1:139578
     1926                    .dwattr $C$DW$172, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     1927                    .dwattr $C$DW$172, DW_AT_TI_begin_line(0x2b0)
     1928                    .dwattr $C$DW$172, DW_AT_TI_end_line(0x2b0)
@@ -2300,7 +2300,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   39
     1939            
     1940            
     1941            $C$DW$176       .dwtag  DW_TAG_TI_loop
-    1942                    .dwattr $C$DW$176, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L39:1:139561
+    1942                    .dwattr $C$DW$176, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L39:1:139578
     1943                    .dwattr $C$DW$176, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     1944                    .dwattr $C$DW$176, DW_AT_TI_begin_line(0x2a9)
     1945                    .dwattr $C$DW$176, DW_AT_TI_end_line(0x2a9)
@@ -2311,7 +2311,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   39
     1950            
     1951            
     1952            $C$DW$178       .dwtag  DW_TAG_TI_loop
-    1953                    .dwattr $C$DW$178, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L37:1:139561
+    1953                    .dwattr $C$DW$178, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L37:1:139578
     1954                    .dwattr $C$DW$178, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     1955                    .dwattr $C$DW$178, DW_AT_TI_begin_line(0x2ad)
     1956                    .dwattr $C$DW$178, DW_AT_TI_end_line(0x2ad)
@@ -2322,7 +2322,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   39
     1961            
     1962            
     1963            $C$DW$180       .dwtag  DW_TAG_TI_loop
-    1964                    .dwattr $C$DW$180, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L32:1:139561
+    1964                    .dwattr $C$DW$180, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L32:1:139578
     1965                    .dwattr $C$DW$180, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     1966                    .dwattr $C$DW$180, DW_AT_TI_begin_line(0x2ca)
     1967                    .dwattr $C$DW$180, DW_AT_TI_end_line(0x2cf)
@@ -2338,14 +2338,14 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   39
     1977            $C$DW$184       .dwtag  DW_TAG_TI_loop_range
     1978                    .dwattr $C$DW$184, DW_AT_low_pc($C$DW$L$wlan_add_profile$45$B)
     1979                    .dwattr $C$DW$184, DW_AT_high_pc($C$DW$L$wlan_add_profile$45$E)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   40
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   40
 
     1980            
     1981            $C$DW$185       .dwtag  DW_TAG_TI_loop
-    1982                    .dwattr $C$DW$185, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L34:2:139561
+    1982                    .dwattr $C$DW$185, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L34:2:139578
     1983                    .dwattr $C$DW$185, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     1984                    .dwattr $C$DW$185, DW_AT_TI_begin_line(0x2ce)
     1985                    .dwattr $C$DW$185, DW_AT_TI_end_line(0x2ce)
@@ -2364,7 +2364,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   40
     1998            
     1999            
     2000            $C$DW$189       .dwtag  DW_TAG_TI_loop
-    2001                    .dwattr $C$DW$189, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L30:1:139561
+    2001                    .dwattr $C$DW$189, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L30:1:139578
     2002                    .dwattr $C$DW$189, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     2003                    .dwattr $C$DW$189, DW_AT_TI_begin_line(0x2c8)
     2004                    .dwattr $C$DW$189, DW_AT_TI_end_line(0x2c8)
@@ -2381,7 +2381,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   40
     2015            
     2016            
     2017            $C$DW$193       .dwtag  DW_TAG_TI_loop
-    2018                    .dwattr $C$DW$193, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L27:1:139561
+    2018                    .dwattr $C$DW$193, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L27:1:139578
     2019                    .dwattr $C$DW$193, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     2020                    .dwattr $C$DW$193, DW_AT_TI_begin_line(0x2be)
     2021                    .dwattr $C$DW$193, DW_AT_TI_end_line(0x2be)
@@ -2392,23 +2392,23 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   40
     2026            
     2027            
     2028            $C$DW$195       .dwtag  DW_TAG_TI_loop
-    2029                    .dwattr $C$DW$195, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L25:1:139561
+    2029                    .dwattr $C$DW$195, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L25:1:139578
     2030                    .dwattr $C$DW$195, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     2031                    .dwattr $C$DW$195, DW_AT_TI_begin_line(0x2c2)
     2032                    .dwattr $C$DW$195, DW_AT_TI_end_line(0x2c2)
     2033            $C$DW$196       .dwtag  DW_TAG_TI_loop_range
     2034                    .dwattr $C$DW$196, DW_AT_low_pc($C$DW$L$wlan_add_profile$28$B)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   41
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   41
 
     2035                    .dwattr $C$DW$196, DW_AT_high_pc($C$DW$L$wlan_add_profile$28$E)
     2036                    .dwendtag $C$DW$195
     2037            
     2038            
     2039            $C$DW$197       .dwtag  DW_TAG_TI_loop
-    2040                    .dwattr $C$DW$197, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L22:1:139561
+    2040                    .dwattr $C$DW$197, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L22:1:139578
     2041                    .dwattr $C$DW$197, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     2042                    .dwattr $C$DW$197, DW_AT_TI_begin_line(0x2ee)
     2043                    .dwattr $C$DW$197, DW_AT_TI_end_line(0x2ee)
@@ -2425,7 +2425,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   41
     2054            
     2055            
     2056            $C$DW$201       .dwtag  DW_TAG_TI_loop
-    2057                    .dwattr $C$DW$201, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L19:1:139561
+    2057                    .dwattr $C$DW$201, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L19:1:139578
     2058                    .dwattr $C$DW$201, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     2059                    .dwattr $C$DW$201, DW_AT_TI_begin_line(0x2ed)
     2060                    .dwattr $C$DW$201, DW_AT_TI_end_line(0x2ed)
@@ -2442,7 +2442,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   41
     2071            
     2072            
     2073            $C$DW$205       .dwtag  DW_TAG_TI_loop
-    2074                    .dwattr $C$DW$205, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L16:1:139561
+    2074                    .dwattr $C$DW$205, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L16:1:139578
     2075                    .dwattr $C$DW$205, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     2076                    .dwattr $C$DW$205, DW_AT_TI_begin_line(0x2e1)
     2077                    .dwattr $C$DW$205, DW_AT_TI_end_line(0x2e1)
@@ -2453,15 +2453,15 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   41
     2082            
     2083            
     2084            $C$DW$207       .dwtag  DW_TAG_TI_loop
-    2085                    .dwattr $C$DW$207, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L14:1:139561
+    2085                    .dwattr $C$DW$207, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L14:1:139578
     2086                    .dwattr $C$DW$207, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     2087                    .dwattr $C$DW$207, DW_AT_TI_begin_line(0x2e5)
     2088                    .dwattr $C$DW$207, DW_AT_TI_end_line(0x2e5)
     2089            $C$DW$208       .dwtag  DW_TAG_TI_loop_range
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   42
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   42
 
     2090                    .dwattr $C$DW$208, DW_AT_low_pc($C$DW$L$wlan_add_profile$9$B)
     2091                    .dwattr $C$DW$208, DW_AT_high_pc($C$DW$L$wlan_add_profile$9$E)
@@ -2518,10 +2518,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   42
     2137            
     2138                    .dwfde $C$DW$CIE, $abproc1
     2139            
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   43
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   43
 
     2140            ;*****************************************************************************
     2141            ;* ABSTRACTED PROCEDURE: $abproc1                                            *
@@ -2578,10 +2578,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   43
     2187                    ; [] 
     2188                    .dwendentry
     2189                    .dwendtag $C$DW$211
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   44
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   44
 
     2190            
     2191 00028c               .sect   ".text:wlan_add_profile"
@@ -2638,10 +2638,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   44
     2238 0002a6               .sect   ".text:wlan_add_profile"
     2239            
     2240            $C$DW$214       .dwtag  DW_TAG_subprogram, DW_AT_name("")
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   45
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   45
 
     2241                    .dwattr $C$DW$214, DW_AT_low_pc($abproc5)
     2242                    .dwattr $C$DW$214, DW_AT_high_pc(0x00)
@@ -2698,10 +2698,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   45
     2292 000000       wlan_smart_config_process:
     2293            ;* --------------------------------------------------------------------------*
     2294                    .dwcfi  cfa_offset, 4
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   46
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   46
 
     2295                    .dwcfi  save_reg_to_mem, 16, -4
     2296                    .dwcfi  save_reg_to_mem, 10, -8
@@ -2758,10 +2758,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   46
     2344 000012 930C          TST.W     r12                   ; [] |1200| 
     2345 000014 208F          JNE       $C$L53                ; [] |1200| 
     2346                                                      ; [] |1200| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   47
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   47
 
     2347            ;* --------------------------------------------------------------------------*
     2348                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -2818,10 +2818,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   47
     2387                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
     2388 000056 425F          MOV.B     &profileArray+0,r15   ; [] |1226| 
          000058 004E!
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   48
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   48
 
     2389 00005a 90FF          CMP.B     #17,profileArray+1(r15) ; [] |1226| 
          00005c 0011 
@@ -2878,10 +2878,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   48
     2432            ;* --------------------------------------------------------------------------*
     2433 000092       $C$L47:    
     2434                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   49
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   49
 
     2435 000092 487D          MOV.B     @r8+,r13              ; [] |1243| 
     2436 000094 430E          MOV.W     #0,r14                ; [] |1243| 
@@ -2938,10 +2938,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   49
     2471            ;* --------------------------------------------------------------------------*
     2472            $C$L49:    
     2473            $C$DW$226       .dwtag  DW_TAG_TI_branch
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   50
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   50
 
     2474                    .dwattr $C$DW$226, DW_AT_low_pc(0x00)
     2475                    .dwattr $C$DW$226, DW_AT_name("wlan_add_profile")
@@ -2998,10 +2998,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   50
          000112 0008 
     2514 000114 1800          MOVX.A    #0,12(SP)             ; [] |1252| 
          000116 43C1 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   51
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   51
 
          000118 000C 
     2515 00011a 1800          MOVX.A    #0,16(SP)             ; [] |1252| 
@@ -3058,10 +3058,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   51
     2560            
     2561            $C$DW$233       .dwtag  DW_TAG_subprogram, DW_AT_name("")
     2562                    .dwattr $C$DW$233, DW_AT_low_pc($abproc6)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   52
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   52
 
     2563                    .dwattr $C$DW$233, DW_AT_high_pc(0x00)
     2564                    .dwattr $C$DW$233, DW_AT_TI_symbol_name("$abproc6")
@@ -3118,10 +3118,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   52
     2608                    .clink
     2609                    .global wlan_set_event_mask
     2610            
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   53
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   53
 
     2611            $C$DW$235       .dwtag  DW_TAG_subprogram, DW_AT_name("wlan_set_event_mask")
     2612                    .dwattr $C$DW$235, DW_AT_low_pc(wlan_set_event_mask)
@@ -3178,10 +3178,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   53
     2663                    .dwattr $C$DW$239, DW_AT_type(*$C$DW$T$25)
     2664                    .dwattr $C$DW$239, DW_AT_location[DW_OP_reg14 DW_OP_piece 2 DW_OP_reg15 DW_OP_piece 2]
     2665 000004 0CCE          MOVA      r12,r14               ; [] |980| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   54
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   54
 
     2666 000006 0DCF          MOVA      r13,r15               ; [] |980| 
     2667                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -3238,10 +3238,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   54
          00003e 0000 
     2711 000040 43B1          MOV.W     #-1,2(SP)             ; [] |1005| 
          000042 0002 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   55
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   55
 
     2712                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
     2713 000044 421A          MOV.W     &tSLInformation+6,r10 ; [] |1006| 
@@ -3298,10 +3298,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   55
     2758 000072 0110          RETA      ; [] 
     2759                    ; [] 
     2760                    .dwattr $C$DW$235, DW_AT_TI_end_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sourc
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   56
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   56
 
     2761                    .dwattr $C$DW$235, DW_AT_TI_end_line(0x3fc)
     2762                    .dwattr $C$DW$235, DW_AT_TI_end_column(0x01)
@@ -3358,10 +3358,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   56
     2813                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
     2814 000002 43B1          MOV.W     #-1,0(SP)             ; [] |1041| 
          000004 0000 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   57
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   57
 
     2815 000006 43B1          MOV.W     #-1,2(SP)             ; [] |1041| 
          000008 0002 
@@ -3418,10 +3418,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   57
     2860                    .dwattr $C$DW$250, DW_AT_high_pc(0x00)
     2861                    .dwattr $C$DW$250, DW_AT_TI_symbol_name("wlan_ioctl_set_scan_params")
     2862                    .dwattr $C$DW$250, DW_AT_external
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   58
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   58
 
     2863                    .dwattr $C$DW$250, DW_AT_type(*$C$DW$T$32)
     2864                    .dwattr $C$DW$250, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
@@ -3478,10 +3478,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   58
     2915            
     2916            ;******************************************************************************
     2917            ;*                                                                            *
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   59
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   59
 
     2918            ;* Using -g (debug) with optimization (-o4) may disable key optimizations!    *
     2919            ;*                                                                            *
@@ -3538,10 +3538,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   59
     2969            ;* r8    assigned to aiIntervalList
     2970            $C$DW$268       .dwtag  DW_TAG_variable, DW_AT_name("aiIntervalList")
     2971                    .dwattr $C$DW$268, DW_AT_TI_symbol_name("aiIntervalList")
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   60
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   60
 
     2972                    .dwattr $C$DW$268, DW_AT_type(*$C$DW$T$166)
     2973                    .dwattr $C$DW$268, DW_AT_location[DW_OP_reg8]
@@ -3598,10 +3598,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   60
          00004a 003E 
          00004c 0012 
     3005 00004e 4191          MOV.W     56(SP),12(SP)         ; [] |925| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   61
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   61
 
          000050 0038 
          000052 000C 
@@ -3658,10 +3658,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   61
     3042                    .dwattr $C$DW$275, DW_AT_low_pc(0x00)
     3043                    .dwattr $C$DW$275, DW_AT_name("UINT32_TO_STREAM_f")
     3044                    .dwattr $C$DW$275, DW_AT_TI_call
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   62
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   62
 
     3045 00008e 13B0!         CALLA     #UINT32_TO_STREAM_f   ; [] |937| 
          000090 0000 
@@ -3718,10 +3718,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   62
     3086            $C$DW$280       .dwtag  DW_TAG_TI_branch
     3087                    .dwattr $C$DW$280, DW_AT_low_pc(0x00)
     3088                    .dwattr $C$DW$280, DW_AT_name("UINT32_TO_STREAM_f")
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   63
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   63
 
     3089                    .dwattr $C$DW$280, DW_AT_TI_call
     3090 0000c2 13B0!         CALLA     #UINT32_TO_STREAM_f   ; [] |942| 
@@ -3778,10 +3778,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   63
     3133 0000ee 411D          MOV.W     2(SP),r13             ; [] |953| 
          0000f0 0002 
     3134                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   64
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   64
 
     3135 0000f2 5031          ADD.W     #28,SP                ; [] 
          0000f4 001C 
@@ -3801,7 +3801,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   64
     3149                    ; [] 
     3150            
     3151            $C$DW$284       .dwtag  DW_TAG_TI_loop
-    3152                    .dwattr $C$DW$284, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L58:1:139561
+    3152                    .dwattr $C$DW$284, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L58:1:139578
     3153                    .dwattr $C$DW$284, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     3154                    .dwattr $C$DW$284, DW_AT_TI_begin_line(0x3af)
     3155                    .dwattr $C$DW$284, DW_AT_TI_end_line(0x3af)
@@ -3838,10 +3838,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   64
     3186                    .dwattr $C$DW$287, DW_AT_TI_symbol_name("should_connect_to_open_ap")
     3187                    .dwattr $C$DW$287, DW_AT_type(*$C$DW$T$25)
     3188                    .dwattr $C$DW$287, DW_AT_location[DW_OP_reg12 DW_OP_piece 2 DW_OP_reg13 DW_OP_piece 2]
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   65
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   65
 
     3189            $C$DW$288       .dwtag  DW_TAG_formal_parameter, DW_AT_name("ulShouldUseFastConnect")
     3190                    .dwattr $C$DW$288, DW_AT_TI_symbol_name("ulShouldUseFastConnect")
@@ -3898,10 +3898,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   65
     3241                    .dwattr $C$DW$293, DW_AT_type(*$C$DW$T$32)
     3242                    .dwattr $C$DW$293, DW_AT_location[DW_OP_breg1 0]
     3243            ;* r6    assigned to ptr
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   66
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   66
 
     3244            $C$DW$294       .dwtag  DW_TAG_variable, DW_AT_name("ptr")
     3245                    .dwattr $C$DW$294, DW_AT_TI_symbol_name("ptr")
@@ -3958,10 +3958,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   66
     3287 00003a 422C          MOV.W     #4,r12                ; [] |605| 
     3288 00003c 06CD          MOVA      r6,r13                ; [] |605| 
     3289 00003e 407E          MOV.B     #12,r14               ; [] |605| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   67
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   67
 
          000040 000C 
     3290            $C$DW$298       .dwtag  DW_TAG_TI_branch
@@ -4018,10 +4018,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   67
     3338                    .dwattr $C$DW$301, DW_AT_external
     3339                    .dwattr $C$DW$301, DW_AT_type(*$C$DW$T$32)
     3340                    .dwattr $C$DW$301, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   68
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   68
 
     3341                    .dwattr $C$DW$301, DW_AT_TI_begin_line(0x359)
     3342                    .dwattr $C$DW$301, DW_AT_TI_begin_column(0x07)
@@ -4078,10 +4078,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   68
     3393                    .dwattr $C$DW$306, DW_AT_location[DW_OP_reg9]
     3394 000002 0EC8          MOVA      r14,r8                ; [] |859| 
     3395 000004 0CCA          MOVA      r12,r10               ; [] |859| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   69
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   69
 
     3396 000006 0DCB          MOVA      r13,r11               ; [] |859| 
     3397                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -4138,10 +4138,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   69
     3441                    .dwattr $C$DW$310, DW_AT_TI_return
     3442 000036 0110          RETA      ; [] 
     3443                    ; [] 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   70
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   70
 
     3444                    .dwattr $C$DW$301, DW_AT_TI_end_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sourc
     3445                    .dwattr $C$DW$301, DW_AT_TI_end_line(0x36d)
@@ -4198,10 +4198,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   70
     3496            $C$DW$313       .dwtag  DW_TAG_variable, DW_AT_name("ulIndex")
     3497                    .dwattr $C$DW$313, DW_AT_TI_symbol_name("ulIndex")
     3498                    .dwattr $C$DW$313, DW_AT_type(*$C$DW$T$165)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   71
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   71
 
     3499                    .dwattr $C$DW$313, DW_AT_location[DW_OP_reg14 DW_OP_piece 2 DW_OP_reg15 DW_OP_piece 2]
     3500            $C$DW$314       .dwtag  DW_TAG_variable, DW_AT_name("ret")
@@ -4258,10 +4258,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   71
     3543                    .dwattr $C$DW$318, DW_AT_TI_call
     3544 000034 13B0!         CALLA     #SimpleLinkWaitEvent  ; [] |817| 
          000036 0000 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   72
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   72
 
     3545                                                      ; [] |817| 
     3546                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -4318,10 +4318,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   72
     3596                    .dwattr $C$DW$324, DW_AT_TI_symbol_name("sBootLoaderPatches")
     3597                    .dwattr $C$DW$324, DW_AT_type(*$C$DW$T$31)
     3598                    .dwattr $C$DW$324, DW_AT_location[DW_OP_reg15]
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   73
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   73
 
     3599            $C$DW$325       .dwtag  DW_TAG_formal_parameter, DW_AT_name("sReadWlanInterruptPin")
     3600                    .dwattr $C$DW$325, DW_AT_TI_symbol_name("sReadWlanInterruptPin")
@@ -4378,10 +4378,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   73
     3651                    .dwattr $C$DW$331, DW_AT_TI_symbol_name("sDriverPatches")
     3652                    .dwattr $C$DW$331, DW_AT_type(*$C$DW$T$175)
     3653                    .dwattr $C$DW$331, DW_AT_location[DW_OP_reg14]
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   74
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   74
 
     3654            ;* r15   assigned to sBootLoaderPatches
     3655            $C$DW$332       .dwtag  DW_TAG_variable, DW_AT_name("sBootLoaderPatches")
@@ -4438,10 +4438,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   74
     3696 00002a 0B60!         MOVX.A    r11,&tSLInformation+36 ; [] |263| 
          00002c 0024 
     3697                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   75
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   75
 
     3698 00002e 0C60!         MOVX.A    r12,&tSLInformation+20 ; [] |266| 
          000030 0014 
@@ -4498,10 +4498,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   75
     3748            ;* Using -g (debug) with optimization (-o4) may disable key optimizations!    *
     3749            ;*                                                                            *
     3750            ;******************************************************************************
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   76
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   76
 
     3751 000000       wlan_disconnect:
     3752            ;* --------------------------------------------------------------------------*
@@ -4558,10 +4558,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   76
     3796                    .dwcfi  cfa_offset, 4
     3797            $C$DW$343       .dwtag  DW_TAG_TI_branch
     3798                    .dwattr $C$DW$343, DW_AT_low_pc(0x00)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   77
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   77
 
     3799                    .dwattr $C$DW$343, DW_AT_TI_return
     3800 00002a 0110          RETA      ; [] 
@@ -4618,10 +4618,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   77
     3851            ;*****************************************************************************
     3852            ;* FUNCTION NAME: wlan_connect                                               *
     3853            ;*                                                                           *
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   78
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   78
 
     3854            ;*   Regs Modified     : SP,SR,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15     *
     3855            ;*   Regs Used         : SP,SR,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15     *
@@ -4678,10 +4678,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   78
     3905                    .dwattr $C$DW$356, DW_AT_type(*$C$DW$T$128)
     3906                    .dwattr $C$DW$356, DW_AT_location[DW_OP_reg9 DW_OP_piece 2 DW_OP_reg10 DW_OP_piece 2]
     3907            $C$DW$357       .dwtag  DW_TAG_variable, DW_AT_name("ret")
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   79
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   79
 
     3908                    .dwattr $C$DW$357, DW_AT_TI_symbol_name("ret")
     3909                    .dwattr $C$DW$357, DW_AT_type(*$C$DW$T$32)
@@ -4738,10 +4738,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   79
     3952 00002a 522C          ADD.W     #4,r12                ; [] |449| 
     3953 00002c 430D          MOV.W     #0,r13                ; [] |449| 
     3954 00002e 403E          MOV.W     #6,r14                ; [] |449| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   80
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   80
 
          000030 0006 
     3955            $C$DW$363       .dwtag  DW_TAG_TI_branch
@@ -4798,10 +4798,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   80
     3995                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
     3996 000066 07CD          MOVA      r7,r13                ; [] |459| 
     3997 000068 08CE          MOVA      r8,r14                ; [] |459| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   81
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   81
 
     3998 00006a 503D          ADD.W     #16,r13               ; [] |459| 
          00006c 0010 
@@ -4858,10 +4858,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   81
          000092 FFFF 
     4045 000094 831E          SUB.W     #1,r14                ; [] |470| 
     4046 000096 23FB          JNE       $C$L59                ; [] |470| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   82
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   82
 
     4047                                                      ; [] |470| 
     4048 000098       $C$DW$L$wlan_connect$3$E:
@@ -4918,10 +4918,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   82
     4096            ;*   Known Maximum Trip Count        : 4294967295
     4097            ;*   Known Max Trip Count Factor     : 1
     4098            ;* --------------------------------------------------------------------------*
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   83
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   83
 
     4099 0000b8       $C$L64:    
     4100 0000b8       $C$DW$L$wlan_connect$11$B:
@@ -4978,10 +4978,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   83
     4149 0000e8       $C$L67:    
     4150                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
     4151 0000e8 430F          MOV.W     #0,r15                ; [] |477| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   84
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   84
 
     4152            ;* --------------------------------------------------------------------------*
     4153            ;*   BEGIN LOOP $C$L68
@@ -5038,10 +5038,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   84
     4200 000116 01CD          MOVA      SP,r13                ; [] |485| 
     4201            $C$DW$371       .dwtag  DW_TAG_TI_branch
     4202                    .dwattr $C$DW$371, DW_AT_low_pc(0x00)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   85
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   85
 
     4203                    .dwattr $C$DW$371, DW_AT_name("SimpleLinkWaitEvent")
     4204                    .dwattr $C$DW$371, DW_AT_TI_call
@@ -5075,7 +5075,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   85
     4228                    ; [] 
     4229            
     4230            $C$DW$373       .dwtag  DW_TAG_TI_loop
-    4231                    .dwattr $C$DW$373, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L68:1:139561
+    4231                    .dwattr $C$DW$373, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L68:1:139578
     4232                    .dwattr $C$DW$373, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     4233                    .dwattr $C$DW$373, DW_AT_TI_begin_line(0x1dd)
     4234                    .dwattr $C$DW$373, DW_AT_TI_end_line(0x1dd)
@@ -5092,16 +5092,16 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   85
     4245            
     4246            
     4247            $C$DW$377       .dwtag  DW_TAG_TI_loop
-    4248                    .dwattr $C$DW$377, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L64:1:139561
+    4248                    .dwattr $C$DW$377, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L64:1:139578
     4249                    .dwattr $C$DW$377, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     4250                    .dwattr $C$DW$377, DW_AT_TI_begin_line(0x1d9)
     4251                    .dwattr $C$DW$377, DW_AT_TI_end_line(0x1d9)
     4252            $C$DW$378       .dwtag  DW_TAG_TI_loop_range
     4253                    .dwattr $C$DW$378, DW_AT_low_pc($C$DW$L$wlan_connect$11$B)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   86
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   86
 
     4254                    .dwattr $C$DW$378, DW_AT_high_pc($C$DW$L$wlan_connect$11$E)
     4255            $C$DW$379       .dwtag  DW_TAG_TI_loop_range
@@ -5114,7 +5114,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   86
     4262            
     4263            
     4264            $C$DW$381       .dwtag  DW_TAG_TI_loop
-    4265                    .dwattr $C$DW$381, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L61:1:139561
+    4265                    .dwattr $C$DW$381, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L61:1:139578
     4266                    .dwattr $C$DW$381, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     4267                    .dwattr $C$DW$381, DW_AT_TI_begin_line(0x1d2)
     4268                    .dwattr $C$DW$381, DW_AT_TI_end_line(0x1d2)
@@ -5125,7 +5125,7 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   86
     4273            
     4274            
     4275            $C$DW$383       .dwtag  DW_TAG_TI_loop
-    4276                    .dwattr $C$DW$383, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0040811:$C$L59:1:139561
+    4276                    .dwattr $C$DW$383, DW_AT_name("C:\\Users\\Lucas\\AppData\\Local\\Temp\\0500410:$C$L59:1:139578
     4277                    .dwattr $C$DW$383, DW_AT_TI_begin_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sou
     4278                    .dwattr $C$DW$383, DW_AT_TI_begin_line(0x1d6)
     4279                    .dwattr $C$DW$383, DW_AT_TI_end_line(0x1d6)
@@ -5158,10 +5158,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   86
     4306                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
     4307            
     4308                    .dwfde $C$DW$CIE, ConnectToServer
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   87
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   87
 
     4309            
     4310            ;*****************************************************************************
@@ -5218,10 +5218,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   87
     4352                                                      ; [] |178| 
     4353 000024 B03C          BIT.W     #32768,r12            ; [] |178| 
          000026 8000 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   88
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   88
 
     4354 000028 7F0F          SUBC.W    r15,r15               ; [] |178| 
     4355 00002a E33F          INV.W     r15                   ; [] |178| 
@@ -5278,10 +5278,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   88
          00006e 0002!
     4393 000070 01CE          MOVA      SP,r14                ; [] |192| 
     4394 000072 523E          ADD.W     #8,r14                ; [] |192| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   89
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   89
 
     4395            $C$DW$391       .dwtag  DW_TAG_TI_branch
     4396                    .dwattr $C$DW$391, DW_AT_low_pc(0x00)
@@ -5338,10 +5338,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   89
     4445            
     4446                    .dwfde $C$DW$CIE, ConnectToAP
     4447            
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   90
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   90
 
     4448            ;*****************************************************************************
     4449            ;* FUNCTION NAME: ConnectToAP                                                *
@@ -5398,10 +5398,10 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   90
     4496                    .dwattr $C$DW$398, DW_AT_TI_call
     4497 000014 13B0!         CALLA     #memcpy               ; [] |148| 
          000016 0000 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   91
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   91
 
     4498                                                      ; [] |148| 
     4499                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
@@ -5456,34 +5456,35 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   91
     4536 000054 4C0E          MOV.W     r12,r14               ; [] |155| 
     4537 000056 0E71          MOVX.A    r14,6(SP)             ; [] |155| 
          000058 0006 
-    4538 00005a 430C          MOV.W     #0,r12                ; [] |155| 
-    4539 00005c 430D          MOV.W     #0,r13                ; [] |155| 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+    4538 00005a 403C          MOV.W     #3,r12                ; [] |155| 
+         00005c 0003 
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   92
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   92
 
-    4540 00005e 01CE          MOVA      SP,r14                ; [] |155| 
-    4541 000060 503E          ADD.W     #10,r14               ; [] |155| 
-         000062 000A 
+    4539 00005e 430D          MOV.W     #0,r13                ; [] |155| 
+    4540 000060 01CE          MOVA      SP,r14                ; [] |155| 
+    4541 000062 503E          ADD.W     #10,r14               ; [] |155| 
+         000064 000A 
     4542            $C$DW$402       .dwtag  DW_TAG_TI_branch
     4543                    .dwattr $C$DW$402, DW_AT_low_pc(0x00)
     4544                    .dwattr $C$DW$402, DW_AT_name("wlan_connect")
     4545                    .dwattr $C$DW$402, DW_AT_TI_call
-    4546 000064 13B0!         CALLA     #wlan_connect         ; [] |155| 
-         000066 0000 
+    4546 000066 13B0!         CALLA     #wlan_connect         ; [] |155| 
+         000068 0000 
     4547                                                      ; [] |155| 
     4548                    .dwpsn  file "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Source/CC3000HostDrive
-    4549 000068 5031          ADD.W     #42,SP                ; [] 
-         00006a 002A 
+    4549 00006a 5031          ADD.W     #42,SP                ; [] 
+         00006c 002A 
     4550                    .dwcfi  cfa_offset, 8
     4551                    .dwcfi  restore_reg, 10
-    4552 00006c 160A          POPM.A    #1,r10                ; [] 
+    4552 00006e 160A          POPM.A    #1,r10                ; [] 
     4553                    .dwcfi  cfa_offset, 4
     4554            $C$DW$403       .dwtag  DW_TAG_TI_branch
     4555                    .dwattr $C$DW$403, DW_AT_low_pc(0x00)
     4556                    .dwattr $C$DW$403, DW_AT_TI_return
-    4557 00006e 0110          RETA      ; [] 
+    4557 000070 0110          RETA      ; [] 
     4558                    ; [] 
     4559                    .dwattr $C$DW$393, DW_AT_TI_end_file("E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Sourc
     4560                    .dwattr $C$DW$393, DW_AT_TI_end_line(0x9c)
@@ -5517,12 +5518,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   92
          000012 0033 
          000013 0034 
          000014 0035 
-         000015 0036 
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   93
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   93
 
+         000015 0036 
          000016 0000 
     4573            ;*****************************************************************************
     4574            ;* UNDEFINED EXTERNAL REFERENCES                                             *
@@ -5577,12 +5578,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   93
     4623                    .dwattr $C$DW$406, DW_AT_TI_symbol_name("pucReceivedData")
     4624                    .dwattr $C$DW$406, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
     4625                    .dwattr $C$DW$406, DW_AT_accessibility(DW_ACCESS_public)
-    4626            $C$DW$407       .dwtag  DW_TAG_member
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   94
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   94
 
+    4626            $C$DW$407       .dwtag  DW_TAG_member
     4627                    .dwattr $C$DW$407, DW_AT_type(*$C$DW$T$21)
     4628                    .dwattr $C$DW$407, DW_AT_name("pucTxCommandBuffer")
     4629                    .dwattr $C$DW$407, DW_AT_TI_symbol_name("pucTxCommandBuffer")
@@ -5637,12 +5638,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   94
     4678                    .dwattr $C$DW$415, DW_AT_data_member_location[DW_OP_plus_uconst 0x24]
     4679                    .dwattr $C$DW$415, DW_AT_accessibility(DW_ACCESS_public)
     4680            $C$DW$416       .dwtag  DW_TAG_member
-    4681                    .dwattr $C$DW$416, DW_AT_type(*$C$DW$T$32)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   95
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   95
 
+    4681                    .dwattr $C$DW$416, DW_AT_type(*$C$DW$T$32)
     4682                    .dwattr $C$DW$416, DW_AT_name("slTransmitDataError")
     4683                    .dwattr $C$DW$416, DW_AT_TI_symbol_name("slTransmitDataError")
     4684                    .dwattr $C$DW$416, DW_AT_data_member_location[DW_OP_plus_uconst 0x28]
@@ -5697,12 +5698,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   95
     4733            $C$DW$T$56      .dwtag  DW_TAG_volatile_type
     4734                    .dwattr $C$DW$T$56, DW_AT_type(*$C$DW$T$55)
     4735            $C$DW$T$3       .dwtag  DW_TAG_pointer_type
-    4736                    .dwattr $C$DW$T$3, DW_AT_address_class(0x10)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   96
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   96
 
+    4736                    .dwattr $C$DW$T$3, DW_AT_address_class(0x10)
     4737            $C$DW$T$60      .dwtag  DW_TAG_const_type
     4738                    .dwattr $C$DW$T$60, DW_AT_type(*$C$DW$T$3)
     4739            
@@ -5757,12 +5758,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   96
     4788                    .dwattr $C$DW$T$70, DW_AT_type(*$C$DW$T$45)
     4789            
     4790            $C$DW$T$73      .dwtag  DW_TAG_subroutine_type
-    4791                    .dwattr $C$DW$T$73, DW_AT_language(DW_LANG_C)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   97
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   97
 
+    4791                    .dwattr $C$DW$T$73, DW_AT_language(DW_LANG_C)
     4792            $C$DW$428       .dwtag  DW_TAG_formal_parameter
     4793                    .dwattr $C$DW$428, DW_AT_type(*$C$DW$T$3)
     4794                    .dwendtag $C$DW$T$73
@@ -5817,12 +5818,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   97
     4843                    .dwattr $C$DW$T$86, DW_AT_language(DW_LANG_C)
     4844                    .dwattr $C$DW$T$86, DW_AT_byte_size(0x43)
     4845            $C$DW$431       .dwtag  DW_TAG_subrange_type
-    4846                    .dwattr $C$DW$431, DW_AT_upper_bound(0x42)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   98
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   98
 
+    4846                    .dwattr $C$DW$431, DW_AT_upper_bound(0x42)
     4847                    .dwendtag $C$DW$T$86
     4848            
     4849            
@@ -5877,12 +5878,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   98
     4898                    .dwattr $C$DW$T$48, DW_AT_language(DW_LANG_C)
     4899            $C$DW$T$9       .dwtag  DW_TAG_base_type
     4900                    .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
-    4901                    .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   99
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE   99
 
+    4901                    .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
     4902                    .dwattr $C$DW$T$9, DW_AT_byte_size(0x02)
     4903            $C$DW$T$19      .dwtag  DW_TAG_typedef, DW_AT_name("UINT16")
     4904                    .dwattr $C$DW$T$19, DW_AT_type(*$C$DW$T$9)
@@ -5937,12 +5938,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE   99
     4953                    .dwattr $C$DW$T$26, DW_AT_address_class(0x10)
     4954            $C$DW$T$166     .dwtag  DW_TAG_const_type
     4955                    .dwattr $C$DW$T$166, DW_AT_type(*$C$DW$T$26)
-    4956            $C$DW$T$14      .dwtag  DW_TAG_base_type
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE  100
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE  100
 
+    4956            $C$DW$T$14      .dwtag  DW_TAG_base_type
     4957                    .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
     4958                    .dwattr $C$DW$T$14, DW_AT_name("long long")
     4959                    .dwattr $C$DW$T$14, DW_AT_byte_size(0x08)
@@ -5997,12 +5998,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE  100
     5008                    .dwattr $C$DW$T$29, DW_AT_type(*$C$DW$T$28)
     5009                    .dwattr $C$DW$T$29, DW_AT_language(DW_LANG_C)
     5010            $C$DW$T$176     .dwtag  DW_TAG_const_type
-    5011                    .dwattr $C$DW$T$176, DW_AT_type(*$C$DW$T$29)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE  101
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE  101
 
+    5011                    .dwattr $C$DW$T$176, DW_AT_type(*$C$DW$T$29)
     5012            $C$DW$T$177     .dwtag  DW_TAG_const_type
     5013                    .dwattr $C$DW$T$177, DW_AT_type(*$C$DW$T$24)
     5014            
@@ -6057,12 +6058,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE  101
     5063                    .dwattr $C$DW$440, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
     5064                    .dwattr $C$DW$440, DW_AT_accessibility(DW_ACCESS_public)
     5065            $C$DW$441       .dwtag  DW_TAG_member
-    5066                    .dwattr $C$DW$441, DW_AT_type(*$C$DW$T$19)
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE  102
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE  102
 
+    5066                    .dwattr $C$DW$441, DW_AT_type(*$C$DW$T$19)
     5067                    .dwattr $C$DW$441, DW_AT_name("sin_port")
     5068                    .dwattr $C$DW$441, DW_AT_TI_symbol_name("sin_port")
     5069                    .dwattr $C$DW$441, DW_AT_data_member_location[DW_OP_plus_uconst 0x2]
@@ -6117,12 +6118,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE  102
     5118            ;***************************************************************
     5119            
     5120            $C$DW$CIE       .dwcie 16
-    5121                    .dwcfi  cfa_register, 1
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE  103
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE  103
 
+    5121                    .dwcfi  cfa_register, 1
     5122                    .dwcfi  cfa_offset, 0
     5123                    .dwcfi  undefined, 0
     5124                    .dwcfi  undefined, 1
@@ -6177,12 +6178,12 @@ C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE  103
     5173                    .dwattr $C$DW$459, DW_AT_location[DW_OP_reg13]
     5174            $C$DW$460       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r14")
     5175                    .dwattr $C$DW$460, DW_AT_location[DW_OP_reg14]
-    5176            $C$DW$461       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r15")
-MSP430 Assembler PC v4.1.9 Sun Mar 23 16:08:25 2014
+MSP430 Assembler PC v4.1.9 Tue Mar 25 16:18:27 2014
 
 Tools Copyright (c) 2003-2014 Texas Instruments Incorporated
-C:\Users\Lucas\AppData\Local\Temp\0040811                            PAGE  104
+C:\Users\Lucas\AppData\Local\Temp\0500410                            PAGE  104
 
+    5176            $C$DW$461       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("r15")
     5177                    .dwattr $C$DW$461, DW_AT_location[DW_OP_reg15]
     5178            $C$DW$462       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("CIE_RETA")
     5179                    .dwattr $C$DW$462, DW_AT_location[DW_OP_reg16]

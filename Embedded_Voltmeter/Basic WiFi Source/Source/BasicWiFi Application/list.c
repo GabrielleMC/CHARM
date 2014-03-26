@@ -1,6 +1,12 @@
 
 #include "list.h"
 
+
+NODE *CURSOR;
+NODE *FIRST;
+NODE *LAST;
+unsigned int list_size;
+
 void InitializeList() {
 	CURSOR = NULL;
 	FIRST = NULL;
@@ -8,11 +14,26 @@ void InitializeList() {
 	list_size = 0;
 }
 
-void AppendNode(READING_PAIR new_data)
+NODE* NewNode()
 {
-	NODE *new_node = malloc(sizeof(NODE));
-	new_node->data.time = new_data.time;
-	new_node->data.reading = new_data.reading;
+	READING_PAIR *new_data = malloc(sizeof(READING_PAIR));
+	NODE *new_node = (NODE *) malloc(sizeof(NODE));
+	if(!new_data || ! new_node)
+		return NULL;
+	new_node->data = *new_data;
+	new_data->reading = 0;
+	new_data->time = 0;
+	return new_node;
+}
+
+void AppendNode(time_t new_time, int new_reading)
+{
+
+	NODE *new_node = NewNode();
+	while(new_node == NULL) // can enter infinite loop due if memory leak
+		RemoveOldestNode();
+	new_node->data.time = new_time;
+	new_node->data.reading = new_reading;
 
 	if(FIRST == NULL)
 	{
@@ -22,8 +43,9 @@ void AppendNode(READING_PAIR new_data)
 	else
 	{
 		new_node->previous = LAST;
+		NODE *TEMP = new_node->previous;
+		TEMP->next = new_node;
 	}
-
 	new_node->next = NULL;
 	LAST = new_node;
 	list_size++;
@@ -31,6 +53,7 @@ void AppendNode(READING_PAIR new_data)
 
 int FindNode(time_t wanted_time)
 {
+	ResetCursor();
 	while(CursorValid())
 	{
 		if(CURSOR->data.time == wanted_time)
@@ -60,13 +83,13 @@ int RemoveTime(time_t dead_time)
 
 void RemoveNode(NODE *dead_node)
 {
-	if(list_size > 2)
+	if(list_size > 1)
 	{
 		if(dead_node == LAST) // last node
 		{
 			NODE *TEMP = dead_node->previous;
 			TEMP->next = NULL;
-			LAST = LAST->previous;
+			LAST = TEMP;
 		} else if(dead_node == FIRST) { // first node
 			NODE *TEMP = dead_node->next;
 			TEMP->previous = NULL;
@@ -82,8 +105,25 @@ void RemoveNode(NODE *dead_node)
 		LAST = NULL;
 	}
 	list_size--;
+	if(&dead_node->data.reading) free (&dead_node->data.reading);
+	if(&dead_node->data.time) free (&dead_node->data.time);
 	free(dead_node);
 
+}
+
+int RemoveOldestNode()
+{
+	if(list_size == 0)
+		return 0;
+	ResetCursor();
+	time_t temp = CURSOR->data.time;
+	while(CursorValid())
+	{
+		if(CURSOR->data.time < temp)
+			temp = CURSOR->data.time;
+		CursorStepNext();
+	}
+	return RemoveTime(temp);
 }
 
 int CursorValid()
