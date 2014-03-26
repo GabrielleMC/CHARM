@@ -511,6 +511,9 @@ int Device::create_confirm_raw(char *buf, int n_readings)
                         buf[6+(i*(8))+n] = it->first >> n*8;
                 }
         }
+	if(flags & UPDATE_TIME_FLAG)
+		return 1;
+
         return n_readings;
 
 }
