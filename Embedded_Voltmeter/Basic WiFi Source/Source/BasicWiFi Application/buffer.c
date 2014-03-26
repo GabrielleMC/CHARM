@@ -4,6 +4,7 @@
 #pragma DATA_SECTION(readings, ".readings")
 volatile READING_PAIR readings[N_READINGS];
 
+#pragma DATA_SECTION(n_readings, ".n_readings")
 volatile unsigned int n_readings = 0;
 
 // always assume the buffer has oldest readings at front and newest at the end.

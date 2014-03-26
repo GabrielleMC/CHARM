@@ -97,9 +97,10 @@ SECTIONS
     {
        GROUP(READ_WRITE_MEMORY): ALIGN(0x0200) RUN_START(fram_rw_start)
        {
-          .cio        : {}                   /* C I/O BUFFER                      */
-          .sysmem     : {}                   /* DYNAMIC MEMORY ALLOCATION AREA    */
-          .uid		  : {}					 /* UID VALUE ASSIGNED FROM THE SERVER */
+          .cio        : {}                   /* C I/O BUFFER                        */
+          .sysmem     : {}                   /* DYNAMIC MEMORY ALLOCATION AREA      */
+          .uid		  : {}					 /* UID VALUE ASSIGNED FROM THE SERVER  */
+          .n_readings : {} 	                 /* NUMBER OF READINGS IN LIST          */
           .readings	  : {}				     /* READINGS NOT YET SENT TO THE SERVER */
        }
 

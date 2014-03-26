@@ -88,6 +88,8 @@ extern int uart_have_cmd;
 
 #define NETAPP_IPCONFIG_MAC_OFFSET				(20)
 
+#define BUFFER_SIZE (128)
+
 volatile unsigned long ulSmartConfigFinished, ulCC3000Connected,ulCC3000DHCP,
 OkToDoShutDown, ulCC3000DHCP_configured;
 
@@ -601,6 +603,8 @@ main(void)
 	ulCC3000Connected = 0;
 	ulSocket = 0xFFFFFFFF;
 	ulSmartConfigFinished=0;
+	char outBuffer[BUFFER_SIZE];
+	char inBuffer[BUFFER_SIZE];
 
 
 	WDTCTL = WDTPW + WDTHOLD;
@@ -621,30 +625,32 @@ main(void)
 		__bis_SR_register(LPM2_bits + GIE);
 		__no_operation();
 
-		if(ulSocket == 0xFFFFFFFF)
+		/*if(ulSocket == 0xFFFFFFFF)
 		{
 			ConnectToServer();
-		}
+		}*/
 
 		if((printOnce == 1) && (ulCC3000DHCP == 1) && (ulCC3000Connected == 1)) {
 			turnLedOn(6); // we have a dhcp address
 			printOnce = 0;
 		}
 
-		if((ulCC3000DHCP == 1) && (ulCC3000Connected == 1)) {
+		if(1) {//(ulCC3000DHCP == 1) && (ulCC3000Connected == 1)) {
+
+			ConnectToServer();
+			int bytesToSend = 0;
 			int bytesSent;
-			char outBuffer[128];
-			char inBuffer[128];
-			memset(outBuffer, 0, 128);
-			memset(inBuffer, 0, 128);
-			CreateReadingsRaw(outBuffer, 128);
-			bytesSent = send(ulSocket, (char *) &outBuffer, strlen(outBuffer), 0);
-			if(bytesSent < 0 || bytesSent != strlen(outBuffer)) {
+			memset(outBuffer, 0, BUFFER_SIZE);
+			memset(inBuffer, 0, BUFFER_SIZE);
+			bytesToSend = CreateReadingsRaw(outBuffer, 128);
+			bytesToSend = bytesToSend*8+6;
+			bytesSent = send(ulSocket, (char *) &outBuffer, bytesToSend, 0);
+			if(bytesSent < 0 || bytesSent != bytesToSend) {
 				turnLedOn(1);
 				break;
 			}
 
-			int temp = recv(ulSocket, (char *) &inBuffer, 128, 0);
+			int temp = recv(ulSocket, (char *) &inBuffer, BUFFER_SIZE, 0);
 			ProcessConfirmRaw(inBuffer, temp);
 
 			killSocket();

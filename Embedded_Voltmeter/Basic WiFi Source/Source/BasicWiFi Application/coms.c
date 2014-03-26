@@ -12,8 +12,9 @@ enum STATE {WORKING, MISSING, SHUTDOWN, INVALID};
 int uid = -1;
 
 volatile time_t deviceTime = 0;
+extern volatile unsigned int n_readings;
 
-int state = WORKING;
+int system_state = WORKING;
 
 void FakeList()
 {
@@ -66,6 +67,7 @@ int LowBattery()
 
 int ProcessConfirmRaw(char *buf, int size)
 {
+		int readings_present = 0;
         int readings_removed = 0;
         int uid_test = (buf[0] | (buf[1] << 8) | ((buf[2] << 8) << 8) | (((buf[3] << 8) << 8) << 8));
         if(uid == -1)
@@ -73,7 +75,7 @@ int ProcessConfirmRaw(char *buf, int size)
 
         int flags = buf[4];
         if(flags & SHUTDOWN_FLAG) {
-                state = SHUTDOWN;
+                system_state = SHUTDOWN;
         }
         if(flags & UPDATE_TIME_FLAG) {
                 time_t temp = 0;
@@ -83,9 +85,9 @@ int ProcessConfirmRaw(char *buf, int size)
                 }
                 deviceTime = temp;
         }
-        int n_readings = buf[5];
+        readings_present = buf[5];
         int i;
-        for(i = 0; i < n_readings; i++) {
+        for(i = 0; i < readings_present; i++) {
                 time_t time = 0;
                 int n;
                 for(n = 0; n < 8; n++) {
@@ -102,7 +104,6 @@ int ProcessConfirmRaw(char *buf, int size)
 int CreateReadingsRaw(char *buf, int size)
 {
         int flags = 0;
-        int n_readings = 0;
         if(uid == -1) {
                 buf[0] = 0xFF;
                 buf[1] = 0xFF;
@@ -116,7 +117,7 @@ int CreateReadingsRaw(char *buf, int size)
         }
         if(LowBattery())
                 flags |= LOW_BATTERY_FLAG;
-        if(state == SHUTDOWN)
+        if(system_state == SHUTDOWN)
                 flags |= SHUTDOWN_FLAG;
 
         int n_temp = n_readings;
