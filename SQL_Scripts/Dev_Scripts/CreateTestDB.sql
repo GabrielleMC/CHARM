@@ -13,30 +13,6 @@ CREATE TABLE `t1_day` (
   PRIMARY KEY (logdate)
 ); 
 
-CREATE TABLE `t2` (
-  `logtime` datetime NOT NULL,
-  `value` double DEFAULT NULL,
-  PRIMARY KEY (logtime)
-);
-
-CREATE TABLE `t2_day` (
-  `logdate` date NOT NULL,
-  `total` double DEFAULT NULL,
-  PRIMARY KEY (logdate)
-);
-
-CREATE TABLE `t3` (
-  `logtime` datetime NOT NULL,
-  `value` double DEFAULT NULL,
-  PRIMARY KEY (logtime)
-);
-
-CREATE TABLE `t3_day` (
-  `logdate` date NOT NULL,
-  `total` double DEFAULT NULL,
-  PRIMARY KEY (logdate)
-);
-
 CREATE TABLE `User` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
