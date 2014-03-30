@@ -12,7 +12,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
 	mysql_select_db("CHARM");
     $username = trim(mysql_real_escape_string($_POST['username']));
 	$password = trim(mysql_real_escape_string($_POST['password']));
-    $hash = crypt($password,  PASSWORD_DEFAULT);
+    $hash = crypt($password, "PASSWORD_DEFAULT");
 	//password is 5*Hotel, username is project
     $checklogin = mysql_query("SELECT * FROM User WHERE username = '$username' AND password = '$hash'");
     if (mysql_num_rows($checklogin) == 1){

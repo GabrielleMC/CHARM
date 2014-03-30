@@ -604,8 +604,6 @@ int Device::update_db_readings(){
 		ss.str(std::string()); // clear the stream
 		ss << "INSERT INTO Device_" << id << " (value, logtime) VALUES ('" << get_reading(readtime) << "', '" << buff << "')";
 		str = ss.str();
-		//const char *query = ;
-		//std::cout<< str;
 		mysql_query(connect, (const char*) str.c_str());
 		readings.erase(it->first);
 	}
@@ -634,10 +632,9 @@ int Device::update_db_status(){
 	ss.str(std::string());
     ss << "SELECT * FROM Status WHERE device_id = " << id;
 	str = ss.str();
-	const char *query = str.c_str();
 	MYSQL_RES *res_set;
 	unsigned int numrows;
-	mysql_query(connect, query);
+	mysql_query(connect, (const char*) str.c_str());
 	res_set = mysql_store_result(connect);
 	numrows = mysql_num_rows(res_set);
 	
@@ -645,8 +642,7 @@ int Device::update_db_status(){
 		ss.str(std::string());
     	ss << "UPDATE Status SET battery_level = " << battery << ", current_state =" << status << " WHERE device_id = " << id;
 		str = ss.str();
-		const char *query = str.c_str();
-		mysql_query(connect, query);
+		mysql_query(connect, (const char*) str.c_str());
 	}
 	
 	else {
@@ -654,24 +650,18 @@ int Device::update_db_status(){
 		ss.str(std::string());
     	ss << "INSERT INTO Status (battery_level, current_state, device_id) VALUES (" << battery << ", " << status << ", " << id << ")";
 		str = ss.str();
-		const char *query = str.c_str();
-		mysql_query(connect, query);
+		mysql_query(connect, (const char*) str.c_str());
 		//Add the new tables
 		ss.str(std::string());
     	ss << "CREATE TABLE `Device_" << id << "` (`value` double DEFAULT NULL,`logtime` datetime NOT NULL, PRIMARY KEY (logtime))";
 		str = ss.str();
-		query = str.c_str();
-		std::cout << query;
-		mysql_query(connect, query);
+		mysql_query(connect, (const char*) str.c_str());
 		ss.str(std::string());
 		ss << "CREATE TABLE `Device_Day_" << id << "` (`logdate` date NOT NULL, `total` double DEFAULT NULL, PRIMARY KEY (logdate))";
 		str = ss.str();
-		query = str.c_str();
-		std::cout << query;
-		mysql_query(connect, query);
-		
+		mysql_query(connect, (const char*) str.c_str());
 	}
-	
+	mysql_free_result(res_set);
 	mysql_close(connect);
 	return 0;
 }
