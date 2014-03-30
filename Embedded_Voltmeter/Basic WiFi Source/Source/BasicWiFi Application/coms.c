@@ -12,6 +12,7 @@ enum STATE {WORKING, MISSING, SHUTDOWN, INVALID};
 int uid = -1;
 
 volatile time_t deviceTime = 0;
+volatile unsigned int reading_frequency = 2;
 extern volatile unsigned int n_readings;
 
 int system_state = WORKING;

@@ -47,7 +47,7 @@
 
 unsigned char * msp430_forced_restart_ptr = (unsigned char *)FRAM_FORCED_RES_ADDRESS;  
 extern unsigned char * ptrFtcAtStartup;
-volatile extern time_t deviceTime;
+extern volatile time_t deviceTime;
 //*****************************************************************************
 //
 //! pio_init

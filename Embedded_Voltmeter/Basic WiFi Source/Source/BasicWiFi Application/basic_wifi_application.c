@@ -40,7 +40,7 @@
 #include "socket.h"
 #include "netapp.h"
 #include "spi.h"
-#include "dispatcher.h"
+//#include "dispatcher.h"
 #include "spi_version.h"
 #include "board.h"
 #include "application_version.h"
@@ -95,7 +95,9 @@ OkToDoShutDown, ulCC3000DHCP_configured;
 
 volatile unsigned char ucStopSmartConfig;
 
-volatile extern time_t deviceTime;
+extern volatile time_t deviceTime;
+
+extern volatile unsigned int reading_frequency;
 
 char digits[] = "0123456789";
 
@@ -434,7 +436,7 @@ initDriver(void)
 	//Init Spi
 	init_spi();
 	
-	DispatcherUARTConfigure();
+	//DispatcherUARTConfigure();
 	
 	// WLAN On API Implementation
 	wlan_init( CC3000_UsynchCallback, sendWLFWPatch, sendDriverPatch, sendBootLoaderPatch, ReadWlanInterruptPin, WlanInterruptEnable, WlanInterruptDisable, WriteWlanPin);
@@ -635,7 +637,7 @@ main(void)
 			printOnce = 0;
 		}
 
-		if(deviceTime % 30 == 0) {//(ulCC3000DHCP == 1) && (ulCC3000Connected == 1)) {
+		if(deviceTime % reading_frequency == 0) {//(ulCC3000DHCP == 1) && (ulCC3000Connected == 1)) {
 
 			if(ConnectToServer()) {
 				int bytesToSend = 0;
@@ -658,7 +660,7 @@ main(void)
 			}
 		}
 
-		if((deviceTime != 0) && (deviceTime % 30 == 0)) {
+		if((deviceTime != 0) && (deviceTime % reading_frequency == 0)) {
 			ADC10routine();
 			AddReading(deviceTime, ADC10_READING);
 		}
