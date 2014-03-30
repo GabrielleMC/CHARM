@@ -69,7 +69,7 @@ int ProcessConfirmRaw(char *buf, int size)
 {
 		int readings_present = 0;
         int readings_removed = 0;
-        int uid_test = (buf[0] | (buf[1] << 8) | ((buf[2] << 8) << 8) | (((buf[3] << 8) << 8) << 8));
+        int uid_test = (buf[0] | ((buf[1] & 0x000000FFL) << 8) | ((buf[2] & 0x000000FFL) << 16) | ((buf[3] & 0x000000FFL) << 24));
         if(uid == -1)
                 uid = uid_test;
 
@@ -78,11 +78,10 @@ int ProcessConfirmRaw(char *buf, int size)
                 system_state = SHUTDOWN;
         }
         if(flags & UPDATE_TIME_FLAG) {
-                time_t temp = 0;
-                int n;
-                for(n = 0; n < 8; n++) {
-                        temp |= ((buf[6+n] & 0x000000FF) << n*8);
-                }
+                time_t temp, lower, upper = 0;
+				lower = ((buf[6] & 0x000000FFL) | ((buf[6+1] & 0x000000FFL) << 8));
+				upper = (((buf[6+2] & 0x000000FFL) | ((buf[6+3] & 0x000000FFL) << 8)) << 16);
+				temp = (lower & 0x0000FFFFL) | ((upper & 0xFFFF0000L));
                 deviceTime = temp;
         }
         readings_present = buf[5];
@@ -90,8 +89,8 @@ int ProcessConfirmRaw(char *buf, int size)
         for(i = 0; i < readings_present; i++) {
                 time_t time = 0;
                 int n;
-                for(n = 0; n < 8; n++) {
-                        time |= ((buf[6+(i*(8))+n] & 0x000000FF) << n*8);
+                for(n = 0; n < 4; n++) {
+                        time |= ((buf[6+(i*(4))+n] & 0x000000FFL) << n*8);
                 }
                 if(RemoveTime(time) != -1)
                         readings_removed++;
@@ -111,9 +110,9 @@ int CreateReadingsRaw(char *buf, int size)
                 buf[3] = 0xFF;
         } else {
                 buf[0] = uid;
-                buf[1] = uid>>8;
-                buf[2] = (uid>>8)>>8;
-                buf[3] = ((uid>>8)>>8)>>8;
+                buf[1] = (uid & 0xFFFFFFFFL) >>8;
+                buf[2] = (uid & 0xFFFFFFFFL) >>16;
+                buf[3] = (uid & 0xFFFFFFFFL) >>24;
         }
         if(LowBattery())
                 flags |= LOW_BATTERY_FLAG;
@@ -127,12 +126,11 @@ int CreateReadingsRaw(char *buf, int size)
         buf[5] = n_temp;
         int i;
         for(i = 0; i < n_temp; i++) {
+        		READING_PAIR temp_reading = GetReading(i);
         		int n;
-                for(n = 0; n < 8; n++) {
-                		READING_PAIR temp_reading = GetReading(i);
-                        buf[6+(i*(8+4))+n] = temp_reading.time >> n*8;
-                        if (n < 4)
-                                buf[6+(i*(8+4))+8+n] = temp_reading.reading >> n*8;
+                for(n = 0; n < 4; n++) {
+                        buf[6+(i*(4+4))+n] = (temp_reading.time & 0xFFFFFFFFL) >> n*8;
+                        buf[6+(i*(4+4))+4+n] = (temp_reading.reading & 0xFFFFFFFFL) >> n*8;
                 }
         }
         return n_temp;

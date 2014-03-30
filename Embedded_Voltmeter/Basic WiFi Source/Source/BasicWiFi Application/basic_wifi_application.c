@@ -635,31 +635,35 @@ main(void)
 			printOnce = 0;
 		}
 
-		if(1) {//(ulCC3000DHCP == 1) && (ulCC3000Connected == 1)) {
+		if(deviceTime % 30 == 0) {//(ulCC3000DHCP == 1) && (ulCC3000Connected == 1)) {
 
-			ConnectToServer();
-			int bytesToSend = 0;
-			int bytesSent;
-			memset(outBuffer, 0, BUFFER_SIZE);
-			memset(inBuffer, 0, BUFFER_SIZE);
-			bytesToSend = CreateReadingsRaw(outBuffer, 128);
-			bytesToSend = bytesToSend*8+6;
-			bytesSent = send(ulSocket, (char *) &outBuffer, bytesToSend, 0);
-			if(bytesSent < 0 || bytesSent != bytesToSend) {
-				turnLedOn(1);
-				break;
+			if(ConnectToServer()) {
+				int bytesToSend = 0;
+				int bytesSent;
+				memset(outBuffer, 0, BUFFER_SIZE);
+				memset(inBuffer, 0, BUFFER_SIZE);
+				bytesToSend = CreateReadingsRaw(outBuffer, 128);
+				bytesToSend = bytesToSend*8+6;
+				bytesSent = send(ulSocket, (char *) &outBuffer, bytesToSend, 0);
+				if(bytesSent < 0 || bytesSent != bytesToSend) {
+					turnLedOn(1);
+					break;
+				}
+
+				int temp = recv(ulSocket, (char *) &inBuffer, BUFFER_SIZE, 0);
+				if(temp != -1)
+					ProcessConfirmRaw(inBuffer, temp);
+
+				killSocket();
 			}
+		}
 
-			int temp = recv(ulSocket, (char *) &inBuffer, BUFFER_SIZE, 0);
-			ProcessConfirmRaw(inBuffer, temp);
-
-			killSocket();
-
+		if((deviceTime != 0) && (deviceTime % 30 == 0)) {
 			ADC10routine();
 			AddReading(deviceTime, ADC10_READING);
-
-			SleepOneSecond();
 		}
+
+		SleepOneSecond();
 	}
 }
 

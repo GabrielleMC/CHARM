@@ -162,7 +162,7 @@ void ConnectToAP(void)
 //!
 //!  @param  None
 //!
-//!  @return 0 if connection successful, -1 if failure
+//!  @return 1 if connection successful, 0 if failure
 //!
 //!  @brief  Connects to an server with PORT and SKEY_NAME defined at the top
 //
@@ -175,8 +175,8 @@ int ConnectToServer() {
 	// * AF_INET: using address family "Internet Protocol address"
 	// * SOCK_STREAM: Provides sequenced, reliable, bidirectional, connection-mode byte streams.
 	// * IPPROTO_TCP: TCP protocol
-	if ((ulSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) {
-		return -1;
+	if ((ulSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) == -1) {
+		return 0;
 	}
 
 	// Initialize the server information
@@ -189,10 +189,10 @@ int ConnectToServer() {
 	// * sock: the socket for this connection
 	// * serverAddr: the server address
 	// * sizeof(*): the size of the server address
-	if (connect(ulSocket, (const sockaddr *) &serverAddr, sizeof(serverAddr)) < 0) {
-		return -1;
+	if (connect(ulSocket, (const sockaddr *) &serverAddr, sizeof(serverAddr)) == -1) {
+		return 0;
 	}
-	return 0;
+	return 1;
 }
 
 

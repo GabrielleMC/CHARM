@@ -257,7 +257,7 @@ __interrupt void TIMER1_A0_ISR(void)
 void SleepOneSecond(void)
 {
 	__delay_cycles(FREQUENCY);
-	deviceTime += 60;
+	deviceTime += 1;
 }
 
 //*****************************************************************************

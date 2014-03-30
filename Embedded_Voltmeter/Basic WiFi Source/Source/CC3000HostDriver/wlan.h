@@ -152,7 +152,7 @@ extern void ConnectToAP();
 //!
 //!  @param  None
 //!
-//!  @return 0 if connection successful, -1 if failure
+//!  @return 1 if connection successful, 0 if failure
 //!
 //!  @brief  Connects to an server with PORT and SKEY_NAME defined at the top
 //
