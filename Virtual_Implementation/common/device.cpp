@@ -591,6 +591,7 @@ int Device::update_db_readings(){
 	/* Connect to database */
 	if (!mysql_real_connect(connect, SERVER, USER, PASSWORD, DATABASE, 0, NULL, 0)) {
 	      fprintf(stderr, "%s\n", mysql_error(connect));
+	      mysql_close(connect);
 	      return 1;
 	}
 	
@@ -602,16 +603,16 @@ int Device::update_db_readings(){
 		time_t readtime = (it)->first;
 		char buff[20];
 		format_time(readtime, buff);
-        ss.str(std::string()); // clear the stream
-        ss << "INSERT INTO Device_" << id << " (value, logtime) VALUES ('" << get_reading(readtime) << "', '" << buff << "')";
+		ss.str(std::string()); // clear the stream
+		ss << "INSERT INTO Device_" << id << " (value, logtime) VALUES ('" << get_reading(readtime) << "', '" << buff << "')";
 		str = ss.str();
-		const char *query = str.c_str();
+		//const char *query = ;
 		//std::cout<< str;
-		mysql_query(connect, query);
+		mysql_query(connect, (const char*) str.c_str());
 		readings.erase(it->first);
 	}
-		mysql_close(connect);
-		return 0;	
+	mysql_close(connect);
+	return 0;	
 }
 
 int Device::update_db_status(){
@@ -628,6 +629,7 @@ int Device::update_db_status(){
 	/* Connect to database */
 	if (!mysql_real_connect(connect, SERVER, USER, PASSWORD, DATABASE, 0, NULL, 0)) {
 	      fprintf(stderr, "%s\n", mysql_error(connect));
+	      mysql_close(connect);
 	      return 1;
 	}
 	

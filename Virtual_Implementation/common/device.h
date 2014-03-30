@@ -28,7 +28,7 @@
 
 enum STATE {WORKING, MISSING, SHUTDOWN, INVALID};
 
-static int uid_counter = 0;
+volatile static int uid_counter = 0;
 
 class Device {
         private:
