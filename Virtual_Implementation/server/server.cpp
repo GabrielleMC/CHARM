@@ -45,14 +45,14 @@ int main(int argc, char *argv[])
                     cout << "PS: select() failed" << endl;
                     break;
                 }
-				//insert status info and check if there are any new readings to insert into database
-				for(unsigned int i = 0; i < devices.size(); i++){
-					devices[i].update_db_status();
-					if(devices[i].num_readings() != 0){
-						//cout << "Readings found for device " << i;
-						devices[i].update_db_readings();
-					}
-				}
+                //insert status info and check if there are any new readings to insert into database
+                for(unsigned int i = 0; i < devices.size(); i++){
+		    devices[i].update_db_status();
+		    if(devices[i].num_readings() != 0){
+		    //cout << "Readings found for device " << i;
+		        devices[i].update_db_readings();
+                    }
+                }
                 // Process new connection request, if any.
                 if (FD_ISSET(tcpSock, &tempRecvSockSet)) {
                         // set the size of the client address structure
@@ -154,7 +154,7 @@ void processTCPSockets (fd_set readySocks)
                 int test_uid;
                 int outBufferLen = 0;
                 
-                if(inBuffer[0] == '<') {// xml data
+                if(inBuffer[0] == '<' && inBuffer[1] == 'x') {// xml data
                 
                         std::stringstream ss;
                         ss << inBuffer;
@@ -198,7 +198,7 @@ void processTCPSockets (fd_set readySocks)
                         devices[pos].set_state(WORKING);
                         
                 
-                if(inBuffer[0] == '<') { // xml data
+                if(inBuffer[0] == '<' && inBuffer[1] == 'x') { // xml data
                 
                         std::stringstream ss;
                         pugi::xml_document doc;
@@ -210,7 +210,7 @@ void processTCPSockets (fd_set readySocks)
                         outBufferLen = strlen(outBuffer);
                 } else { // raw data
                         outBufferLen = devices[pos].create_confirm_raw(outBuffer, processed);
-                        outBufferLen = outBufferLen*8+6;
+                        outBufferLen = outBufferLen*4+6;
                 }
                 
                 
