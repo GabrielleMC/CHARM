@@ -403,10 +403,9 @@ int Device::process_readings_raw(char *buf)
         for(int i = 0; i < n_readings; i++) {
                 time_t time = 0;
                 int reading = 0;
-                for(int n = 0; n < 8; n++) {
-                        time |= ((buf[6+(i*(8+4))+n] & 0x000000FF) << n*8);
-                        if (n < 4)
-                                reading |= ((buf[6+(i*(8+4))+8+n] & 0x000000FF) << n*8);
+                for(int n = 0; n < 4; n++) {
+                        time |= ((buf[6+(i*(4+4))+n] & 0x000000FF) << n*8);
+                        reading |= ((buf[6+(i*(4+4))+4+n] & 0x000000FF) << n*8);
                 }
                 add_reading(time, reading);
         }
@@ -441,10 +440,9 @@ int Device::create_readings_raw(char *buf)
         
         std::map<time_t,int>::iterator it = readings.begin();
         for(int i = 0; i < n_readings; i++) {
-                for(int n = 0; n < 8; n++) {
-                        buf[6+(i*(8+4))+n] = it->first >> n*8;
-                        if (n < 4)
-                                buf[6+(i*(8+4))+8+n] = it->second >> n*8;
+                for(int n = 0; n < 4; n++) {
+                        buf[6+(i*(4+4))+n] = it->first >> n*8;
+                        buf[6+(i*(4+4))+4+n] = it->second >> n*8;
                 }
                 it++;
         }
@@ -464,7 +462,7 @@ int Device::process_confirm_raw(char *buf)
         }
         if(flags & UPDATE_TIME_FLAG) {
                 time_t temp = 0;
-                for(int n = 0; n < 8; n++) {
+                for(int n = 0; n < 4; n++) {
                         temp |= ((buf[6+n] & 0x000000FF) << n*8);
                 }
                 std::cout << "Time update, now " << temp << std::endl;
@@ -472,8 +470,8 @@ int Device::process_confirm_raw(char *buf)
         int n_readings = buf[5];
         for(int i = 0; i < n_readings; i++) {
                 time_t time = 0;
-                for(int n = 0; n < 8; n++) {
-                        time |= ((buf[6+(i*(8))+n] & 0x000000FF) << n*8);
+                for(int n = 0; n < 4; n++) {
+                        time |= ((buf[6+(i*(4))+n] & 0x000000FF) << n*8);
                 }
                 if(rm_reading(time))
                         readings_removed++;
@@ -495,7 +493,7 @@ int Device::create_confirm_raw(char *buf, int n_readings)
         if(n_readings == 0) {
                 flags |= UPDATE_TIME_FLAG;
                 time_t temp = time(NULL);
-                for(int n = 0; n < 8; n++) {
+                for(int n = 0; n < 4; n++) {
                         buf[6+n] = temp >> n*8;
                 }
         }
@@ -507,8 +505,8 @@ int Device::create_confirm_raw(char *buf, int n_readings)
         std::map<time_t,int>::iterator it = readings.end();
         for(int i = 0; i < n_readings; i++) {
                 --it;
-                for(int n = 0; n < 8; n++) {
-                        buf[6+(i*(8))+n] = it->first >> n*8;
+                for(int n = 0; n < 4; n++) {
+                        buf[6+(i*(4))+n] = it->first >> n*8;
                 }
         }
 	if(flags & UPDATE_TIME_FLAG)
