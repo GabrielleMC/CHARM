@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v4.1.9                      
 ******************************************************************************
->> Linked Tue Mar 25 22:51:08 2014
+>> Linked Sun Mar 30 17:58:06 2014
 
 OUTPUT FILE NAME:   <BasicWiFi Application.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 0000ead2
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000ebb0
 
 
 MEMORY CONFIGURATION
@@ -16,9 +16,9 @@ MEMORY CONFIGURATION
   PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
   INFOB                 00001800   00000080  00000000  00000080  RWIX
   INFOA                 00001880   00000080  00000000  00000080  RWIX
-  RAM                   00001c00   00000400  00000372  0000008e  RWIX
+  RAM                   00001c00   00000400  0000032e  000000d2  RWIX
   FRAM_DATA             0000c200   00000400  00000108  000002f8  RWIX
-  FRAM                  0000c600   00003980  00002856  0000112a  RWIX
+  FRAM                  0000c600   00003980  00002928  00001058  RWIX
   SIGNATURE             0000ff88   00000008  00000000  00000008  RWIX
   INT00                 0000ff90   00000002  00000000  00000002  RWIX
   INT01                 0000ff92   00000002  00000000  00000002  RWIX
@@ -68,7 +68,7 @@ MEMORY CONFIGURATION
   INT45                 0000ffea   00000002  00000002  00000000  RWIX
   INT46                 0000ffec   00000002  00000002  00000000  RWIX
   INT47                 0000ffee   00000002  00000002  00000000  RWIX
-  INT48                 0000fff0   00000002  00000002  00000000  RWIX
+  INT48                 0000fff0   00000002  00000000  00000002  RWIX
   INT49                 0000fff2   00000002  00000002  00000000  RWIX
   INT50                 0000fff4   00000002  00000002  00000000  RWIX
   INT51                 0000fff6   00000002  00000002  00000000  RWIX
@@ -83,18 +83,17 @@ SECTION ALLOCATION MAP
  output                                  attributes/
 section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
-.bss       0    00001c00    00000202     UNINITIALIZED
+.bss       0    00001c00    000001be     UNINITIALIZED
                   00001c00    000000b0     CC3000HostDriver.lib : security.obj (.bss)
                   00001cb0    00000092                          : wlan.obj (.bss)
                   00001d42    00000048     basic_wifi_application.obj (.bss)
-                  00001d8a    00000044     HyperTerminal Driver.lib : dispatcher.obj (.bss)
-                  00001dce    00000016     CC3000 Spi.lib : spi.obj (.bss)
-                  00001de4    00000008     rts430x.lib : _lock.obj (.bss)
-                  00001dec    00000008                 : boot.obj (.bss)
-                  00001df4    00000006     coms.obj (.bss)
-                  00001dfa    00000004     CC3000HostDriver.lib : evnt_handler.obj (.bss)
-                  00001dfe    00000002     board.obj (.bss)
-                  00001e00    00000002     rts430x.lib : errno.obj (.bss)
+                  00001d8a    00000016     CC3000 Spi.lib : spi.obj (.bss)
+                  00001da0    00000008     rts430x.lib : _lock.obj (.bss)
+                  00001da8    00000008                 : boot.obj (.bss)
+                  00001db0    00000006     coms.obj (.bss)
+                  00001db6    00000004     CC3000HostDriver.lib : evnt_handler.obj (.bss)
+                  00001dba    00000002     board.obj (.bss)
+                  00001dbc    00000002     rts430x.lib : errno.obj (.bss)
 
 .data      0    00001c00    00000000     UNINITIALIZED
 
@@ -121,143 +120,141 @@ section   page    origin      length       input sections
 *          0    0000c604    0000001e     UNINITIALIZED
                   0000c604    0000001e     buffer.obj (.readings)
 
-.cinit     0    0000c800    00000068     
+.cinit     0    0000c800    00000062     
                   0000c800    00000028     basic_wifi_application.obj (.cinit)
                   0000c828    00000014     coms.obj (.cinit)
                   0000c83c    00000009     CC3000 Spi.lib : spi.obj (.cinit)
                   0000c845    00000001     --HOLE-- [fill = 0]
                   0000c846    00000008     CC3000HostDriver.lib : evnt_handler.obj (.cinit)
-                  0000c84e    00000006     HyperTerminal Driver.lib : dispatcher.obj (.cinit)
-                  0000c854    00000006     board.obj (.cinit)
-                  0000c85a    00000006     buffer.obj (.cinit)
-                  0000c860    00000006     rts430x.lib : errno.obj (.cinit)
-                  0000c866    00000002     --HOLE-- [fill = 0]
+                  0000c84e    00000006     board.obj (.cinit)
+                  0000c854    00000006     buffer.obj (.cinit)
+                  0000c85a    00000006     rts430x.lib : errno.obj (.cinit)
+                  0000c860    00000002     --HOLE-- [fill = 0]
 
-.pinit     0    0000c868    00000000     UNINITIALIZED
+.pinit     0    0000c862    00000000     UNINITIALIZED
 
 .init_array 
-*          0    0000c868    00000000     UNINITIALIZED
+*          0    0000c862    00000000     UNINITIALIZED
 
 .mspabi.exidx 
-*          0    0000c868    00000000     UNINITIALIZED
+*          0    0000c862    00000000     UNINITIALIZED
 
 .mspabi.extab 
-*          0    0000c868    00000000     UNINITIALIZED
+*          0    0000c862    00000000     UNINITIALIZED
 
-.const     0    0000c868    00000042     
-                  0000c868    00000018     CC3000HostDriver.lib : wlan.obj (.const:.string)
-                  0000c880    00000014     rts430x.lib : _printfi_min.obj (.const:.string)
-                  0000c894    00000012     basic_wifi_application.obj (.const:.string)
-                  0000c8a6    00000004     CC3000HostDriver.lib : wlan.obj (.const:.string:$P$T0$1)
+.const     0    0000c862    00000042     
+                  0000c862    00000018     CC3000HostDriver.lib : wlan.obj (.const:.string)
+                  0000c87a    00000014     rts430x.lib : _printfi_min.obj (.const:.string)
+                  0000c88e    00000012     basic_wifi_application.obj (.const:.string)
+                  0000c8a0    00000004     CC3000HostDriver.lib : wlan.obj (.const:.string:$P$T0$1)
 
-.text      0    0000ca00    00002456     
+.text      0    0000ca00    00002528     
                   0000ca00    0000031c     CC3000HostDriver.lib : evnt_handler.obj (.text:hci_event_handler)
                   0000cd1c    0000027c                          : evnt_handler.obj (.text:hci_unsol_event_handler)
                   0000cf98    000001a4                          : socket.obj (.text:simple_link_send)
-                  0000d13c    00000148     basic_wifi_application.obj (.text:main)
-                  0000d284    0000013a     coms.obj (.text:CreateReadingsRaw)
-                  0000d3be    0000012e     CC3000HostDriver.lib : wlan.obj (.text:wlan_connect)
-                  0000d4ec    0000011e     coms.obj (.text:ProcessConfirmRaw)
-                  0000d60a    0000010e     rts430x.lib : _printfi_min.obj (.text:_setfield)
-                  0000d718    00000102     basic_wifi_application.obj (.text:CC3000_UsynchCallback)
-                  0000d81a    000000da     buffer.obj (.text:SortReadings)
-                  0000d8f4    000000d8     CC3000HostDriver.lib : hci.obj (.text:hci_patch_send)
-                  0000d9cc    000000ca     CC3000 Spi.lib : spi.obj (.text:SpiWrite)
-                  0000da96    000000c4     CC3000HostDriver.lib : wlan.obj (.text:wlan_start)
-                  0000db5a    000000c0     rts430x.lib : _printfi_min.obj (.text:_printfi_minimal)
-                  0000dc1a    00000098     buffer.obj (.text:RemoveTime)
-                  0000dcb2    00000096     CC3000HostDriver.lib : evnt_handler.obj (.text:hci_unsol_handle_patch_request)
-                  0000dd48    0000008e                          : socket.obj (.text:simple_link_recv)
-                  0000ddd6    0000008a     basic_wifi_application.obj (.text:ADC10routine)
-                  0000de60    00000088     CC3000HostDriver.lib : wlan.obj (.text:ConnectToServer)
-                  0000dee8    00000084     board.obj (.text:pio_init)
-                  0000df6c    0000007c     CC3000 Spi.lib : spi.obj (.text:_isr:IntSpiGPIOHandler)
-                  0000dfe8    0000007a                    : spi.obj (.text:SpiReadDataCont)
-                  0000e062    00000074     board.obj (.text:turnLedOff)
-                  0000e0d6    00000074     board.obj (.text:turnLedOn)
-                  0000e14a    00000074     CC3000HostDriver.lib : wlan.obj (.text:wlan_set_event_mask)
-                  0000e1be    00000072                          : wlan.obj (.text:ConnectToAP)
-                  0000e230    0000006e                          : socket.obj (.text:socket)
-                  0000e29e    0000006c     basic_wifi_application.obj (.text:initDriver)
-                  0000e30a    00000068     CC3000HostDriver.lib : socket.obj (.text:connect)
-                  0000e372    0000005e                          : evnt_handler.obj (.text:set_socket_active_status)
-                  0000e3d0    00000054                          : socket.obj (.text:closesocket)
-                  0000e424    00000052     buffer.obj (.text:AddReading)
-                  0000e476    00000052     rts430x.lib : _printfi_min.obj (.text:_ltostr)
-                  0000e4c8    0000004c     buffer.obj (.text:FindTime)
-                  0000e514    0000004c     CC3000HostDriver.lib : socket.obj (.text:HostFlowControlConsumeBuff)
-                  0000e560    0000004c     rts430x.lib : _printfi_min.obj (.text:_pproc_diouxp)
-                  0000e5ac    00000048                 : autoinit.obj (.text:_auto_init)
-                  0000e5f4    00000046     CC3000 Spi.lib : spi.obj (.text:SpiFirstWrite)
-                  0000e63a    00000044                    : spi.obj (.text:SpiReadDataSynchronous)
-                  0000e67e    00000040     rts430x.lib : _printfi_min.obj (.text:_pproc_str)
-                  0000e6be    00000040     CC3000HostDriver.lib : evnt_handler.obj (.text:get_socket_active_status)
-                  0000e6fe    00000040                          : hci.obj (.text:hci_data_send)
-                  0000e73e    0000003e     rts430x.lib : lsl32.obj (.text:l_lsl_const)
-                  0000e77c    0000003e                 : lsr32.obj (.text:l_lsr_const)
-                  0000e7ba    0000003c     CC3000HostDriver.lib : socket.obj (.text:send)
-                  0000e7f6    0000003a                          : socket.obj (.text:recv)
-                  0000e830    0000003a                          : wlan.obj (.text:wlan_init)
-                  0000e86a    00000038     rts430x.lib : sprintf.obj (.text:sprintf)
-                  0000e8a2    00000036     HyperTerminal Driver.lib : dispatcher.obj (.text:_isr:USCI_A0_ISR)
-                  0000e8d8    00000034     CC3000HostDriver.lib : evnt_handler.obj (.text:hci_unsolicited_event_handler)
-                  0000e90c    00000034     CC3000 Spi.lib : spi.obj (.text:init_spi)
-                  0000e940    00000030     CC3000HostDriver.lib : cc3000_common.obj (.text:STREAM_TO_UINT32_f)
-                  0000e970    0000002e     HyperTerminal Driver.lib : dispatcher.obj (.text:DispatcherUARTConfigure)
-                  0000e99e    0000002e     rts430x.lib : _printfi_min.obj (.text:_getarg_diouxp)
-                  0000e9cc    0000002e     basic_wifi_application.obj (.text:_isr:ADC10_read_In)
-                  0000e9fa    0000002c     CC3000 Spi.lib : spi.obj (.text:SpiOpen)
-                  0000ea26    0000002c     CC3000HostDriver.lib : hci.obj (.text:hci_command_send)
-                  0000ea52    0000002c     rts430x.lib : div16s.obj (.text)
-                  0000ea7e    0000002a     buffer.obj (.text:GetReading)
-                  0000eaa8    0000002a     CC3000 Spi.lib : spi.obj (.text:SpiWriteDataSynchronous)
-                  0000ead2    0000002a     rts430x.lib : boot.obj (.text:_isr:_c_int00_noexit)
-                  0000eafc    00000028     CC3000HostDriver.lib : cc3000_common.obj (.text:UINT32_TO_STREAM_f)
-                  0000eb24    00000026     CC3000 Spi.lib : spi.obj (.text:SpiTriggerRxProcessing)
-                  0000eb4a    00000026     CC3000HostDriver.lib : socket.obj (.text:inet_aton)
-                  0000eb70    00000022     board.obj (.text:SleepOneSecond)
-                  0000eb92    00000020     board.obj (.text:wakeup_timer_init)
-                  0000ebb2    0000001e     basic_wifi_application.obj (.text:setADC10)
-                  0000ebd0    0000001e     basic_wifi_application.obj (.text:setPins)
-                  0000ebee    0000001c     rts430x.lib : memccpy.obj (.text:memccpy)
-                  0000ec0a    0000001a     board.obj (.text:WriteWlanPin)
-                  0000ec24    0000001a     rts430x.lib : _printfi_min.obj (.text:_div)
-                  0000ec3e    0000001a     board.obj (.text:initLEDs)
-                  0000ec58    0000001a     basic_wifi_application.obj (.text:setClocks)
-                  0000ec72    00000018     rts430x.lib : sprintf.obj (.text:_outs)
-                  0000ec8a    00000018     board.obj (.text:initClk)
-                  0000eca2    00000018     basic_wifi_application.obj (.text:setTimers)
-                  0000ecba    00000016     basic_wifi_application.obj (.text:_isr:Timer__Off)
-                  0000ecd0    00000016     basic_wifi_application.obj (.text:killSocket)
-                  0000ece6    00000016     rts430x.lib : div16u.obj (.text)
-                  0000ecfc    00000016                 : mult16_f5hw.obj (.text)
-                  0000ed12    00000014                 : memset.obj (.text:memset)
-                  0000ed26    00000012                 : sprintf.obj (.text:_outc)
-                  0000ed38    00000012                 : memcpy.obj (.text:memcpy)
-                  0000ed4a    00000012     basic_wifi_application.obj (.text:sendBootLoaderPatch)
-                  0000ed5c    00000012     basic_wifi_application.obj (.text:sendDriverPatch)
-                  0000ed6e    00000012     basic_wifi_application.obj (.text:sendWLFWPatch)
-                  0000ed80    00000010     CC3000HostDriver.lib : cc3000_common.obj (.text:STREAM_TO_UINT16_f)
-                  0000ed90    00000010                          : evnt_handler.obj (.text:SimpleLinkWaitEvent)
-                  0000eda0    00000010                          : cc3000_common.obj (.text:UINT16_TO_STREAM_f)
-                  0000edb0    00000010     board.obj (.text:WlanInterruptEnable)
-                  0000edc0    00000010     rts430x.lib : asr32.obj (.text:l_asr)
-                  0000edd0    00000010                 : lsl32.obj (.text:l_lsl)
-                  0000ede0    0000000e     buffer.obj (.text:RemoveOldestTime)
-                  0000edee    0000000e     rts430x.lib : strlen.obj (.text:strlen)
-                  0000edfc    0000000c     CC3000HostDriver.lib : wlan.obj (.text:SpiReceiveHandler)
-                  0000ee08    0000000a     board.obj (.text:ReadWlanInterruptPin)
-                  0000ee12    0000000a     board.obj (.text:_isr:TIMER1_A0_ISR)
-                  0000ee1c    0000000a     rts430x.lib : asr16.obj (.text)
-                  0000ee26    0000000a                 : lsl16.obj (.text)
-                  0000ee30    00000008     CC3000HostDriver.lib : evnt_handler.obj (.text:SimpleLinkWaitData)
-                  0000ee38    00000006     CC3000 Spi.lib : spi.obj (.text:SpiResumeSpi)
-                  0000ee3e    00000006     board.obj (.text:WlanInterruptDisable)
-                  0000ee44    00000004     coms.obj (.text:LowBattery)
-                  0000ee48    00000004     board.obj (.text:_isr:Trap_ISR)
-                  0000ee4c    00000004     rts430x.lib : pre_init.obj (.text:_system_pre_init)
-                  0000ee50    00000004                 : exit.obj (.text:abort)
-                  0000ee54    00000002                 : _lock.obj (.text:_nop)
+                  0000d13c    00000192     basic_wifi_application.obj (.text:main)
+                  0000d2ce    0000017e     coms.obj (.text:ProcessConfirmRaw)
+                  0000d44c    0000013a     coms.obj (.text:CreateReadingsRaw)
+                  0000d586    0000012e     CC3000HostDriver.lib : wlan.obj (.text:wlan_connect)
+                  0000d6b4    0000010e     rts430x.lib : _printfi_min.obj (.text:_setfield)
+                  0000d7c2    00000102     basic_wifi_application.obj (.text:CC3000_UsynchCallback)
+                  0000d8c4    000000da     buffer.obj (.text:SortReadings)
+                  0000d99e    000000d8     CC3000HostDriver.lib : hci.obj (.text:hci_patch_send)
+                  0000da76    000000ca     CC3000 Spi.lib : spi.obj (.text:SpiWrite)
+                  0000db40    000000c4     CC3000HostDriver.lib : wlan.obj (.text:wlan_start)
+                  0000dc04    000000c0     rts430x.lib : _printfi_min.obj (.text:_printfi_minimal)
+                  0000dcc4    00000098     buffer.obj (.text:RemoveTime)
+                  0000dd5c    00000096     CC3000HostDriver.lib : evnt_handler.obj (.text:hci_unsol_handle_patch_request)
+                  0000ddf2    0000008e                          : socket.obj (.text:simple_link_recv)
+                  0000de80    0000008c                          : wlan.obj (.text:ConnectToServer)
+                  0000df0c    0000008a     basic_wifi_application.obj (.text:ADC10routine)
+                  0000df96    00000084     board.obj (.text:pio_init)
+                  0000e01a    0000007c     CC3000 Spi.lib : spi.obj (.text:_isr:IntSpiGPIOHandler)
+                  0000e096    0000007a                    : spi.obj (.text:SpiReadDataCont)
+                  0000e110    00000074     board.obj (.text:turnLedOff)
+                  0000e184    00000074     board.obj (.text:turnLedOn)
+                  0000e1f8    00000074     CC3000HostDriver.lib : wlan.obj (.text:wlan_set_event_mask)
+                  0000e26c    00000072                          : wlan.obj (.text:ConnectToAP)
+                  0000e2de    0000006e                          : socket.obj (.text:socket)
+                  0000e34c    00000068                          : socket.obj (.text:connect)
+                  0000e3b4    00000068     basic_wifi_application.obj (.text:initDriver)
+                  0000e41c    0000005e     CC3000HostDriver.lib : evnt_handler.obj (.text:set_socket_active_status)
+                  0000e47a    00000058     rts430x.lib : div32u.obj (.text)
+                  0000e4d2    00000054     CC3000HostDriver.lib : socket.obj (.text:closesocket)
+                  0000e526    00000052     buffer.obj (.text:AddReading)
+                  0000e578    00000052     rts430x.lib : _printfi_min.obj (.text:_ltostr)
+                  0000e5ca    0000004c     buffer.obj (.text:FindTime)
+                  0000e616    0000004c     CC3000HostDriver.lib : socket.obj (.text:HostFlowControlConsumeBuff)
+                  0000e662    0000004c     rts430x.lib : _printfi_min.obj (.text:_pproc_diouxp)
+                  0000e6ae    00000048                 : autoinit.obj (.text:_auto_init)
+                  0000e6f6    00000046     CC3000 Spi.lib : spi.obj (.text:SpiFirstWrite)
+                  0000e73c    00000044                    : spi.obj (.text:SpiReadDataSynchronous)
+                  0000e780    00000040     rts430x.lib : _printfi_min.obj (.text:_pproc_str)
+                  0000e7c0    00000040     CC3000HostDriver.lib : evnt_handler.obj (.text:get_socket_active_status)
+                  0000e800    00000040                          : hci.obj (.text:hci_data_send)
+                  0000e840    00000040     rts430x.lib : div32s.obj (.text)
+                  0000e880    0000003e                 : lsl32.obj (.text:l_lsl_const)
+                  0000e8be    0000003e                 : lsr32.obj (.text:l_lsr_const)
+                  0000e8fc    0000003c     CC3000HostDriver.lib : socket.obj (.text:send)
+                  0000e938    0000003a                          : socket.obj (.text:recv)
+                  0000e972    0000003a                          : wlan.obj (.text:wlan_init)
+                  0000e9ac    00000038     rts430x.lib : sprintf.obj (.text:sprintf)
+                  0000e9e4    00000034     CC3000HostDriver.lib : evnt_handler.obj (.text:hci_unsolicited_event_handler)
+                  0000ea18    00000034     CC3000 Spi.lib : spi.obj (.text:init_spi)
+                  0000ea4c    00000030     CC3000HostDriver.lib : cc3000_common.obj (.text:STREAM_TO_UINT32_f)
+                  0000ea7c    0000002e     rts430x.lib : _printfi_min.obj (.text:_getarg_diouxp)
+                  0000eaaa    0000002e     basic_wifi_application.obj (.text:_isr:ADC10_read_In)
+                  0000ead8    0000002c     CC3000 Spi.lib : spi.obj (.text:SpiOpen)
+                  0000eb04    0000002c     CC3000HostDriver.lib : hci.obj (.text:hci_command_send)
+                  0000eb30    0000002c     rts430x.lib : div16s.obj (.text)
+                  0000eb5c    0000002a     buffer.obj (.text:GetReading)
+                  0000eb86    0000002a     CC3000 Spi.lib : spi.obj (.text:SpiWriteDataSynchronous)
+                  0000ebb0    0000002a     rts430x.lib : boot.obj (.text:_isr:_c_int00_noexit)
+                  0000ebda    00000028     CC3000HostDriver.lib : cc3000_common.obj (.text:UINT32_TO_STREAM_f)
+                  0000ec02    00000026     CC3000 Spi.lib : spi.obj (.text:SpiTriggerRxProcessing)
+                  0000ec28    00000026     CC3000HostDriver.lib : socket.obj (.text:inet_aton)
+                  0000ec4e    00000020     board.obj (.text:SleepOneSecond)
+                  0000ec6e    00000020     board.obj (.text:wakeup_timer_init)
+                  0000ec8e    0000001e     basic_wifi_application.obj (.text:setADC10)
+                  0000ecac    0000001e     basic_wifi_application.obj (.text:setPins)
+                  0000ecca    0000001c     rts430x.lib : memccpy.obj (.text:memccpy)
+                  0000ece6    0000001a     board.obj (.text:WriteWlanPin)
+                  0000ed00    0000001a     rts430x.lib : _printfi_min.obj (.text:_div)
+                  0000ed1a    0000001a     board.obj (.text:initLEDs)
+                  0000ed34    0000001a     basic_wifi_application.obj (.text:setClocks)
+                  0000ed4e    00000018     rts430x.lib : sprintf.obj (.text:_outs)
+                  0000ed66    00000018     board.obj (.text:initClk)
+                  0000ed7e    00000018     basic_wifi_application.obj (.text:setTimers)
+                  0000ed96    00000016     basic_wifi_application.obj (.text:_isr:Timer__Off)
+                  0000edac    00000016     basic_wifi_application.obj (.text:killSocket)
+                  0000edc2    00000016     rts430x.lib : div16u.obj (.text)
+                  0000edd8    00000016                 : mult16_f5hw.obj (.text)
+                  0000edee    00000014                 : memset.obj (.text:memset)
+                  0000ee02    00000012                 : sprintf.obj (.text:_outc)
+                  0000ee14    00000012                 : memcpy.obj (.text:memcpy)
+                  0000ee26    00000012     basic_wifi_application.obj (.text:sendBootLoaderPatch)
+                  0000ee38    00000012     basic_wifi_application.obj (.text:sendDriverPatch)
+                  0000ee4a    00000012     basic_wifi_application.obj (.text:sendWLFWPatch)
+                  0000ee5c    00000010     CC3000HostDriver.lib : cc3000_common.obj (.text:STREAM_TO_UINT16_f)
+                  0000ee6c    00000010                          : evnt_handler.obj (.text:SimpleLinkWaitEvent)
+                  0000ee7c    00000010                          : cc3000_common.obj (.text:UINT16_TO_STREAM_f)
+                  0000ee8c    00000010     board.obj (.text:WlanInterruptEnable)
+                  0000ee9c    00000010     rts430x.lib : lsl32.obj (.text:l_lsl)
+                  0000eeac    00000010                 : lsr32.obj (.text:l_lsr)
+                  0000eebc    0000000e     buffer.obj (.text:RemoveOldestTime)
+                  0000eeca    0000000e     rts430x.lib : strlen.obj (.text:strlen)
+                  0000eed8    0000000c     CC3000HostDriver.lib : wlan.obj (.text:SpiReceiveHandler)
+                  0000eee4    0000000a     board.obj (.text:ReadWlanInterruptPin)
+                  0000eeee    0000000a     board.obj (.text:_isr:TIMER1_A0_ISR)
+                  0000eef8    0000000a     rts430x.lib : lsl16.obj (.text)
+                  0000ef02    00000008     CC3000HostDriver.lib : evnt_handler.obj (.text:SimpleLinkWaitData)
+                  0000ef0a    00000006     CC3000 Spi.lib : spi.obj (.text:SpiResumeSpi)
+                  0000ef10    00000006     board.obj (.text:WlanInterruptDisable)
+                  0000ef16    00000004     coms.obj (.text:LowBattery)
+                  0000ef1a    00000004     board.obj (.text:_isr:Trap_ISR)
+                  0000ef1e    00000004     rts430x.lib : pre_init.obj (.text:_system_pre_init)
+                  0000ef22    00000004                 : exit.obj (.text:abort)
+                  0000ef26    00000002                 : _lock.obj (.text:_nop)
 
 RTC        0    0000ffce    00000002     
                   0000ffce    00000002     board.obj (.int31)
@@ -317,9 +314,6 @@ ADC10      0    0000ffec    00000002
 
 USCI_B0    0    0000ffee    00000002     
                   0000ffee    00000002     board.obj (.int47)
-
-USCI_A0    0    0000fff0    00000002     
-                  0000fff0    00000002     HyperTerminal Driver.lib : dispatcher.obj (.int48)
 
 WDT        0    0000fff2    00000002     
                   0000fff2    00000002     board.obj (.int49)
@@ -383,13 +377,13 @@ address    name
 00000713   ADC10MEM0_H
 00000712   ADC10MEM0_L
 00001d86   ADC10_READING
-0000e9cc   ADC10_read_In
-0000ddd6   ADC10routine
-0000e424   AddReading
+0000eaaa   ADC10_read_In
+0000df0c   ADC10routine
+0000e526   AddReading
 000004be   BCD2BIN
 000004bc   BIN2BCD
-0000ee50   C$$EXIT
-0000d718   CC3000_UsynchCallback
+0000ef22   C$$EXIT
+0000d7c2   CC3000_UsynchCallback
 000008c0   CDCTL0
 000008c1   CDCTL0_H
 000008c0   CDCTL0_L
@@ -441,9 +435,9 @@ address    name
 0000016c   CSCTL6
 0000016d   CSCTL6_H
 0000016c   CSCTL6_L
-0000e1be   ConnectToAP
-0000de60   ConnectToServer
-0000d284   CreateReadingsRaw
+0000e26c   ConnectToAP
+0000de80   ConnectToServer
+0000d44c   CreateReadingsRaw
 00000510   DMA0CTL
 00000511   DMA0CTL_H
 00000510   DMA0CTL_L
@@ -486,55 +480,53 @@ address    name
 0000050e   DMAIV
 0000050f   DMAIV_H
 0000050e   DMAIV_L
-0000e970   DispatcherUARTConfigure
 00000140   FRCTL0
 00000141   FRCTL0_H
 00000140   FRCTL0_L
-0000e4c8   FindTime
+0000e5ca   FindTime
 00000144   GCCTL0
 00000145   GCCTL0_H
 00000144   GCCTL0_L
 00000146   GCCTL1
 00000147   GCCTL1_H
 00000146   GCCTL1_L
-0000ea7e   GetReading
-0000e514   HostFlowControlConsumeBuff
-0000ee1c   I_ASR
-0000ee26   I_LSL
-0000df6c   IntSpiGPIOHandler
-0000edc0   L_ASR
-0000edd0   L_LSL
-0000e776   L_LSL_1
-0000e752   L_LSL_10
-0000e74e   L_LSL_11
-0000e74a   L_LSL_12
-0000e746   L_LSL_13
-0000e742   L_LSL_14
-0000e73e   L_LSL_15
-0000e772   L_LSL_2
-0000e76e   L_LSL_3
-0000e76a   L_LSL_4
-0000e766   L_LSL_5
-0000e762   L_LSL_6
-0000e75e   L_LSL_7
-0000e75a   L_LSL_8
-0000e756   L_LSL_9
-0000e7b4   L_LSR_1
-0000e790   L_LSR_10
-0000e78c   L_LSR_11
-0000e788   L_LSR_12
-0000e784   L_LSR_13
-0000e780   L_LSR_14
-0000e77c   L_LSR_15
-0000e7b0   L_LSR_2
-0000e7ac   L_LSR_3
-0000e7a8   L_LSR_4
-0000e7a4   L_LSR_5
-0000e7a0   L_LSR_6
-0000e79c   L_LSR_7
-0000e798   L_LSR_8
-0000e794   L_LSR_9
-0000ee44   LowBattery
+0000eb5c   GetReading
+0000e616   HostFlowControlConsumeBuff
+0000eef8   I_LSL
+0000e01a   IntSpiGPIOHandler
+0000ee9c   L_LSL
+0000e8b8   L_LSL_1
+0000e894   L_LSL_10
+0000e890   L_LSL_11
+0000e88c   L_LSL_12
+0000e888   L_LSL_13
+0000e884   L_LSL_14
+0000e880   L_LSL_15
+0000e8b4   L_LSL_2
+0000e8b0   L_LSL_3
+0000e8ac   L_LSL_4
+0000e8a8   L_LSL_5
+0000e8a4   L_LSL_6
+0000e8a0   L_LSL_7
+0000e89c   L_LSL_8
+0000e898   L_LSL_9
+0000eeac   L_LSR
+0000e8f6   L_LSR_1
+0000e8d2   L_LSR_10
+0000e8ce   L_LSR_11
+0000e8ca   L_LSR_12
+0000e8c6   L_LSR_13
+0000e8c2   L_LSR_14
+0000e8be   L_LSR_15
+0000e8f2   L_LSR_2
+0000e8ee   L_LSR_3
+0000e8ea   L_LSR_4
+0000e8e6   L_LSR_5
+0000e8e2   L_LSR_6
+0000e8de   L_LSR_7
+0000e8da   L_LSR_8
+0000e8d6   L_LSR_9
+0000ef16   LowBattery
 000004c4   MAC
 000004da   MAC32H
 000004db   MAC32H_H
@@ -690,7 +682,7 @@ address    name
 0000012a   PMMIFG
 0000012b   PMMIFG_H
 0000012a   PMMIFG_L
-0000d4ec   ProcessConfirmRaw
+0000d2ce   ProcessConfirmRaw
 000001b0   REFCTL0
 000001b1   REFCTL0_H
 000001b0   REFCTL0_L
@@ -746,9 +738,9 @@ address    name
 000004b6   RTCYEAR
 000004b7   RTCYEAR_H
 000004b6   RTCYEAR_L
-0000ee08   ReadWlanInterruptPin
-0000ede0   RemoveOldestTime
-0000dc1a   RemoveTime
+0000eee4   ReadWlanInterruptPin
+0000eebc   RemoveOldestTime
+0000dcc4   RemoveTime
 00000100   SFRIE1
 00000101   SFRIE1_H
 00000100   SFRIE1_L
@@ -759,8 +751,8 @@ address    name
 00000105   SFRRPCR_H
 00000104   SFRRPCR_L
 00001d84   STATE
-0000ed80   STREAM_TO_UINT16_f
-0000e940   STREAM_TO_UINT32_f
+0000ee5c   STREAM_TO_UINT16_f
+0000ea4c   STREAM_TO_UINT32_f
 000004ce   SUMEXT
 000004cf   SUMEXT_H
 000004ce   SUMEXT_L
@@ -797,19 +789,19 @@ address    name
 0000019a   SYSUNIV
 0000019b   SYSUNIV_H
 0000019a   SYSUNIV_L
-0000ee30   SimpleLinkWaitData
-0000ed90   SimpleLinkWaitEvent
-0000eb70   SleepOneSecond
-0000d81a   SortReadings
-0000e5f4   SpiFirstWrite
-0000e9fa   SpiOpen
-0000dfe8   SpiReadDataCont
-0000e63a   SpiReadDataSynchronous
-0000edfc   SpiReceiveHandler
-0000ee38   SpiResumeSpi
-0000eb24   SpiTriggerRxProcessing
-0000d9cc   SpiWrite
-0000eaa8   SpiWriteDataSynchronous
+0000ef02   SimpleLinkWaitData
+0000ee6c   SimpleLinkWaitEvent
+0000ec4e   SleepOneSecond
+0000d8c4   SortReadings
+0000e6f6   SpiFirstWrite
+0000ead8   SpiOpen
+0000e096   SpiReadDataCont
+0000e73c   SpiReadDataSynchronous
+0000eed8   SpiReceiveHandler
+0000ef0a   SpiResumeSpi
+0000ec02   SpiTriggerRxProcessing
+0000da76   SpiWrite
+0000eb86   SpiWriteDataSynchronous
 00000352   TA0CCR0
 00000354   TA0CCR1
 00000356   TA0CCR2
@@ -860,9 +852,9 @@ address    name
 00000460   TB2EX0
 0000046e   TB2IV
 00000450   TB2R
-0000ee12   TIMER1_A0_ISR
-0000ecba   Timer__Off
-0000ee48   Trap_ISR
+0000eeee   TIMER1_A0_ISR
+0000ed96   Timer__Off
+0000ef1a   Trap_ISR
 000005d0   UCA0ABCTL
 000005c6   UCA0BRW
 000005c7   UCA0BRW_H
@@ -972,117 +964,116 @@ address    name
 0000064e   UCB0TXBUF
 0000064f   UCB0TXBUF_H
 0000064e   UCB0TXBUF_L
-0000eda0   UINT16_TO_STREAM_f
-0000eafc   UINT32_TO_STREAM_f
-0000e8a2   USCI_A0_ISR
+0000ee7c   UINT16_TO_STREAM_f
+0000ebda   UINT32_TO_STREAM_f
 0000015c   WDTCTL
 0000015d   WDTCTL_H
 0000015c   WDTCTL_L
-0000ee3e   WlanInterruptDisable
-0000edb0   WlanInterruptEnable
-0000ec0a   WriteWlanPin
-00001e00   _Errno
+0000ef10   WlanInterruptDisable
+0000ee8c   WlanInterruptEnable
+0000ece6   WriteWlanPin
+00001dbc   _Errno
 00002000   __STACK_END
 00000170   __STACK_SIZE
 00000001   __TI_args_main
 00000001   __TI_auto_init
 00000001   __TI_exit
-0000fff0   __TI_int48
 ffffffff   __binit__
 00001c00   __bss__
 ffffffff   __c_args__
 0000c800   __cinit__
 00001c00   __data__
-0000ea52   __divi
-0000ece6   __divu
+0000eb30   __divi
+0000e840   __divli
+0000edc2   __divu
+0000e47a   __divul
 00001c00   __edata__
-00001e02   __end__
-0000ee56   __etext__
-0000ecfc   __mpyi_f5hw
+00001dbe   __end__
+0000ef28   __etext__
+0000edd8   __mpyi_f5hw
 ffffffff   __pinit__
-0000ea52   __remi
-0000ece6   __remu
+0000eb30   __remi
+0000e840   __remli
+0000edc2   __remu
+0000e47a   __remul
 0000ca00   __text__
-0000e5ac   _auto_init
-0000ead2   _c_int00
-0000ead2   _c_int00_noexit
-00001dec   _cleanup_ptr
-00001df0   _dtors_ptr
-00001de4   _lock
-0000ee54   _nop
-0000db5a   _printfi_minimal
+0000e6ae   _auto_init
+0000ebb0   _c_int00
+0000ebb0   _c_int00_noexit
+00001da8   _cleanup_ptr
+00001dac   _dtors_ptr
+00001da0   _lock
+0000ef26   _nop
+0000dc04   _printfi_minimal
 0000fffe   _reset_vector
 00001e90   _stack
-0000ee4c   _system_pre_init
-00001de8   _unlock
-0000ee50   abort
+0000ef1e   _system_pre_init
+00001da4   _unlock
+0000ef22   abort
 00001d88   battLow
 ffffffff   binit
 0000c800   cinit
-0000e3d0   closesocket
-0000e30a   connect
-00001df4   deviceTime
+0000e4d2   closesocket
+0000e34c   connect
+00001db0   deviceTime
 00001d58   digits
 00001c00   edata
-00001e02   end
-0000ee56   etext
+00001dbe   end
+0000ef28   etext
 00001c00   expandedKey
 0000c800   fram_ro_start
 0000c600   fram_rw_start
 0000ca00   fram_rx_start
-00001dca   g_ucLength
-00001d8a   g_ucUARTBuffer
-0000e6be   get_socket_active_status
-0000ea26   hci_command_send
-0000e6fe   hci_data_send
+0000e7c0   get_socket_active_status
+0000eb04   hci_command_send
+0000e800   hci_data_send
 0000ca00   hci_event_handler
-0000d8f4   hci_patch_send
+0000d99e   hci_patch_send
 0000cd1c   hci_unsol_event_handler
-0000dcb2   hci_unsol_handle_patch_request
-0000e8d8   hci_unsolicited_event_handler
-0000eb4a   inet_aton
-0000ec8a   initClk
-0000e29e   initDriver
-0000ec3e   initLEDs
-0000e90c   init_spi
+0000dd5c   hci_unsol_handle_patch_request
+0000e9e4   hci_unsolicited_event_handler
+0000ec28   inet_aton
+0000ed66   initClk
+0000e3b4   initDriver
+0000ed1a   initLEDs
+0000ea18   init_spi
 00001cee   key
-0000ecd0   killSocket
+0000edac   killSocket
 0000d13c   main
-0000ebee   memccpy
-0000ed38   memcpy
-0000ed12   memset
-00001dfe   msp430_forced_restart_ptr
+0000ecca   memccpy
+0000ee14   memcpy
+0000edee   memset
+00001dba   msp430_forced_restart_ptr
 0000c602   n_readings
 ffffffff   pinit
-0000dee8   pio_init
+0000df96   pio_init
 00001d68   printOnce
 00001cfe   profileArray
 00001d6a   pucCC3000_Rx_Buffer
 0000c604   readings
-0000e7f6   recv
-00001dce   sSpiInformation
-0000e7ba   send
-0000ed4a   sendBootLoaderPatch
-0000ed5c   sendDriverPatch
-0000ed6e   sendWLFWPatch
-0000ebb2   setADC10
-0000ec58   setClocks
-0000ebd0   setPins
-0000eca2   setTimers
-0000e372   set_socket_active_status
-0000dd48   simple_link_recv
+0000e938   recv
+00001d8a   sSpiInformation
+0000e8fc   send
+0000ee26   sendBootLoaderPatch
+0000ee38   sendDriverPatch
+0000ee4a   sendWLFWPatch
+0000ec8e   setADC10
+0000ed34   setClocks
+0000ecac   setPins
+0000ed7e   setTimers
+0000e41c   set_socket_active_status
+0000ddf2   simple_link_recv
 0000cf98   simple_link_send
-0000e230   socket
-00001dfa   socket_active_status
+0000e2de   socket
+00001db6   socket_active_status
 0000c200   spi_buffer
-0000e86a   sprintf
-0000edee   strlen
-00001df8   system_state
+0000e9ac   sprintf
+0000eeca   strlen
+00001db4   system_state
 00001cb0   tSLInformation
-00001dde   tSpiReadHeader
-0000e062   turnLedOff
-0000e0d6   turnLedOn
-00001dcc   uart_have_cmd
+00001d9a   tSpiReadHeader
+0000e110   turnLedOff
+0000e184   turnLedOn
 00001d56   ucStopSmartConfig
 0000c600   uid
 00001d46   ulCC3000Connected
@@ -1090,11 +1081,11 @@ ffffffff   pinit
 00001d52   ulCC3000DHCP_configured
 00001d42   ulSmartConfigFinished
 00001d64   ulSocket
-0000eb92   wakeup_timer_init
-0000d3be   wlan_connect
-0000e830   wlan_init
-0000e14a   wlan_set_event_mask
-0000da96   wlan_start
+0000ec6e   wakeup_timer_init
+0000d586   wlan_connect
+0000e972   wlan_init
+0000e1f8   wlan_set_event_mask
+0000db40   wlan_start
 0000c284   wlan_tx_buffer
 
 
@@ -1679,22 +1670,19 @@ address    name
 00001d84   STATE
 00001d86   ADC10_READING
 00001d88   battLow
-00001d8a   g_ucUARTBuffer
-00001dca   g_ucLength
-00001dcc   uart_have_cmd
-00001dce   sSpiInformation
-00001dde   tSpiReadHeader
-00001de4   _lock
-00001de8   _unlock
-00001dec   _cleanup_ptr
-00001df0   _dtors_ptr
-00001df4   deviceTime
-00001df8   system_state
-00001dfa   socket_active_status
-00001dfe   msp430_forced_restart_ptr
-00001e00   _Errno
-00001e02   __end__
-00001e02   end
+00001d8a   sSpiInformation
+00001d9a   tSpiReadHeader
+00001da0   _lock
+00001da4   _unlock
+00001da8   _cleanup_ptr
+00001dac   _dtors_ptr
+00001db0   deviceTime
+00001db4   system_state
+00001db6   socket_active_status
+00001dba   msp430_forced_restart_ptr
+00001dbc   _Errno
+00001dbe   __end__
+00001dbe   end
 00001e90   _stack
 00002000   __STACK_END
 0000c200   spi_buffer
@@ -1713,136 +1701,136 @@ address    name
 0000cd1c   hci_unsol_event_handler
 0000cf98   simple_link_send
 0000d13c   main
-0000d284   CreateReadingsRaw
-0000d3be   wlan_connect
-0000d4ec   ProcessConfirmRaw
-0000d718   CC3000_UsynchCallback
-0000d81a   SortReadings
-0000d8f4   hci_patch_send
-0000d9cc   SpiWrite
-0000da96   wlan_start
-0000db5a   _printfi_minimal
-0000dc1a   RemoveTime
-0000dcb2   hci_unsol_handle_patch_request
-0000dd48   simple_link_recv
-0000ddd6   ADC10routine
-0000de60   ConnectToServer
-0000dee8   pio_init
-0000df6c   IntSpiGPIOHandler
-0000dfe8   SpiReadDataCont
-0000e062   turnLedOff
-0000e0d6   turnLedOn
-0000e14a   wlan_set_event_mask
-0000e1be   ConnectToAP
-0000e230   socket
-0000e29e   initDriver
-0000e30a   connect
-0000e372   set_socket_active_status
-0000e3d0   closesocket
-0000e424   AddReading
-0000e4c8   FindTime
-0000e514   HostFlowControlConsumeBuff
-0000e5ac   _auto_init
-0000e5f4   SpiFirstWrite
-0000e63a   SpiReadDataSynchronous
-0000e6be   get_socket_active_status
-0000e6fe   hci_data_send
-0000e73e   L_LSL_15
-0000e742   L_LSL_14
-0000e746   L_LSL_13
-0000e74a   L_LSL_12
-0000e74e   L_LSL_11
-0000e752   L_LSL_10
-0000e756   L_LSL_9
-0000e75a   L_LSL_8
-0000e75e   L_LSL_7
-0000e762   L_LSL_6
-0000e766   L_LSL_5
-0000e76a   L_LSL_4
-0000e76e   L_LSL_3
-0000e772   L_LSL_2
-0000e776   L_LSL_1
-0000e77c   L_LSR_15
-0000e780   L_LSR_14
-0000e784   L_LSR_13
-0000e788   L_LSR_12
-0000e78c   L_LSR_11
-0000e790   L_LSR_10
-0000e794   L_LSR_9
-0000e798   L_LSR_8
-0000e79c   L_LSR_7
-0000e7a0   L_LSR_6
-0000e7a4   L_LSR_5
-0000e7a8   L_LSR_4
-0000e7ac   L_LSR_3
-0000e7b0   L_LSR_2
-0000e7b4   L_LSR_1
-0000e7ba   send
-0000e7f6   recv
-0000e830   wlan_init
-0000e86a   sprintf
-0000e8a2   USCI_A0_ISR
-0000e8d8   hci_unsolicited_event_handler
-0000e90c   init_spi
-0000e940   STREAM_TO_UINT32_f
-0000e970   DispatcherUARTConfigure
-0000e9cc   ADC10_read_In
-0000e9fa   SpiOpen
-0000ea26   hci_command_send
-0000ea52   __divi
-0000ea52   __remi
-0000ea7e   GetReading
-0000eaa8   SpiWriteDataSynchronous
-0000ead2   _c_int00
-0000ead2   _c_int00_noexit
-0000eafc   UINT32_TO_STREAM_f
-0000eb24   SpiTriggerRxProcessing
-0000eb4a   inet_aton
-0000eb70   SleepOneSecond
-0000eb92   wakeup_timer_init
-0000ebb2   setADC10
-0000ebd0   setPins
-0000ebee   memccpy
-0000ec0a   WriteWlanPin
-0000ec3e   initLEDs
-0000ec58   setClocks
-0000ec8a   initClk
-0000eca2   setTimers
-0000ecba   Timer__Off
-0000ecd0   killSocket
-0000ece6   __divu
-0000ece6   __remu
-0000ecfc   __mpyi_f5hw
-0000ed12   memset
-0000ed38   memcpy
-0000ed4a   sendBootLoaderPatch
-0000ed5c   sendDriverPatch
-0000ed6e   sendWLFWPatch
-0000ed80   STREAM_TO_UINT16_f
-0000ed90   SimpleLinkWaitEvent
-0000eda0   UINT16_TO_STREAM_f
-0000edb0   WlanInterruptEnable
-0000edc0   L_ASR
-0000edd0   L_LSL
-0000ede0   RemoveOldestTime
-0000edee   strlen
-0000edfc   SpiReceiveHandler
-0000ee08   ReadWlanInterruptPin
-0000ee12   TIMER1_A0_ISR
-0000ee1c   I_ASR
-0000ee26   I_LSL
-0000ee30   SimpleLinkWaitData
-0000ee38   SpiResumeSpi
-0000ee3e   WlanInterruptDisable
-0000ee44   LowBattery
-0000ee48   Trap_ISR
-0000ee4c   _system_pre_init
-0000ee50   C$$EXIT
-0000ee50   abort
-0000ee54   _nop
-0000ee56   __etext__
-0000ee56   etext
-0000fff0   __TI_int48
+0000d2ce   ProcessConfirmRaw
+0000d44c   CreateReadingsRaw
+0000d586   wlan_connect
+0000d7c2   CC3000_UsynchCallback
+0000d8c4   SortReadings
+0000d99e   hci_patch_send
+0000da76   SpiWrite
+0000db40   wlan_start
+0000dc04   _printfi_minimal
+0000dcc4   RemoveTime
+0000dd5c   hci_unsol_handle_patch_request
+0000ddf2   simple_link_recv
+0000de80   ConnectToServer
+0000df0c   ADC10routine
+0000df96   pio_init
+0000e01a   IntSpiGPIOHandler
+0000e096   SpiReadDataCont
+0000e110   turnLedOff
+0000e184   turnLedOn
+0000e1f8   wlan_set_event_mask
+0000e26c   ConnectToAP
+0000e2de   socket
+0000e34c   connect
+0000e3b4   initDriver
+0000e41c   set_socket_active_status
+0000e47a   __divul
+0000e47a   __remul
+0000e4d2   closesocket
+0000e526   AddReading
+0000e5ca   FindTime
+0000e616   HostFlowControlConsumeBuff
+0000e6ae   _auto_init
+0000e6f6   SpiFirstWrite
+0000e73c   SpiReadDataSynchronous
+0000e7c0   get_socket_active_status
+0000e800   hci_data_send
+0000e840   __divli
+0000e840   __remli
+0000e880   L_LSL_15
+0000e884   L_LSL_14
+0000e888   L_LSL_13
+0000e88c   L_LSL_12
+0000e890   L_LSL_11
+0000e894   L_LSL_10
+0000e898   L_LSL_9
+0000e89c   L_LSL_8
+0000e8a0   L_LSL_7
+0000e8a4   L_LSL_6
+0000e8a8   L_LSL_5
+0000e8ac   L_LSL_4
+0000e8b0   L_LSL_3
+0000e8b4   L_LSL_2
+0000e8b8   L_LSL_1
+0000e8be   L_LSR_15
+0000e8c2   L_LSR_14
+0000e8c6   L_LSR_13
+0000e8ca   L_LSR_12
+0000e8ce   L_LSR_11
+0000e8d2   L_LSR_10
+0000e8d6   L_LSR_9
+0000e8da   L_LSR_8
+0000e8de   L_LSR_7
+0000e8e2   L_LSR_6
+0000e8e6   L_LSR_5
+0000e8ea   L_LSR_4
+0000e8ee   L_LSR_3
+0000e8f2   L_LSR_2
+0000e8f6   L_LSR_1
+0000e8fc   send
+0000e938   recv
+0000e972   wlan_init
+0000e9ac   sprintf
+0000e9e4   hci_unsolicited_event_handler
+0000ea18   init_spi
+0000ea4c   STREAM_TO_UINT32_f
+0000eaaa   ADC10_read_In
+0000ead8   SpiOpen
+0000eb04   hci_command_send
+0000eb30   __divi
+0000eb30   __remi
+0000eb5c   GetReading
+0000eb86   SpiWriteDataSynchronous
+0000ebb0   _c_int00
+0000ebb0   _c_int00_noexit
+0000ebda   UINT32_TO_STREAM_f
+0000ec02   SpiTriggerRxProcessing
+0000ec28   inet_aton
+0000ec4e   SleepOneSecond
+0000ec6e   wakeup_timer_init
+0000ec8e   setADC10
+0000ecac   setPins
+0000ecca   memccpy
+0000ece6   WriteWlanPin
+0000ed1a   initLEDs
+0000ed34   setClocks
+0000ed66   initClk
+0000ed7e   setTimers
+0000ed96   Timer__Off
+0000edac   killSocket
+0000edc2   __divu
+0000edc2   __remu
+0000edd8   __mpyi_f5hw
+0000edee   memset
+0000ee14   memcpy
+0000ee26   sendBootLoaderPatch
+0000ee38   sendDriverPatch
+0000ee4a   sendWLFWPatch
+0000ee5c   STREAM_TO_UINT16_f
+0000ee6c   SimpleLinkWaitEvent
+0000ee7c   UINT16_TO_STREAM_f
+0000ee8c   WlanInterruptEnable
+0000ee9c   L_LSL
+0000eeac   L_LSR
+0000eebc   RemoveOldestTime
+0000eeca   strlen
+0000eed8   SpiReceiveHandler
+0000eee4   ReadWlanInterruptPin
+0000eeee   TIMER1_A0_ISR
+0000eef8   I_LSL
+0000ef02   SimpleLinkWaitData
+0000ef0a   SpiResumeSpi
+0000ef10   WlanInterruptDisable
+0000ef16   LowBattery
+0000ef1a   Trap_ISR
+0000ef1e   _system_pre_init
+0000ef22   C$$EXIT
+0000ef22   abort
+0000ef26   _nop
+0000ef28   __etext__
+0000ef28   etext
 0000fffe   _reset_vector
 ffffffff   __binit__
 ffffffff   __c_args__
@@ -1850,4 +1838,4 @@ ffffffff   __pinit__
 ffffffff   binit
 ffffffff   pinit
 
-[747 symbols]
+[744 symbols]

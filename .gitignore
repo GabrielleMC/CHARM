@@ -35,4 +35,14 @@ Virtual_Implementation/server/device_1_readings.txt
 Virtual_Implementation/client/device_1_readings.txt
 
 Virtual_Implementation/server/server
+Embedded_Voltmeter/Basic WiFi Source/Basic WiFi Application CCS/BasicWiFi Application/Debug/BasicWiFi Application_linkInfo.xml
+*.xml
+*.map
+*.out
+*.pp
+*.obj
+*.xml
+*.map
+*.lib
+*.lst
 *.dat

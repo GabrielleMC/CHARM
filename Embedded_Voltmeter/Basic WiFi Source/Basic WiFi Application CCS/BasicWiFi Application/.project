@@ -126,10 +126,5 @@
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/CC3000HostDriver/Debug/CC3000HostDriver.lib</locationURI>
 		</link>
-		<link>
-			<name>Library/HyperTerminal Driver.lib</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/HyperTerminal%20Driver/Debug/HyperTerminal%20Driver.lib</locationURI>
-		</link>
 	</linkedResources>
 </projectDescription>

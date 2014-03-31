@@ -16,7 +16,6 @@ $(GEN_CMDS__FLAG) \
 "../lnk_msp430fr5739.cmd" \
 "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Basic WiFi Application CCS/CC3000 Spi/Debug/CC3000 Spi.lib" \
 "E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Basic WiFi Application CCS/CC3000HostDriver/Debug/CC3000HostDriver.lib" \
-"E:/Dropbox/git/CHARM/Embedded_Voltmeter/Basic WiFi Source/Basic WiFi Application CCS/HyperTerminal Driver/Debug/HyperTerminal Driver.lib" \
 
 -include ../makefile.init
 
