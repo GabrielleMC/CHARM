@@ -81,3 +81,4 @@ class Device {
 };
 
 void format_time(time_t time, char* buff);
+double voltage_conversion(int reading);

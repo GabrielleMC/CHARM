@@ -6,6 +6,13 @@ void format_time(time_t time, char* buff)
         strftime(buff, 20, "%Y-%m-%d %H:%M:%S", localtime(&time));
 }
 
+#define VDD 3.5
+#define VOLTAGE_DIVIDER (24/2.7)
+
+double voltage_conversion(int reading) {
+	return (((double)reading)/1023.0)*VDD*VOLTAGE_DIVIDER;
+}
+
 void Device::log(std::string msg, std::string file, bool append, bool timestamp)
 {
         std::ofstream logfile;
@@ -602,7 +609,9 @@ int Device::update_db_readings(){
 		char buff[20];
 		format_time(readtime, buff);
 		ss.str(std::string()); // clear the stream
-		ss << "INSERT INTO Device_" << id << " (value, logtime) VALUES ('" << get_reading(readtime) << "', '" << buff << "')";
+		double converted_reading = 0.0;
+		converted_reading = voltage_conversion(get_reading(readtime));
+		ss << "INSERT INTO Device_" << id << " (value, logtime) VALUES ('" << converted_reading << "', '" << buff << "')";
 		str = ss.str();
 		mysql_query(connect, (const char*) str.c_str());
 		readings.erase(it->first);
