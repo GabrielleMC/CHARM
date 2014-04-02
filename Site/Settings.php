@@ -10,6 +10,18 @@ if (isset($_SESSION['auth'])) {
 } else {
     header("Location: CHARMindex.php");
 }
+$host = "localhost";
+$user = "CHARM";
+$pass = "5*Hotel";
+mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
+mysql_select_db("testCHARM");
+
+date_default_timezone_set("America/Edmonton");
+//$date = "2014-02-05"; test date 
+$date = Date("Y-m-d");
+
+//Code to check for missing devices and low batteries goes here 
+$num_devices = mysql_query("SELECT device_id FROM Status");
 ?>
 <h3>User Options: </h3>
 <button id="changepw">Change Password</button>
@@ -17,6 +29,8 @@ if (isset($_SESSION['auth'])) {
 <br/ >
 
 <h3>Home Options: </h3>
+<button id="rmsys">Remove a Device</button>
+
 <div id="dialog">	
 	<form id="changepw" action="changepw.php" method="post">
 		<label for="password"> Old Password: </label>
@@ -44,6 +58,37 @@ if (isset($_SESSION['auth'])) {
 	});	
 	</script>
 </div>
+
+<div id="dialog1">	
+	<form id="remove" action="remove_device.php" method="post">
+		<select id="devices">
+		<option value="default">Select device to remove</option>
+		<?php
+		while ($row = mysql_fetch_row($result)){
+			$i = $row[0];
+			echo "<option value=\"$i\">$i</option>";
+		}
+		?>
+		</select>
+		<button type="button" id="submit" name="submit">Submit</button>
+	</form>
+	<div id="alert"></div>
+	<script type="text/javascript">
+	$("#submit").click(function getItem(){
+                var oldp = document.getElementById("password").value;
+                var newp = document.getElementById("newpw").value;
+                var confirm = document.getElementById("confirm").value;
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function(){
+			if (xmlhttp.readyState==4 && xmlhttp.status==200){
+				document.getElementById("alert").innerHTML=xmlhttp.responseText;
+			}
+		};
+		xmlhttp.open("GET","Processing/remove_device.php?id="+id,true);
+		xmlhttp.send();
+	});	
+	</script>
+</div>
 <script type="text/javascript">
 	$( "#dialog" ).dialog({ 
 		autoOpen: false, 
@@ -57,7 +102,22 @@ if (isset($_SESSION['auth'])) {
 		}
 	});	
 	$( "#submit" ).button();
+	$( "#dialog1" ).dialog({ 
+		autoOpen: false, 
+		modal: true,
+		width: 500,
+		title: "Remove a device",
+		buttons: {
+			"Cancel": function() {
+				$(this).dialog("close");
+			}
+		}
+	});	
+	$( "#submit" ).button();
 	$( "#changepw" ).button().click(function() {
 		$( "#dialog" ).dialog( "open" );
+	});
+	$( "#rmsys" ).button().click(function() {
+		$( "#dialog1" ).dialog( "open" );
 	});
 </script>
