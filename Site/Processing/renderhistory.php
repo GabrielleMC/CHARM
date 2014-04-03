@@ -44,6 +44,7 @@
 	    while ($row = mysql_fetch_array($result[$i])) {
 	        extract($row);
 	        $time *= 1000;
+			$time -= 21600000;
 	        $data = array($time, $value);
 	        $export['data'][] = $data;
 	    }
