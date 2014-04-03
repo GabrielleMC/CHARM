@@ -14,11 +14,10 @@
 	mysql_select_db("testCHARM");
 	
 	$id = (mysql_real_escape_string($_POST['devices']));
-	echo $id;
 	
 	$result = mysql_query("DROP TABLE Device_$id");
 	$result = mysql_query("DROP TABLE Device_Day_$id");
 	$result = mysql_query("DELETE FROM Status WHERE device_id = $id");
 	
-	
+	mysql_free_result($result);
 	?>

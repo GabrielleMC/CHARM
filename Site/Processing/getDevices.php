@@ -15,6 +15,7 @@
 	$num_devices = mysql_query("SELECT device_id FROM Status");
 	echo "<select id=\"devices\" name=\"devices\">";
 	echo "<option value=\"default\">Select device to remove</option>";
+	echo "<p>WARNING: This operation will remove all data that has been logged for the selected device. You will not be able to recover this data.</p>";
 	while ($row = mysql_fetch_row($num_devices)){
 		$i = $row[0];
 		echo "<option value=\"$i\">$i</option>";

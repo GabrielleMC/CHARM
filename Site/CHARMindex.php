@@ -26,33 +26,39 @@
 	<ul>
 		<li> <a href="#tabs-1">Home</a></li>
 		<li> <a href="#tabs-2">About CHARM</a></li>
-		<li> <a href="#tabs-3">Features</a></li>
+		<li> <a href="#tabs-3">Meet the Team</a></li>
 	</ul>
 	<div id="tabs-1">
 		<p>Welcome to the CHARM homepage! Login or learn more</p>
 	</div>
 	<div id="tabs-2">
-		<div id="accordion">
-			<h3>The Goal</h3>
-			<div>First content panel</div>
-			<h3>The Team</h3>
-			<div>Lucas, Gaby, Dave and Brandon :D</div>
-		</div>
-		<script>
-		$( "#accordion" ).accordion();
-		</script>
+			<p>CHARM is a lightweight, low-cost residential energy monitoring system. We designed this system so that you can either install it while constructing a new home, or integrate in an existing home with minimal renovations. </p>
+			<p>We use a central server to communicate with a set of sensor monitoring devices. Each device is able to connnect to and read data from a variety of electrical systems. </p>
 	</div>
 	<div id="tabs-3">
-		<p>So just what are we doing? Currently, our project may feature wireless monitoring of the following home systems:
+		<p>Lucas Holzhaeuer</p>
 		<ul>
-		<li>Thermistors</li>
-		<li>Lights</li>
-		<li>Occupancy sensors</li>
-		<li>Ambient light sensor</li>
+		<li>Team Manager</li>
+		<li>Honeywell Intl. Inc.</li>
 		</ul>
-		We can provide historical trend data for all of this information, and a detailed breakdown of power usage in your house!<br><br>
-		Stretch goal: be able to send control signals back to some systems
-		</p>
+		
+		<p>Gabrielle Comeau</p>
+		<ul>
+		<li>Server Designer</li>
+		<li>Hitachi ID Systems</li>
+		</ul>
+		
+		<p>Brandon Crapo</p>
+		<ul>
+		<li>Embedded Systems</li>
+		<li>General Electric</li>
+		</ul>
+		
+		<p>David Kozuchar</p>
+		<ul>
+		<li>Home Integration</li>
+		<li>Stantec Consulting</li>
+		</ul>
 	</div>
 </div>		
 <button id="Login">Log into the CHARM dashboard</button>

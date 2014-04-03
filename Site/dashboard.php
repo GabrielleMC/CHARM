@@ -56,10 +56,12 @@ if (isset($_SESSION['auth'])) {
 	<div id = "tabs-4">
 		<p style = "color:#2191C0;font-weight:bold">Frequently Asked Questions</p>
 		<div id="accordion">
-			<h3>How can I change how often data is logged from a system?</h3>
-			<div>To change how often monitoring devices log data, first open the Systems tab and click on "Modify System" to open the edit window. From here, you will be able to choose the system to change from the dropdown menu. Simply select the new logging interval from the slider.</div>
-			<h3>How do I add a system?</h3>
-			<div>First content panel</div>
+			<h3>How do I add a device to the system?</h3>
+			<div>Simply connect the device to the circuit you would like to monitor and turn it on. Once this device connects to the network, your CHARM server will automatically detect it and begin tracking information from it</div>
+			<h3>What if I want to remove a device?</h3>
+			<div>First, disconnect the device you'd like to remove from your system. Then, clear the device's tables and information using the Remove Devices form in the Settings tab</div>
+			<h3>Can I add another user to the CHARM website?</h3>
+			<div>Unfortunately, adding additional website users is currently not supported. Look for this feature in a future release!</div>
 		</div>	
 		<script>
 		$( "#accordion" ).accordion();

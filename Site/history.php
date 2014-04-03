@@ -61,7 +61,7 @@
                             marginBottom: 25
                         },
                         title: {
-                            text: 'Sample Home Data',
+                            text: 'Device Data',
                             style: {
                                 color: '#2191C0',
                                 fontWeight: 'bold'
@@ -110,9 +110,7 @@
                 var fromarr = fromstr.split("/");
                 var toarr = tostr.split("/");
                 var from = fromarr[2]+fromarr[0]+fromarr[1];
-                console.log ("from date:" + from);
                 var to = toarr[2]+toarr[0]+toarr[1];
-                console.log ("to date: " + to);
                 $.getJSON('Processing/renderhistory.php?opt='+opt+'&from='+from+"&to="+to, function(json) {
                     chart = new Highcharts.Chart({
                         chart: {
@@ -122,7 +120,7 @@
                             marginBottom: 25
                         },
                         title: {
-                            text: 'Sample Home Data',
+                            text: 'Device Data',
                             style: {
                                 color: '#2191C0',
                                 fontWeight: 'bold'
