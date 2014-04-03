@@ -42,7 +42,7 @@ if (isset($_SESSION['auth'])) {
 <h1>Welcome to the CHARM Dashboard</h1>
 <div id = "tabs" class = "stylable">
 	<ul>
-		<li> <a href="CHARM_Overview.php">My Home</a></li>
+		<li> <a href="CHARM_overview.php">My Home</a></li>
 		<li> <a href="history.php">History</a></li>
 		<li> <a href="Settings.php">System Settings</a></li>
 		<li> <a href="#tabs-4">CHARM School (Help)</a></li>
