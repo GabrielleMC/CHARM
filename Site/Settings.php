@@ -10,18 +10,7 @@ if (isset($_SESSION['auth'])) {
 } else {
     header("Location: CHARMindex.php");
 }
-$host = "localhost";
-$user = "CHARM";
-$pass = "5*Hotel";
-mysql_connect($host, $user, $pass) or die("Could not connect: " . mysql_error());
-mysql_select_db("testCHARM");
 
-date_default_timezone_set("America/Edmonton");
-//$date = "2014-02-05"; test date 
-$date = Date("Y-m-d");
-
-//Code to check for missing devices and low batteries goes here 
-$num_devices = mysql_query("SELECT device_id FROM Status");
 ?>
 <h3>User Options: </h3>
 <button id="changepw">Change Password</button>
@@ -59,36 +48,32 @@ $num_devices = mysql_query("SELECT device_id FROM Status");
 	</script>
 </div>
 
-<div id="dialog1">	
-	<form id="remove" action="remove_device.php" method="post">
-		<select id="devices">
-		<option value="default">Select device to remove</option>
-		<?php
-		while ($row = mysql_fetch_row($result)){
-			$i = $row[0];
-			echo "<option value=\"$i\">$i</option>";
-		}
-		?>
-		</select>
-		<button type="button" id="submit" name="submit">Submit</button>
+<div id="dialog1" title="Remove a Device">	
+	<form id="remove" name= "remove" action="Processing/removeDevice.php" method="post">
+		<button type="button" id="viewdevices" name="viewdevices">View Available Devices</button>
 	</form>
-	<div id="alert"></div>
+	
 	<script type="text/javascript">
-	$("#submit").click(function getItem(){
-                var oldp = document.getElementById("password").value;
-                var newp = document.getElementById("newpw").value;
-                var confirm = document.getElementById("confirm").value;
+	$("#viewdevices").click(function viewDevices(){
 		xmlhttp=new XMLHttpRequest();
 		xmlhttp.onreadystatechange=function(){
 			if (xmlhttp.readyState==4 && xmlhttp.status==200){
-				document.getElementById("alert").innerHTML=xmlhttp.responseText;
-			}
-		};
-		xmlhttp.open("GET","Processing/remove_device.php?id="+id,true);
+				document.getElementById("remove").innerHTML=xmlhttp.responseText;
+				// trigger an artificial click event
+				$("#remove").click(function initNewElements(){
+					$(function() {
+						$( "#submit" ).button();
+					});
+				});
+				$("#remove").trigger("click");
+				}
+			};
+		xmlhttp.open("GET","Processing/getDevices.php",true);
 		xmlhttp.send();
-	});	
-	</script>
+	});
+	</script>		
 </div>
+
 <script type="text/javascript">
 	$( "#dialog" ).dialog({ 
 		autoOpen: false, 
@@ -113,7 +98,7 @@ $num_devices = mysql_query("SELECT device_id FROM Status");
 			}
 		}
 	});	
-	$( "#submit" ).button();
+	$( "#viewdevices" ).button();
 	$( "#changepw" ).button().click(function() {
 		$( "#dialog" ).dialog( "open" );
 	});
