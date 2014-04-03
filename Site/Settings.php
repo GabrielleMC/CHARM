@@ -14,12 +14,12 @@ if (isset($_SESSION['auth'])) {
 ?>
 
 
-<p style = "color:#2191C0;font-weight:bold">User Options: </p>
+<p style = "color:#2191C0;font-weight:bold">User Options </p>
 <button id="changepw">Change Password</button>
 
 <br/ >
 
-<p style = "color:#2191C0;font-weight:bold">Home Options: </p>
+<p style = "color:#2191C0;font-weight:bold">Home Options </p>
 <button id="rmsys">Remove a Device</button>
 
 <div id="dialog">	
