@@ -47,10 +47,10 @@ int main(int argc, char *argv[])
                 }
                 //insert status info and check if there are any new readings to insert into database
                 for(unsigned int i = 0; i < devices.size(); i++){
-		    devices[i].update_db_status();
-		    if(devices[i].num_readings() != 0){
-		    //cout << "Readings found for device " << i;
-		        devices[i].update_db_readings();
+                   devices[i].update_db_status();
+                   if(devices[i].num_readings() != 0){
+                       //cout << "Readings found for device " << i;
+                       devices[i].update_db_readings();
                     }
                 }
                 // Process new connection request, if any.
