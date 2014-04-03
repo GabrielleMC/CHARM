@@ -73,6 +73,7 @@
 <script type="text/javascript">
 	$( "#dialog" ).dialog({ 
 		autoOpen: false, 
+		title: "Login",
 		modal: true,
 		width: 500,
 		buttons: {
@@ -85,7 +86,16 @@
 				$(this).dialog("close");
 			}
 		}
-	});	
+	}).bind('keypress',pressed);
+
+function pressed(e)
+{
+    if(e.keyCode === 13|| e.which === 13)
+    {
+		$("form#login").submit();
+		$(this).dialog("close");
+    }
+};	
 	$( "#Login" ).button().click(function() {
 		$( "#dialog" ).dialog( "open" );
 	});
