@@ -20,8 +20,14 @@
 	</script>
 </head> 
 <body>
-
 <h1>CHARM Project Home</h1>
+<?php 
+	$cond = $_GET[cond];
+	if ($cond == 1) {
+		echo "<div class=\"ui-state-error ui-corner-all\" style=\"padding: 0 .7em;\"><p><span class=\"ui-icon ui-icon-alert\" style=\"font-family: Verdana,Arial,sans-serif; float: left; margin-right: .3em;\"></span><strong>Login Failed: </strong>Incorrect username or password. Please try again.</p></div>";
+	
+}
+?>
 <div id = "tabs">
 	<ul>
 		<li> <a href="#tabs-1">Home</a></li>
