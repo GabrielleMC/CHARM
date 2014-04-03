@@ -534,12 +534,14 @@ void setClocks(void)// won't clash with our UART test base as we leave the SmClo
 	CSCTL3 = DIVA_5 + DIVM_4; // f = 312 Hz on Aclk, Mclk f = 1 GHz
 }
 //void setSPI(void); -- will not need to use spi with UDP protocol already in place
+int ST = 0;
 void setTimers(void)
 {
 	TA0CTL |= TASSEL_1 + ID_3 + MC_1;
 	//Timer A0 on 39 Hz, Count up mode to TA0CCRO, interrupt enabled
 	TA0R = 0; // set count to 0;
-	TA0CCR0 = 0x426; // 1 minute
+	TA0CCR0 = 0x132;//0x426; // 1 minute
+	ST = 1;
 	TA0CCTL0 |= CM_1 + CCIE;
 }
 void setADC10(void)
@@ -573,7 +575,7 @@ void ADC10routine(void)
 			if(STATE == 1) // timer expired Take ADC10 readings
 			{
 				ADC10CTL0 |= ADC10ENC + ADC10SC;// Take sensor reading
-				while((ADC10CTL1 & ADC10BUSY) == ADC10BUSY)
+				while((ADC10CTL1 & ADC10BUSY) == ADC10BUSY);
 				ADC10_READING = ADC10MEM0; // save sensor reading
 				ADC10MCTL0 &= ~ADC10INCH_4; // turn off channel 4
 				ADC10MCTL0 |= ADC10INCH_5; //select ch 5 for battery reading
@@ -581,7 +583,7 @@ void ADC10routine(void)
 				_delay_cycles(40000);//let switch settle
 
 				ADC10CTL0 |= ADC10ENC + ADC10SC;// Take battery reading
-				while((ADC10CTL1 & ADC10BUSY) == ADC10BUSY)
+				while((ADC10CTL1 & ADC10BUSY) == ADC10BUSY);
 				ADC10MCTL0 &= ~ ADC10INCH_5;//CLOSE CHANNEL 5
 				ADC10MCTL0 |= ADC10INCH_4; //BACK TO CHANNEL 4
 				P2OUT &= ~BIT1; // turn switch off
@@ -675,8 +677,12 @@ __interrupt void Timer__Off()
 {
 	//clear interrupt flags
 	TA0CTL &= ~TAIFG;
-	TA0CCR0 = 0x462;
-	STATE = 1;
+	TA0CCR0 =  0x132;//0x462;
+	if(ST==1)
+	{
+		STATE = 1;
+		ST = 0;
+	}
 	TA0CTL |= MC_0; // stop timer
 }
 
